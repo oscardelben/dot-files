@@ -1,1 +1,0 @@
-/Users/oscar/.zprofile
