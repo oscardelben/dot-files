@@ -1,1 +1,2 @@
-/Users/oscar/.zshenv
+fpath=($fpath $HOME/.zsh/func)
+typeset -U fpath

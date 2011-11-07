@@ -1,1 +1,49 @@
-/Users/oscar/.gitconfig
+[user]
+	name = Oscar Del Ben
+  email = info@oscardelben.com
+
+[alias]
+	st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  w  = whatchanged
+
+
+[core]
+	editor = vim
+  pager = less -FRSX
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[apply]
+  whitespace = fix
+
+
+[github]
+	user = oscardelben
