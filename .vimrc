@@ -37,8 +37,9 @@ set laststatus=2
 " Load plugin and indentation
 filetype plugin indent on
 
-" Our theme
-colorscheme jellybeans
+" Theme
+set background=light
+colorscheme solarized
 
 " Command-T configuration
 let g:CommandTMaxHeight=20
