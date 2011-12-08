@@ -12,6 +12,7 @@ alias be='bundle exec'
 alias migrate='be rake db:migrate && be rake db:test:prepare'
 alias vi='vim'
 alias g='git'
+alias reset_db='be rake db:drop; be rake db:create; be rake db:migrate; be rake db:seed; be rake db:test:prepare'
 
 # colors
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
