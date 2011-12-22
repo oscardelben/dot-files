@@ -38,7 +38,7 @@ set laststatus=2
 filetype plugin indent on
 
 " Theme
-set background=light
+set background=dark
 colorscheme solarized
 
 " Command-T configuration
@@ -149,3 +149,6 @@ map <leader>a :call RunTests('spec')<cr>
 
 " Switch between the last two files
 noremap <leader><leader> <c-^>
+
+" Exit insert mode
+:imap jj <Esc>
