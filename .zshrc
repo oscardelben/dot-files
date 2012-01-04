@@ -13,6 +13,7 @@ alias migrate='be rake db:migrate && be rake db:test:prepare'
 alias vi='mvim'
 alias vim='mvim'
 alias g='git'
+alias gaci='g add .; g ci'
 alias b='bundle'
 alias reset_db='be rake db:drop; be rake db:create; be rake db:migrate; be rake db:seed; be rake db:test:prepare'
 
