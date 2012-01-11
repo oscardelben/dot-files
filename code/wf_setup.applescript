@@ -29,6 +29,7 @@ tell application "iTerm"
         launch session "Default Session"
         tell the last session
             write text "cd ~/Developer/wildfire/app_suite"
+            write text "QUEUE=* be rake environment resque:work"
         end tell
     end tell
 end tell
