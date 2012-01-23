@@ -152,3 +152,20 @@ noremap <leader><leader> <c-^>
 
 " Exit insert mode
 :imap jj <Esc>
+
+" Haskell stuff (install extension following this post: http://robertmassaioli.wordpress.com/2010/06/16/haskellmode-guide-awesome-haskell-with-vim/)
+
+" This assumes that ghc is in your path, if it is not, or you
+" wish to use a specific version of ghc, then please change
+" the ghc below to a full path to the correct one
+au BufEnter *.hs compiler ghc
+
+" For this section both of these should be set to your
+" browser and ghc of choice, I used the following
+" two vim lines to get those paths:
+" :r!which google-chrome
+" :r!whigh ghc
+"let g:haddock_browser = "/usr/bin/google-chrome"
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"
+let g:ghc = "/usr/bin/ghc"
