@@ -1,0 +1,18 @@
+# ~/.tmuxinator/development.yml
+# you can make as many tabs as you wish...
+
+project_name: appsuite
+project_root: ~/code/wildfire/app_suite
+tabs:
+  - editor:
+      layout: main-horizontal
+      panes:
+        - vim
+        - #empty
+  - console: # empty
+  - server:
+      layout: even-vertical
+      panes:
+        - rails s
+        - cd ../account_management/ && rails s -p 3001
+
