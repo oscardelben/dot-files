@@ -24,6 +24,8 @@ compinit
 
 export EDITOR="vim"
 
+bindkey -v
+
 alias be='bundle exec'
 alias migrate='be rake db:migrate && be rake db:test:prepare'
 alias vi='vim'
