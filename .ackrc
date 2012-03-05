@@ -1,0 +1,8 @@
+--type-add=ruby=.haml
+--type-add=ruby=.fbml.erb
+--type-add=ruby=.sass
+--type-add=ruby=.scss
+--type-add=ruby=.erb
+--type-add=ruby=.liquid
+--type-add=js=.coffee
+
