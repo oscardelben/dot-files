@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/oscar/.rvm/gems/ruby-1.8.7-p352/gems/capybara-1.1.1/lib'
 let g:netrw_dirhist_2='/Users/oscardelben/Downloads/plataformatec-devise-a5aa03b/lib/devise/omniauth'
 let g:netrw_dirhist_3='/Users/oscardelben/.rvm/gems/ruby-1.8.7-p352/bundler/gems/accounts-client-dc1016248f8e'
 let g:netrw_dirhist_4='/Users/oscardelben/Developer/wildfire/app_suite'
 let g:netrw_dirhist_5='/Users/oscardelben/Developer/wildfire/app_suite/spec'
 let g:netrw_dirhist_6='/Users/oscardelben/Developer/wildfire/app_suite'
+let g:netrw_dirhist_7='/Users/oscardelben/.rvm/gems/ruby-1.8.7-p352/gems/rspec-core-2.7.1/lib/rspec/core'

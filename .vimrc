@@ -37,7 +37,9 @@ set laststatus=2
 " Load plugin and indentation
 filetype plugin indent on
 
-colorscheme mac_classic
+syntax enable
+set background=dark
+colorscheme solarized
 
 " Command-T configuration
 let g:CommandTMaxHeight=20
