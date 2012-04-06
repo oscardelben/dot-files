@@ -8,24 +8,77 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/wom
+~MSle0~/auto
 
 # Last Substitute Search Pattern:
-~MSle0&)
+~MSle0&mountain
 
 # Last Substitute String:
-$\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$", "\/*%s*\/")
+$\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$", "\" %s")
 
 # Command Line History (newest to oldest):
 :wq
 :q
-:w
-:colorscheme wombat
 :q!
+:w
+:vsp server.rb
 :W
+:checktime
+:vsp app/controllers/business/pages_controller.rb
+:xhecktime
+:vsp app/controllers/business/business_controller.rb
+:noh
+:vsp app/coffeescripts/business/pages/shared.coffee
+:vsp spec/spec_helper.rb
+::w
+:e spec/support/ace_editor.rb
+:vsp
+:vsp app/coffeescripts/designer/page_templates/show.coffee
+:e spec/lib/trek_spec.rb
+:! mkdir spec/lib
+:e lib/trek.rb
+:e spec/factories/trekkings.rb
+:e spec/controllers/trekkings_controller_spec.rb
+:%s/mountain/trail/g
+:%s/trekking/mountain/g
+:%s/trekking/mountain/gi
+:e features/mountains.feature
+:vsp app/views/layouts/application.html.yaml
+:e features/trekkings.feature
+:e config/initializers/app.rb
+:e config/config.yml
+:e features/step_definitions/app_steps.rb
+:vsp features/welcome.feature
+:e spec/liquid/liquid_filters_spec.rb
+:e spec/liquid/drops/page_spec.rb
+:e config/initializers/liquid.rb
+:919
+:%s/publication_social_app_id/publication_job_social_app_id/g
+:vsp spec/acceptance/business/publishing_spec.rb
+:Rake
+:vsp app/models/publication_job.rb
+:vsp ~/.vimrc
+:quit!
+:quit
+:q!!
+:load $MYVIMRC
+:e ~/.vimrc
+:e lib/wf/jobs/publish.rb
+:we
+:e spec/models/publication_job_spec.rb
+:e lib/resque/publication_job_worker.rb
+:e ~/tmp.rb
+:vsp spec/acceptance/business/async_publishing_spec.rb
+:set autoread
+:e lib/business/fb_rendering.rb
+:e wikipedia.rb
+:!mysql.server start
+:e ~/.my.cnf
+:e spec/support/web_stubs.rb
+:vsp app/models/page.rb
+:colorscheme wombat
 :colorscheme raggi
 :e app/views/layouts/business/business.html.haml
-:noh
 :vsp app/views/designer/page_templates/_page_template.html.haml
 :Q
 :vsp lib/fake_test.rb
@@ -39,7 +92,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 :!python %:p
 :map <leader>t :w<cr> :!python %:p<cr>
 :e app/views/designer/page_templates/_wizard_accordion.html.haml
-:vsp
 :e config/app_suite.yml
 :e spec/support/interface_matcher.rb
 :e lib/designer/page_templates.rb
@@ -60,7 +112,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 :e app/helpers/business/page_groups_helper.rb
 :e
 :'<,'>w
-:e spec/support/web_stubs.rb
 :e app/views/business/publication_jobs/publishing_retry.html.haml
 :e spec/lib/publishable_spec.rb
 :e app/views/business/facebook_publications/_publishing_success.html.haml
@@ -191,8 +242,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 :map ,leader>t :w<cr> :!ruby %:p<cr>
 :w ~/ideas.txt
 :w ~/Desktop/this.txt
-:e config/initializers/app.rb
-:e config/config.yml
 :vsp features/step_definitions/app_steps.rb
 :e features/epic_a.feature
 :w:w
@@ -201,8 +250,206 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 :vsp spec/adapters/rspec/rspec_adapter_spec.rb
 :vsp LIb/adapters/rspec/rspec_adapter.rb
 :vsp features/step_definitions/additional_cli_steps.rb
+:e lib/parallel_tests.rb
+:vsp LIb/rubygems/``
+:a
+:e ~/bin/git-cwd-info
+:e .rvm/bin/rvm-prompt
+:e vendor/plugins/pjax_rails/lib/pjax_rails.rb
+:e app/controllers/business/publication_jobs_controller.rb
+:syntax erb
+:syntax html
+:vsp gilded_rose.cs
+:e Gemfile
+:w ~/Desktop/katas.txt
+:e .vimrc
+:e _config.yml
+:e atom.xml
+:e _layouts/post.html
+:vsp _layouts/default.html
+:!rake
+:vsp test/liquid/standard_filter_test.rb
+:e _posts/2012-01-21-open-university.markdown
+:e _posts/2012-03-02-skipping-university-for-now.markdown
+:e _posts/2012-02-27-command-line-pow-wrapper.markdown
+:e _posts/2012-01-26-linkedin-experiment.markdown
+:e _posts/2012-01-23-first-steps-with-haskell.markdown
+:e _posts/2011-12-21-automating-development-setup.markdown
+:e _posts/2011-12-09-introducing-json-formatter.markdown
+:e _posts/2011-11-29-introducing-git-diff-grep.markdown
+:vsp stylesheets/main.less
+:vsp stylesheets/main.css
+:vsp index.html
+:e app/coffeescripts/shared/editor.coffee
+:e config/assets.rb
+:e app/views/business/pages/custom_css.html.haml
+:vsp app/coffeescripts/business/pages/edit.coffee
+:e script/run_plugin_specs.rb
+:vsp app/views/layouts/consumer/_facebook_logout.html.haml
+:e config/locales/en.yml
+:.q
+:t
+:!ruby %:p
+:e university/trigonometry_review.html
+:!mkdir university
+:!rake test
+:e lib/active_model/
+:vsp test/cases/attribute_methods_test.rb
+:e lib/active_model/attribute_methods.rb
+:e lib/active_model.rb
+:e examples/validations.rb
+:e test/_helper.js
+:e package.json
+:e test/apps/authentication-test.coffee
+:vsp package.json
+:e bin/devserver
+:e views/layout.jade
+:vsp apps/authentication/views/login.jade
+:e apps/authentication/routes.coffee
+:e lib/active_model/errors.rb
+:e lib/active_model/dirty.rb
+:e lib/active_model/conversion.rb
+:vsp ../activesupport/lib/active_support/configurable.rb
+:e lib/active_model/configuration.rb
+:vsp test/cases/callbacks_test.rb
+:vsp test/models/
+:vsp lib/active_model/
+:vsp ../activesupport/lib/active_support/concern.rb
+:e lib/active_model/callbacks.rb
+:vsp test/cases/configuration_test.rb
+:vsp
+:e .rspec
 
 # Search String History (newest to oldest):
+? \V\^\zs\(\_.\{-}\)\$
+?/auto
+?/feedz
+?/ui-too
+?/new
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \V\^  \zs\(\_.\{-}\)\$
+?/def ed
+?/show
+?/moc
+?/hoptoa
+?/koala
+?/prof
+?/setupC
+?/editor
+?/attac
+?/appear
+?/switch
+?/appeara
+?/updateAppea
+?/handle
+?/update
+?/success
+?/before
+?/clea
+?/syste
+?/logg
+?/feed
+?/sys
+?/redclo
+?/html
+?/log
+?/handleEd
+?/attachEd
+?/dialog
+?/custo
+?/closeDi
+?/initializeEd
+?/initiali
+?/atta
+?/attacheE
+?/setEditorM
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\%6c \zs\(\_.\{-}\)\%8c
+?/custom
+?/update_c
+?/def upda
+?/publication
+?/delete
+?/css
+?/wait_for_mo
+?/using
+?/initializeE
+?/openEm
+?/methods
+?/setUpdate
+?/spinner
+? mountain
+? trekking
+?/locale
+?/kami
+?/pagin
+?/template
+?/escape
+?/setup_new
+?/social_app
+?/wait_time
+? \V\^            \zs\(\_.\{-}\)\$
+? publication_social_app_id
+?/>>
+?/pol
+?/publications
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+??context|describe
+??context\|describe
+??describe\|context
+??/describe|context/
+??describe|context
+?/social_pages
+?/updateupda
+?/disabled
+?/fbfan
+?/any
+?/sny
+?/publication_j
+?/override
+?/destroy_pre
+?/overr
+?/def crea
+?/previous_pu
+?/destroy_
+?/overrid
+?/selected
+?/isPubl
+?/submitP
+?/publish_pages
+?/erro
+?/isPu
+?/changed
+?/def er
+?/error
+?/enable
+?/enab
+?/create_re
+?/overwrite
+?/fbfa
+?/fbcanv
+?/addSo
+?/social_a
+?/showH
+?/publica
+?/fbca
+?/slee
+?/validate
+?/val
+?/destro
+?/build_
+?/def creat
+?/@social_page
+?/def edit
+?/double
+?/flush
+?/webki
+?/accepance_login
+?/acceptance_l
+?/paral
+?/web
+?/for_
 ?/wom
 ?/color
 ?/theme
@@ -217,7 +464,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 ?/nullW
 ?/edit
 ?/pho
-? \V\^\zs\(\_.\{-}\)\$
 ?/40
 ?/debu
 ?/create
@@ -233,15 +479,11 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 ?/current)c
 ?/publicl
 ?/recent
-?/update
-? \V\^      \zs\(\_.\{-}\)\$
 ?/high
 ?/code
 ?/prom
-? \V\^  \zs\(\_.\{-}\)\$
 ?/p_mo
 ?/loading
-?/delete
 ?/edit_pa
 ?/edit+[age
 ?/page_template
@@ -259,7 +501,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 ?/tag_cate
 ?/order
 ?/link
-? \V\^    \zs\(\_.\{-}\)\$
 ?/remoti
 ?/Design
 ?/edit te
@@ -290,7 +531,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 ?/for_plu
 ?/create_pa
 ?/page_tem
-?/template
 ?/v1
 ?/15.
 ?/title_w
@@ -301,8 +541,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 ? )
 ? (
 ?/am_id
-?/publications
-?/>>
 ?/not_in
 ?/drafts
 ?/for_st
@@ -355,7 +593,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 ? categories
 ? category
 ? categoriey
-?/ui-too
 ?/body
 ?/li .body
 ?/scroll_pane
@@ -371,7 +608,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 ?/mobile
 ?/consumer
 ?/reques
-?/locale
 ?/toolk
 ?/url
 ?/tab
@@ -390,7 +626,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 ? create_from_social_property_and_company
 ?/new_ste
 ?/chan
-?/destro
 ?/submitPub
 ?/destroy
 ?/publication_id
@@ -424,7 +659,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 ?/@social_pages
 ?/stub_gr
 ?/9999
-?/slee
 ?/js
 ?/attach_f
 ?/install
@@ -440,7 +674,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 ?/page_group_publications
 ?/openPu
 ?/renderP
-?/publica
 ?/social
 ?/company.socia
 ? \<acceptance_login_as\>
@@ -453,25 +686,18 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 ?/social_pro
 ?/SocialP
 ?/wait_
-?/overr
-?/social_app
 ?/social_page_id
 ?/addPu
 ?/addP
 ?/addSoci
-?/addSo
 ?/social_
 ?/addPublicatio
 ?/ispub
 ?/submitpub
-?/publish_pages
 ?/publis
-?/before
-?/fbfan
 ?/select_butt
 ?/widg
 ?/trunca
-?/log
 ?/arti
 ?/sele
 ?/wait_un
@@ -482,116 +708,8 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 ?/lambda
 ?/call
 ?/save_
-?/web
 ? #
 ?/curre
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
-? #
 ? #
 ? #
 ? #
@@ -1211,187 +1329,323 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	      visit edit_page_path(@page)
-	      select_button('#current_channel').select('Microsite')
-	      wait_until(3) do
-	        within_frame('preview_frame') { should_have_text "microsite", :within => 'h3' }
-	      end
+"0	CHAR	0
+	f
 "1	LINE	0
-	
+	" Open splits vertically by default
 "2	LINE	0
-	                    INNER JOIN page_groups ON targets.page_group_id = page_groups.id
+	"
 "3	LINE	0
-	
+	"
 "4	LINE	0
-	  def self.for_state(state)
-	    raise InvalidState unless STATES.include?(state.to_sym)
-	    order('pages.updated_at DESC').send(state)
-	  end
-	
+	set :vertical
 "5	LINE	0
-	    raise InvalidState if state.blank?
+	" use ,F to jump to tag in a vertical split
 "6	LINE	0
-	
+	nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd
+	w<cr>:exec("tag ". word)<cr>
+	"
+	" " use ,gf to go to file in a vertical split
+	" nnoremap <silent> ,gf :vertical botright wincmd f<CR
 "7	LINE	0
-	      PageTemplate.delete_all
+	    ws.send "Hello client"
 "8	LINE	0
-	tmux send-keys -t development 'cd ~/Developer/wildfire/app_suite' C-m
-	tmux send-keys -t development 'vim' C-m
-	tmux split-window -v -t development
-	tmux select-layout -t development main-horizontal
+	    <di
+	
+	      <div id="container">  
+	
+	        <h1>WebSockets Client</h1>  
+	
+	        <div id="chatLog">  
+	
+	        </div><!-- #chatLog -->  
+	        <p id="examples">e.g. try
+	        'hi', 'name', 'age',
+	        'today'</p>  
+	
+	        <input id="text"
+	        type="text" />  
+	        <button
+	          id="disconnect">Disconnect</button>  
+	
+	      </div><!--
+	      #container
+	      -->  
+	
+	    </div>  
 "9	LINE	0
-	set -sg escape-time 1
-	
-	set -g base-index 1
-	setw -g pane-base-index 1
-	
-	# Reload configuration
-	bind r source-file ~/.tmux.conf \; display "Reloaded!"
-	
-	# Send prefix to program that need it
-	bind C-a send-prefix
-	
+	  gem 'rspec-rails-mocha', '~> 0.3.1', :require => false
 "j	CHAR	0
 	1739
 <jjwjjjodef complaete€kb€kb€kb€kbete!kddAEvent.create!(:name => name, :points => pp€kboints)end,twjjjjjjjjjj,,,,,kkkkkkkkkkkkyyjjjjjjjjjjjjjjjpwwwwwwwwwwwwwinon wkjwwwwwwcw0wwwwwcwfalseja do34ggV5jjjyj4j4j4jjpkOjjjjjjjwwwwwwwwinon jbcw4cw0jo,tkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjoshared_s€kbexamples_for 'should create€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb"should create a task" dpa€kb0a€kb0aoi€kbjjjjjjjkkVjjjjjjjkkkkkkkkkkkkwwwbjjjjjjjkkkVjjjjjjjjjjkkdkkkkpOkwwwwwi€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kbjjjjjjjjjjoendkkddkkkkkkwwwwwjjwwwwwwwwci(event.namejbclevent.pointsjjjjjjjjki			it { behaves_like €ýc€ýbbbxxi€kb_€ýc€ýblllllllxhhhhhhishould_A'a task"€kb'kkjja€kb"bbi€kb"okkkkkkkkkkkkkkkkkwwi€kbu,touia ,t47ggyyjjjjjjjjPjV4jj4jjjkkdOjA dotask.complete!ot€kbTask.find(task.id_€kb).should be_niloend,twOdestroy,twkwwcwexists?wwwwwwwbCbe_false,tVkykkkkkkkkkpkA dojjoendkA€kb€kb€kb€kb€kbtrue,twa unless repeating?,t€ý,€ý...uukkoit "so€kbhould clear h€kbthe parent id og€kbf its children"lllkkkkkkkkkkkkkkkkoit "should have many taks€kb€kbsks €kb" dookkkkkkkyyjjjjjjpochild_1 = Fac	(:task)child			_2 = F	(:task)parent.tasks << [chi€kb€kb€kb€kb€kb€kb€kb€kb = [child_1, child_2]parent.tasks.should == [child_1, child_2]end,t€ýbwkkkkkkkohas_n€kbmany :tasks, Lc€kb€kb:cl	 => 't€kbTask',tbbbbbwCforeign_key => :parent_id,tw53ggA dotask = Fac	(:task)2.times { task.tasks << Fac	(:ts€kbask) }task.complee€kbte!tasks€kb.children.all?(€kb {|t}€kb| t.parent_id.blak€kbnk? }.should be_trueend,tkwwcwtasks,twjjjjjjotasks.each { |t| t.update_attribute €kb(:parent_id, nil) }ddopkdd,t€ýc€ýb,fspeccon:e sp	con		tasks_controller_spec.rb
+"t	LINE	0
+	      social_pages = [SocialPage.gen, SocialPage.gen]
+	      company = Company.gen
 "w	CHAR	0
-	415
-<wi@jjjjjjjjjjjjjjjjjjjkkkkkkkjjwwwwwwwwwwwvbi@jj:w€ýc€ýbhhi'jjwwwwa'jj:w€ýc€ýb€ýc€ýb€ýL€ýL€ýL€ýL€ýL€ýL€ýL€ýL€ýL€ýL€ýc€ýb/creatennnnnnnjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkkkkkkkkkkkkjyyjjjjjjjjkkkkkkkkwwwwwwbx:w€ýc€ýb€ýc€ýbjjjjj€ýc€ýbwwwwbla€kb"€kb\"jjbbbbblcl"jj:w€ýc€ýb€ýc€ýbi\jj:w€ýc€ýbkkkkkkkjjosleep 10jj:w€ýc€ýbkjddOwithin('€kb".ui-dialog" €kb) dojjj==oendjj€ýc€ýb€ýc€ýbljk
+	wwwwwwww
 ""-	CHAR	0
-	light
+	 
 
 # File marks:
-'0  41  0  ~/.vimrc
-'1  60  0  ~/.vimrc
-'2  43  0  ~/.vimrc
-'3  2  0  ~/code/wildfire/app_suite/app/models/target.rb
-'4  15  25  ~/bin/development
-'5  3  0  ~/.tmux.conf
-'6  5  0  ~/Developer/fake_test/spec/lib/fake_test_spec.rb
-'7  1  22  ~/Developer/wildfire/app_suite/.git/COMMIT_EDITMSG
-'8  1  12  ~/Developer/pow/.git/COMMIT_EDITMSG
-'9  1  0  ~/Developer/pow/VERSION
+'0  3  4  ~/.gitignore
+'1  50  1  ~/.gitconfig
+'2  2  3  ~/.gitignore
+'3  37  38  ~/.zshrc
+'4  175  68  ~/.vimrc
+'5  101  68  ~/.vimrc
+'6  17  19  ~/code/websockets/sockets/index.html
+'7  4  25  ~/code/websockets/goliath-example/server.rb
+'8  10  0  ~/code/websockets/goliath-example/server.rb
+'9  1  0  ~/code/wildfire/app_suite/Gemfile
 
 # Jumplist (newest first):
--'  41  0  ~/.vimrc
--'  60  0  ~/.vimrc
--'  42  0  ~/.vimrc
--'  43  0  ~/.vimrc
--'  37  21  ~/.vimrc
--'  69  21  ~/.vimrc
--'  66  4  ~/.vimrc
--'  65  8  ~/.vimrc
--'  75  80  ~/.vimrc
--'  70  21  ~/.vimrc
+-'  3  4  ~/.gitignore
+-'  2  0  ~/.gitignore
+-'  50  1  ~/.gitconfig
+-'  51  49  ~/.gitconfig
+-'  1  0  ~/.gitconfig
+-'  1  0  ~/.gitignore
+-'  37  38  ~/.zshrc
+-'  48  0  ~/.zshrc
+-'  175  68  ~/.vimrc
+-'  179  54  ~/.vimrc
+-'  13  10  ~/.vimrc
+-'  101  0  ~/.vimrc
+-'  102  77  ~/.vimrc
+-'  62  8  ~/.vimrc
+-'  14  0  ~/.vimrc
 -'  1  0  ~/.vimrc
--'  2  0  ~/code/wildfire/app_suite/app/models/target.rb
--'  137  35  ~/code/wildfire/app_suite/app/models/page.rb
--'  136  25  ~/code/wildfire/app_suite/app/models/page.rb
--'  66  0  ~/code/wildfire/app_suite/app/models/page.rb
--'  1  0  ~/code/wildfire/app_suite/app/models/page.rb
--'  14  0  ~/code/wildfire/app_suite/app/models/target.rb
--'  113  0  ~/code/wildfire/app_suite/app/coffeescripts/business/page_groups/page_groups.coffee
--'  1  0  ~/code/wildfire/app_suite/app/coffeescripts/business/page_groups/page_groups.coffee
--'  1  0  ~/code/wildfire/app_suite/app/coffeescripts/shared/publishing.coffee
--'  187  0  ~/code/wildfire/app_suite/app/coffeescripts/business/pages/edit.coffee
--'  186  61  ~/code/wildfire/app_suite/app/coffeescripts/business/pages/edit.coffee
--'  116  67  ~/code/wildfire/app_suite/app/coffeescripts/business/pages/edit.coffee
--'  1  0  ~/code/wildfire/app_suite/app/coffeescripts/business/pages/edit.coffee
--'  308  0  ~/code/wildfire/app_suite/public/stylesheets/sass/shared/wizard.scss
--'  1  0  ~/code/wildfire/app_suite/public/stylesheets/sass/shared/wizard.scss
--'  18  0  ~/code/wildfire/app_suite/app/views/designer/page_templates/_page_template.html.haml
--'  3  54  ~/code/wildfire/app_suite/app/views/designer/page_templates/_page_template.html.haml
--'  1  0  ~/code/wildfire/app_suite/spec/acceptance/designer/edit_page_template_spec.rb
--'  15  25  ~/bin/development
--'  2  0  ~/bin/development
--'  16  69  ~/bin/development
--'  1  0  ~/bin/development
--'  3  0  ~/.tmux.conf
--'  4  0  ~/.tmux.conf
--'  1  0  ~/.tmux.conf
--'  5  0  ~/Developer/fake_test/spec/lib/fake_test_spec.rb
--'  1  0  ~/Developer/fake_test/lib/fake_test.rb
--'  1  0  ~/Developer/fake_test/spec/lib/fake_test_spec.rb
--'  1  22  ~/Developer/wildfire/app_suite/.git/COMMIT_EDITMSG
--'  1  12  ~/Developer/pow/.git/COMMIT_EDITMSG
--'  1  0  ~/Developer/pow/VERSION
--'  9  38  ~/Developer/wildfire/app_suite/public/stylesheets/sass/layouts/designer/preview.scss
--'  232  0  ~/Developer/wildfire/app_suite/spec/acceptance/business/edit_pages_spec.rb
--'  43  0  ~/Developer/wildfire/app_suite/lib/page_layout_zip.rb
--'  231  0  ~/Developer/wildfire/app_suite/spec/acceptance/business/edit_pages_spec.rb
--'  23  0  ~/Developer/wildfire/app_suite/spec/acceptance/business/edit_pages_spec.rb
--'  118  0  ~/Developer/wildfire/app_suite/app/models/page_layout_version.rb
--'  28  2  ~/Developer/wildfire/app_suite/app/models/page_template.rb
--'  75  26  ~/Developer/wildfire/app_suite/app/models/page_layout_version.rb
--'  52  40  ~/Developer/wildfire/app_suite/app/models/page_layout_version.rb
--'  1  0  ~/Developer/wildfire/app_suite/app/views/business/pages/edit_iframe.html.haml
--'  85  0  ~/Developer/wildfire/app_suite/spec/acceptance/business/edit_pages_spec.rb
--'  1  0  ~/Developer/wildfire/app_suite/app/views/shared/_current_channel_controls.html.haml
--'  14  11  ~/Developer/wildfire/app_suite/spec/acceptance/business/edit_pages_spec.rb
--'  223  13  ~/Developer/wildfire/app_suite/spec/acceptance/business/edit_pages_spec.rb
--'  209  13  ~/Developer/wildfire/app_suite/spec/acceptance/business/edit_pages_spec.rb
--'  191  22  ~/Developer/wildfire/app_suite/spec/acceptance/business/edit_pages_spec.rb
--'  178  8  ~/Developer/wildfire/app_suite/spec/acceptance/business/edit_pages_spec.rb
--'  1  0  ~/Developer/wildfire/app_suite/app/views/business/pages/edit.html.haml
--'  53  0  ~/Developer/wildfire/app_suite/app/models/page_template.rb
--'  222  210  ~/Developer/wildfire/app_suite/app/models/page_template.rb
--'  30  33  ~/Developer/wildfire/app_suite/app/models/page_template.rb
--'  31  6  ~/Developer/wildfire/app_suite/app/models/page_template.rb
--'  32  4  ~/Developer/wildfire/app_suite/app/models/page_template.rb
--'  33  0  ~/Developer/wildfire/app_suite/app/models/page_template.rb
--'  2  0  ~/code/wildfire/app_suite/app/models/target.rb
--'  137  35  ~/code/wildfire/app_suite/app/models/page.rb
--'  136  25  ~/code/wildfire/app_suite/app/models/page.rb
--'  66  0  ~/code/wildfire/app_suite/app/models/page.rb
--'  1  0  ~/code/wildfire/app_suite/app/models/page.rb
--'  14  0  ~/code/wildfire/app_suite/app/models/target.rb
--'  113  0  ~/code/wildfire/app_suite/app/coffeescripts/business/page_groups/page_groups.coffee
--'  1  0  ~/code/wildfire/app_suite/app/coffeescripts/business/page_groups/page_groups.coffee
--'  1  0  ~/code/wildfire/app_suite/app/coffeescripts/shared/publishing.coffee
--'  187  0  ~/code/wildfire/app_suite/app/coffeescripts/business/pages/edit.coffee
--'  186  61  ~/code/wildfire/app_suite/app/coffeescripts/business/pages/edit.coffee
--'  116  67  ~/code/wildfire/app_suite/app/coffeescripts/business/pages/edit.coffee
--'  1  0  ~/code/wildfire/app_suite/app/coffeescripts/business/pages/edit.coffee
--'  308  0  ~/code/wildfire/app_suite/public/stylesheets/sass/shared/wizard.scss
--'  1  0  ~/code/wildfire/app_suite/public/stylesheets/sass/shared/wizard.scss
--'  18  0  ~/code/wildfire/app_suite/app/views/designer/page_templates/_page_template.html.haml
--'  3  54  ~/code/wildfire/app_suite/app/views/designer/page_templates/_page_template.html.haml
--'  1  0  ~/code/wildfire/app_suite/spec/acceptance/designer/edit_page_template_spec.rb
--'  15  25  ~/bin/development
--'  2  0  ~/bin/development
--'  16  69  ~/bin/development
--'  1  0  ~/bin/development
--'  3  0  ~/.tmux.conf
--'  58  0  ~/.vimrc
--'  40  0  ~/.vimrc
--'  67  21  ~/.vimrc
--'  64  4  ~/.vimrc
--'  63  8  ~/.vimrc
--'  73  80  ~/.vimrc
+-'  17  19  ~/code/websockets/sockets/index.html
+-'  24  71  ~/code/websockets/sockets/index.html
+-'  1  0  ~/code/websockets/sockets/index.html
+-'  4  25  ~/code/websockets/goliath-example/server.rb
+-'  10  0  ~/code/websockets/goliath-example/server.rb
+-'  1  0  ~/code/websockets/goliath-example/server.rb
+-'  1  0  ~/code/wildfire/app_suite/Gemfile
+-'  26  5  ~/code/wildfire/app_suite/Gemfile
+-'  50  114  ~/code/wildfire/app_suite/Gemfile
+-'  4  9  ~/code/wildfire/app_suite/Gemfile
+-'  8  12  ~/code/wildfire/app_suite/Gemfile
+-'  11  13  ~/code/wildfire/app_suite/Gemfile
+-'  12  16  ~/code/wildfire/app_suite/Gemfile
+-'  14  11  ~/code/wildfire/app_suite/Gemfile
+-'  35  18  ~/code/wildfire/app_suite/Gemfile
+-'  75  19  ~/code/wildfire/app_suite/Gemfile
+-'  76  25  ~/code/wildfire/app_suite/Gemfile
+-'  78  15  ~/code/wildfire/app_suite/Gemfile
+-'  92  26  ~/code/wildfire/app_suite/Gemfile
+-'  93  31  ~/code/wildfire/app_suite/Gemfile
+-'  97  24  ~/code/wildfire/app_suite/Gemfile
+-'  104  13  ~/code/wildfire/app_suite/Gemfile
+-'  106  17  ~/code/wildfire/app_suite/Gemfile
+-'  107  33  ~/code/wildfire/app_suite/Gemfile
+-'  108  18  ~/code/wildfire/app_suite/Gemfile
+-'  109  15  ~/code/wildfire/app_suite/Gemfile
+-'  111  15  ~/code/wildfire/app_suite/Gemfile
+-'  124  2  ~/code/wildfire/app_suite/Gemfile
+-'  51  2  ~/code/wildfire/app_suite/Gemfile
+-'  36  0  ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
+-'  35  37  ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
+-'  117  8  ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
+-'  23  0  ~/code/wildfire/app_suite/app/models/account.rb
+-'  22  29  ~/code/wildfire/app_suite/app/models/account.rb
+-'  1  0  ~/code/wildfire/app_suite/lib/wf/consumer_auth/base_auth.rb
+-'  6  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
+-'  4  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
+-'  48  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
+-'  1  0  ~/code/wildfire/app_suite/app/views/business/pages/edit_iframe.html.haml
+-'  4  3  ~/code/wildfire/app_suite/app/views/business/pages/edit_iframe.html.haml
+-'  51  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
+-'  1  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
+-'  142  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
+-'  17  5  ~/code/wildfire/app_suite/Gemfile
+-'  74  28  ~/code/wildfire/app_suite/Gemfile
+-'  85  61  ~/code/wildfire/app_suite/Gemfile
+-'  1  0  ~/code/wildfire/app_suite/Gemfile
+-'  26  5  ~/code/wildfire/app_suite/Gemfile
+-'  50  114  ~/code/wildfire/app_suite/Gemfile
+-'  4  9  ~/code/wildfire/app_suite/Gemfile
+-'  8  12  ~/code/wildfire/app_suite/Gemfile
+-'  11  13  ~/code/wildfire/app_suite/Gemfile
+-'  12  16  ~/code/wildfire/app_suite/Gemfile
+-'  14  11  ~/code/wildfire/app_suite/Gemfile
+-'  35  18  ~/code/wildfire/app_suite/Gemfile
+-'  75  19  ~/code/wildfire/app_suite/Gemfile
+-'  76  25  ~/code/wildfire/app_suite/Gemfile
+-'  78  15  ~/code/wildfire/app_suite/Gemfile
+-'  92  26  ~/code/wildfire/app_suite/Gemfile
+-'  93  31  ~/code/wildfire/app_suite/Gemfile
+-'  97  24  ~/code/wildfire/app_suite/Gemfile
+-'  104  13  ~/code/wildfire/app_suite/Gemfile
+-'  106  17  ~/code/wildfire/app_suite/Gemfile
+-'  107  33  ~/code/wildfire/app_suite/Gemfile
+-'  108  18  ~/code/wildfire/app_suite/Gemfile
+-'  109  15  ~/code/wildfire/app_suite/Gemfile
+-'  111  15  ~/code/wildfire/app_suite/Gemfile
+-'  124  2  ~/code/wildfire/app_suite/Gemfile
+-'  51  2  ~/code/wildfire/app_suite/Gemfile
+-'  36  0  ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
+-'  35  37  ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
+-'  117  8  ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
+-'  23  0  ~/code/wildfire/app_suite/app/models/account.rb
+-'  22  29  ~/code/wildfire/app_suite/app/models/account.rb
+-'  1  0  ~/code/wildfire/app_suite/lib/wf/consumer_auth/base_auth.rb
+-'  6  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
+-'  4  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
+-'  48  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
+-'  1  0  ~/code/wildfire/app_suite/app/views/business/pages/edit_iframe.html.haml
+-'  4  3  ~/code/wildfire/app_suite/app/views/business/pages/edit_iframe.html.haml
+-'  51  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
+-'  1  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
 
 # History of marks within files (newest to oldest):
 
+> ~/.gitignore
+	"	3	4
+	^	3	5
+	.	3	4
+	+	2	3
+	+	3	4
+
+> ~/.gitconfig
+	"	50	1
+	.	51	0
+	+	51	0
+
+> ~/.zshrc
+	"	37	38
+	^	37	39
+	.	37	38
+	+	48	54
+	+	37	38
+
 > ~/.vimrc
-	"	41	0
-	^	41	19
-	.	41	18
-	+	42	21
-	+	43	0
-	+	41	18
+	"	175	68
+	^	174	2
+	.	175	68
+	+	162	0
+	+	163	34
+	+	14	0
+	+	102	0
+	+	101	69
+	+	11	12
+	+	13	11
+	+	14	0
+	+	172	94
+	+	171	28
+	+	179	53
+	+	173	0
+	+	179	0
+	+	179	0
+	+	179	0
+	+	174	34
+	+	179	0
+	+	179	0
+	+	178	0
+	+	175	69
+	+	175	0
+	+	177	0
+	+	177	0
+	+	176	0
+	+	177	0
+	+	174	1
+	+	175	68
 
-> ~/code/TagTime/beeminder.pl
-	"	19	0
+> ~/code/rails/activemodel/lib/active_model/attribute_methods.rb
+	"	247	6
+	^	246	77
+	.	247	0
+	+	106	0
+	+	324	0
+	+	216	33
+	+	106	0
+	+	143	0
+	+	181	0
+	+	216	0
+	+	387	52
+	+	387	0
+	+	393	0
+	+	246	0
+	+	247	0
+	+	247	68
+	+	247	0
+	+	247	20
+	+	247	68
+	+	247	0
+	+	393	0
+	+	246	76
+	+	247	0
+	n	187	10
 
-> ~/code/TagTime/beem
+> ~/code/rails/activemodel/test/cases/configuration_test.rb
 	"	1	0
 
-> ~/code/wildfire/app_suite/spec/acceptance/designer/edit_page_template_spec.rb
-	"	107	0
+> ~/code/rails/activemodel/lib/active_model/callbacks.rb
+	"	91	0
+	.	106	0
+	+	106	0
+	+	106	6
+	+	106	0
+	+	106	36
+	+	132	0
+	+	106	0
+	+	106	23
+	+	106	45
+	+	103	53
+	+	106	0
+
+> ~/code/rails/activesupport/lib/active_support/concern.rb
+	"	124	0
+
+> ~/code/rails/activemodel/test/cases/callbacks_test.rb
+	"	2	0
+
+> ~/code/rails/activemodel/GoToFile
+	"	1	0
+	.	20	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	20	0
+
+> ~/code/rails/activemodel/lib/active_model/configuration.rb
+	"	1	0
+	^	110	55
+	.	110	54
+	+	6	36
+	+	98	70
+	+	111	0
+	+	110	54
+	+	120	65
+	+	98	70
+	+	120	65
+	+	110	54
+
+> ~/code/rails/activesupport/lib/active_support/configurable.rb
+	"	1	0
+
+> ~/code/rails/activemodel/lib/active_model/conversion.rb
+	"	71	2
+	.	43	0
+	+	43	12
+	+	43	0
+	+	43	0
+
+> ~/code/rails/activemodel/lib/active_model/dirty.rb
+	"	168	2
+
+> ~/code/rails/activemodel/lib/active_model/errors.rb
+	"	117	31
+	^	117	33
+	.	117	0
+	+	117	0
+
+> ~/code/wildfire/app_suite/app/controllers/application_controller.rb
+	"	81	6
 
 > ~/code/wildfire/app_suite/GoToFile
 	"	1	0
-	.	1	0
+	.	2	0
 	+	1	0
 	+	1	0
 	+	1	0
@@ -1455,6 +1709,7 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 	+	1	0
 	+	1	0
 	+	1	0
+	+	43	0
 	+	1	0
 	+	1	0
 	+	1	0
@@ -1466,196 +1721,12 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 	+	1	0
 	+	1	0
 	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	23	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	11	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/code/wildfire/app_suite/app/views/designer/page_templates/_page_template.html.haml
-	"	18	0
-	^	16	32
-	.	16	31
-	+	1	56
-	+	16	31
-
-> ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
-	"	58	0
-	^	58	62
-	.	58	28
-	+	53	16
-	+	58	85
-	+	58	28
-
-> ~/code/wildfire/app_suite/public/stylesheets/sass/shared/wizard.scss
-	"	308	0
-	^	308	28
-	.	308	37
-	+	297	47
-	+	303	27
-	+	307	22
-	+	308	26
-	+	302	25
-	+	308	37
-
-> ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
-	"	50	0
-
-> ~/code/wildfire/app_suite/app/views/business/pages/edit_iframe.html.haml
-	"	12	0
-	^	8	0
-	.	1	0
-	+	1	0
-
-> ~/code/wildfire/app_suite/app/views/layouts/business/business.html.haml
-	"	1	0
-
-> ~/code/wildfire/app_suite/app/controllers/business/page_groups_controller.rb
-	"	1	0
-
-> ~/code/wildfire/app_suite/app/controllers/consumer/page_groups_controller.rb
-	"	11	0
-	^	10	130
-	.	10	0
-	+	10	129
-	+	10	0
-
-> ~/code/wildfire/app_suite/lib/wf/consumer_auth.rb
-	"	279	0
-
-> ~/code/wildfire/app_suite/app/models/publication.rb
-	"	1	0
-
-> ~/code/wildfire/app_suite/app/coffeescripts/shared/publishing.coffee
-	"	26	18
-	^	25	19
-	.	25	18
-	+	25	18
-	n	1	0
-
-> ~/code/wildfire/app_suite/app/coffeescripts/business/pages/edit.coffee
-	"	187	0
-	^	187	69
-	.	187	68
-	+	116	67
-	+	186	61
-	+	187	68
-
-> ~/code/wildfire/app_suite/app/coffeescripts/business/page_groups/page_groups.coffee
-	"	113	0
-	^	113	67
-	.	113	66
-	+	113	66
-
-> ~/code/wildfire/app_suite/app/models/page.rb
-	"	137	35
-	^	137	36
-	.	137	35
-	+	1	0
-	+	1	26
-	+	1	4
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	31
-	+	1	4
-	+	1	29
-	+	147	0
-	+	137	35
-
-> ~/code/wildfire/app_suite/app/models/target.rb
-	"	2	0
-	^	15	40
-	.	15	37
-	+	17	0
-	+	16	19
-	+	15	37
-
-> ~/code/wildfire/app_suite/.git/COMMIT_EDITMSG
-	"	1	22
-	^	1	23
-	.	1	22
-	+	1	23
-	+	1	22
-
-> ~/code/dot-files/.git/COMMIT_EDITMSG
-	"	1	8
-	^	1	9
-	.	1	8
-	+	1	8
-
-> ~/.ackrc
-	"	7	20
-	^	7	21
-	.	7	20
-	+	7	20
-
-> ~/code/challenge/Gemfile
-	"	30	15
-	^	30	16
-	.	30	15
-	+	31	0
-	+	28	24
-	+	29	20
-	+	30	15
-
-> ~/code/challenge/features/epic_a.feature
-	"	17	4
-	^	16	7
-	.	17	0
-	+	18	51
-	+	9	0
-	+	7	0
-	+	18	0
-	+	11	47
-	+	10	0
-	+	8	72
-	+	9	0
-	+	2	0
-	+	11	46
-	+	11	0
-	+	8	25
-	+	13	0
-	+	12	0
-	+	13	18
-	+	17	24
-	+	17	30
-	+	11	0
-	+	15	23
-	+	16	6
-	+	17	0
-
-> ~/code/challenge/GoToFile
-	"	1	0
-	.	3	0
+	+	42	0
 	+	1	0
 	+	1	0
 	+	25	0
 	+	1	0
 	+	1	0
-	+	8	0
 	+	1	0
 	+	1	0
 	+	1	0
@@ -1668,450 +1739,503 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 	+	1	0
 	+	1	0
 	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	3	0
-
-> ~/code/challenge/features/step_definitions/app_steps.rb
-	"	4	0
-	.	4	0
-	+	1	0
-	+	1	0
-	+	2	0
-	+	2	0
-	+	3	7
-	+	7	8
-	+	3	8
-	+	7	3
-	+	12	52
-	+	7	50
-	+	3	34
-	+	2	0
-	+	6	3
-	+	7	0
-	+	11	0
-	+	7	2
-	+	14	0
-	+	7	8
-	+	13	8
-	+	4	10
-	+	7	0
-	+	7	13
-	+	13	30
-	+	7	35
-	+	13	0
-	+	7	2
-	+	13	38
-	+	7	0
-	+	8	0
-	+	7	0
-	+	8	23
-	+	10	58
-	+	16	0
-	+	15	0
-	+	16	41
-	+	18	0
-	+	7	0
-	+	8	21
-	+	4	0
-	+	10	0
-	+	6	0
-	+	10	0
-	+	10	0
-	+	10	43
-	+	10	27
-	+	9	0
-	+	10	0
-	+	9	8
-	+	4	0
-	+	4	0
-
-> ~/code/challenge/config/routes.rb
-	"	2	25
-	^	2	26
-	.	2	25
-	+	3	0
-	+	2	25
-
-> ~/code/challenge/app/controllers/application_controller.rb
-	"	5	0
-	.	5	0
-	+	6	0
-	+	6	103
-	+	6	0
-	+	6	32
-	+	6	32
-	+	6	9
-	+	6	32
-	+	6	0
-	+	6	31
-	+	6	32
-	+	6	56
-	+	6	0
-	+	3	0
-	+	6	0
-	+	6	0
-	+	3	2
-	+	5	0
-	+	3	75
-	+	5	23
-	+	5	0
-	+	5	16
-	+	5	0
-	+	5	0
-
-> ~/code/challenge/config/config.yml
-	"	10	0
-	^	10	8
-	.	10	7
-	+	4	15
-	+	6	3
-	+	5	0
-	+	10	0
-	+	9	0
-	+	10	7
-
-> ~/code/challenge/config/initializers/app.rb
-	"	2	87
-	^	2	88
-	.	2	87
-	+	2	87
-
-> ~/code/challenge/app/controllers/home_controller.rb
-	"	1	0
-	.	2	0
-	+	1	0
-	+	2	0
-
-> ~/code/challenge/app/views/home/index.html.erb
-	"	1	0
-	^	1	16
-	.	1	15
-	+	1	15
-
-> ~/code/challenge/features/support/env.rb
-	"	55	58
-	^	55	59
-	.	56	0
-	+	56	0
-
-> ~/curriculum
-	"	26	25
-	^	26	26
-	.	26	25
-	+	4	4
-	+	5	19
-	+	11	12
-	+	14	10
-	+	11	10
-	+	14	0
-	+	1	23
-	+	22	10
-	+	11	11
-	+	23	11
-	+	18	65
-	+	22	0
 	+	20	0
-	+	27	27
-	+	16	19
-	+	18	7
-	+	13	0
-	+	27	0
-	+	26	25
-
-> ~/code/oscardelben/source/_posts/2012-03-02-skipping-university-for-now.markdown
-	"	32	68
-	^	32	69
-	.	32	68
-	+	6	20
-	+	10	50
-	+	3	53
-	+	20	17
-	+	25	4
-	+	24	60
-	+	26	70
-	+	26	0
-	+	29	69
-	+	32	68
-
-> ~/.tmux.conf
-	"	5	0
-	^	5	0
-	.	5	0
-	+	174	16
-	+	174	3
-	+	174	0
-	+	174	0
-	+	174	0
-	+	174	0
-	+	174	0
-	+	174	0
-	+	174	30
-	+	174	12
-	+	174	0
-	+	174	19
-	+	174	44
-	+	174	22
-	+	174	20
-	+	174	5
-	+	174	5
-	+	174	20
-	+	174	20
-	+	174	20
-	+	174	30
-	+	174	0
-	+	148	0
-	+	67	20
-	+	69	26
-	+	70	26
-	+	71	29
-	+	156	33
-	+	155	35
-	+	157	0
-	+	159	62
-	+	158	25
-	+	161	68
-	+	161	68
-	+	163	40
-	+	165	73
-	+	167	0
-	+	169	35
-	+	173	24
-	+	172	21
-	+	4	0
-	+	5	0
-
-> ~/code/challenge/.git/COMMIT_EDITMSG
-	"	1	12
-	^	1	13
-	.	1	12
-	+	1	12
-
-> ~/bin/tmux-panes
-	"	3	0
-	^	3	47
-	.	3	0
-	+	3	0
-
-> ~/.zshrc
-	"	27	9
-	^	27	10
-	.	27	9
-	+	1	0
-	+	21	0
-	+	21	19
-	+	45	33
-	+	58	16
-	+	59	16
-	+	1	0
-	+	45	33
-	+	58	16
-	+	59	16
-	+	58	0
-	+	4	0
-	+	14	0
-	+	1	0
-	+	9	0
-	+	20	68
-	+	31	10
-	+	32	0
-	+	45	0
-	+	67	0
-	+	6	0
-	+	6	0
-	+	8	0
-	+	67	0
-	+	66	91
-	+	65	16
-	+	27	9
-
-> ~/.inputrc
-	"	2	0
-	^	2	13
-	.	2	13
-	+	2	13
-
-> ~/code/havok/lib/havok.rb
-	"	3	0
-	.	3	21
-	+	4	0
-	+	3	31
-	+	2	0
-	+	3	21
-
-> ~/code/havok/GoToFile
-	"	1	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
-
-> ~/code/havok/spec/adapters/rspec/rspec_adapter_spec.rb
-	"	23	6
-	.	23	0
-	+	3	15
-	+	7	22
-	+	8	38
-	+	6	35
-	+	7	43
-	+	8	17
-	+	24	0
-	+	21	0
-	+	20	12
-	+	22	9
-	+	23	35
-	+	14	9
-	+	23	47
-	+	23	0
-
-> ~/code/havok/spec/spec_helper.rb
-	"	2	15
-	^	2	31
-	.	2	30
-	+	2	30
-
-> ~/code/havok/lib/adapters/rspec/rspec_adapter.rb
-	"	17	6
-	^	17	16
-	.	17	15
-	+	1	11
-	+	2	0
-	+	20	0
-	+	8	0
-	+	6	0
-	+	3	0
-	+	7	17
-	+	5	0
-	+	6	25
-	+	7	17
-	+	6	23
-	+	4	23
-	+	12	0
-	+	12	0
-	+	11	27
-	+	18	0
-	+	17	15
-
-> ~/code/havok/Gemfile
-	"	5	0
-	^	5	0
-	.	4	17
-	+	6	61
-	+	6	0
-	+	4	17
-
-> ~/code/havok/test.rb
-	"	37	0
-	^	35	3
-	.	35	2
-	+	10	38
-	+	16	16
-	+	5	34
-	+	16	26
-	+	5	33
 	+	17	0
-	+	10	9
-	+	45	0
-	+	19	25
-	+	10	44
-	+	19	64
-	+	10	44
-	+	19	66
-	+	10	0
-	+	18	39
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	2	0
+
+> ~/.rvm/gems/ruby-1.8.7-p352/gems/activeadmin-0.3.4/spec/support/templates/cucumber.rb
+	"	9	0
+
+> ~/code/wildfire/app_suite/
+	"	1	0
+
+> ~/code/wildfire/app_suite/Gemfile
+	"	75	18
+	^	76	5
+	.	75	18
+	+	15	25
+	+	21	0
+	+	25	18
+	+	122	0
+	+	15	0
+	+	31	0
+	+	56	0
+	+	50	114
+	+	4	8
+	+	8	11
+	+	11	13
+	+	12	16
+	+	14	10
+	+	35	17
+	+	75	18
+	+	76	25
+	+	78	14
+	+	92	25
+	+	93	30
+	+	97	23
+	+	104	12
+	+	106	16
+	+	107	32
+	+	108	17
+	+	109	14
+	+	50	0
+	+	75	18
+
+> ~/code/wildfire/app_suite/.rspec
+	"	4	0
+	^	4	12
+	.	4	11
+	+	4	11
+
+> ~/code/wildfire/app_suite/spec/acceptance/business/targeting_spec.rb
+	"	247	8
+
+> ~/code/websockets/sockets/index.html
+	"	17	19
+	^	17	20
+	.	17	19
+	+	24	71
+	+	6	0
+	+	2	6
+	+	1	0
+	+	3	7
+	+	5	84
+	+	7	35
+	+	21	8
+	+	22	7
+	+	23	8
+	+	24	6
+	+	5	59
 	+	19	0
-	+	20	0
-	+	11	50
-	+	12	55
-	+	13	53
+	+	14	0
+	+	10	6
+	+	18	0
+	+	17	19
+
+> ~/code/websockets/sockets/server.rb
+	"	18	5
+	^	18	6
+	.	18	5
+	+	22	0
+	+	21	0
+	+	3	9
+	+	13	0
+	+	10	30
+	+	17	0
 	+	16	0
-	+	6	77
-	+	19	19
-	+	10	0
+	+	21	0
+	+	12	0
 	+	11	0
 	+	12	0
-	+	13	0
-	+	16	0
-	+	7	0
+	+	20	0
+	+	19	32
+	+	18	5
+
+> ~/code/nodejs/HotPie/app.js
+	"	7	0
+	^	8	33
+	.	8	32
+	+	36	11
+	+	6	24
+	+	33	43
 	+	9	0
-	+	8	16
-	+	12	39
-	+	14	0
-	+	6	82
-	+	7	0
-	+	16	43
-	+	16	21
-	+	16	12
-	+	16	12
-	+	16	0
-	+	45	8
-	+	45	17
-	+	45	0
-	+	45	0
-	+	45	0
-	+	45	0
-	+	45	0
-	+	45	11
-	+	45	0
-	+	45	0
-	+	5	0
-	+	45	4
-	+	45	0
-	+	45	0
-	+	45	23
-	+	45	0
-	+	45	25
-	+	45	0
-	+	21	0
-	+	36	48
-	+	39	35
-	+	6	0
-	+	38	25
-	+	40	0
-	+	38	0
-	+	44	0
-	+	38	15
-	+	38	1
-	+	39	0
-	+	38	2
-	+	34	0
-	+	35	2
+	+	8	32
 
-> ~/.rvm/gems/ruby-1.9.3-p0/gems/rspec-core-2.7.1/lib/rspec/core/example_group.rb
-	"	66	24
+> ~/code/nodejs/HotPie/GoToFile
+	"	1	0
+	.	20	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	66	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	50	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	36	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	33	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	20	0
 
-> ~/.rvm/gems/ruby-1.8.7-p352/gems/rspec-core-2.7.1/lib/rspec/core.rb
+> ~/code/nodejs/HotPie/server.js
 	"	1	0
 
-> ~/.rvm/gems/ruby-1.8.7-p352/gems/rspec-core-2.7.1/lib/rspec/GoToFile
+> ~/code/nodejs/HotPie/routes/index.js
 	"	1	0
+
+> ~/code/nodejs/HotPie/public/assets/js/application.coffee
+	"	1	0
+
+> ~/code/nodejs/HotPie/apps/authentication/routes.coffee
+	"	2	4
 	.	3	0
+	+	7	22
+	+	2	8
+	+	9	22
+	+	2	16
+	+	4	0
+	+	5	28
+	+	3	0
+
+> ~/code/nodejs/HotPie/apps/authentication/views/login.jade
+	"	6	0
+	^	6	14
+	.	6	13
+	+	5	6
+	+	7	33
+	+	8	29
+	+	3	13
+	+	6	13
+
+> ~/code/nodejs/HotPie/views/layout.jade
+	"	6	5
+	^	9	15
+	.	9	14
+	+	5	58
+	+	4	25
+	+	11	3
+	+	9	14
+
+> ~/code/nodejs/HotPie/bin/devserver
+	"	3	0
+	^	3	39
+	.	3	37
+	+	3	37
+
+> ~/code/nodejs/HotPie/package.json
+	"	5	2
+	^	11	23
+	.	11	0
+	+	12	0
+	+	9	0
+	+	11	0
+	+	8	29
+	+	11	0
+
+> ~/code/nodejs/HotPie/test/apps/authentication-test.coffee
+	"	13	0
+	^	13	0
+	.	13	0
+	+	18	6
+	+	7	26
+	+	18	0
+	+	15	11
+	+	12	41
+	+	19	30
+	+	8	14
+	+	15	19
+	+	14	39
+	+	10	17
+	+	16	13
+	+	17	0
+	+	19	32
+	+	1	1
+	+	4	20
+	+	11	14
+	+	13	0
+
+> ~/code/nodejs/HotPie/test/_helper.js
+	"	3	0
+	^	3	25
+	.	4	0
+	+	3	24
+	+	1	28
+	+	3	25
+	+	4	0
+
+> ~/code/mint/Gemfile
+	"	1	0
+
+> ~/code/mint/GoToFile
+	"	1	0
+	.	2	0
+	+	1	0
+	+	1	0
+	+	2	0
+
+> ~/code/mint/README.rdoc
+	"	3	36
+	^	3	37
+	.	3	36
+	+	4	0
+	+	3	36
+
+> ~/code/wildfire/app_suite/.git/COMMIT_EDITMSG
+	"	1	9
+	^	1	10
+	.	1	9
+	+	1	23
+	+	1	29
+	+	1	68
+	+	3	38
+	+	1	52
+	+	1	2
+	+	1	0
+	+	1	0
+	+	1	0
+	+	3	0
+	+	1	28
+	+	1	70
+	+	2	0
+	+	1	9
+
+> /usr/local/.git/config
+	"	1	0
+
+> ~/code/websockets/goliath-example/server.rb
+	"	4	25
+	^	4	26
+	.	4	25
+	+	9	0
+	+	4	25
+
+> ~/code/wildfire/app_suite/spec/spec_helper.rb
+	"	103	0
+	^	191	0
+	.	192	0
+	+	192	0
+	+	191	0
+	+	192	0
+
+> ~/code/wildfire/app_suite/app/coffeescripts/business/pages/edit.coffee
+	"	293	38
+	^	293	27
+	.	293	0
+	+	291	0
+	+	291	23
+	+	291	0
+	+	291	105
+	+	292	0
+	+	295	0
+	+	295	14
+	+	295	28
+	+	295	59
+	+	297	19
+	+	297	39
+	+	109	20
+	+	295	0
+	+	110	0
+	+	295	0
+	+	293	0
+	+	294	27
+	+	114	29
+	+	297	0
+	+	115	0
+	+	291	0
+	+	121	0
+	+	120	0
+	+	121	16
+	+	131	25
+	+	301	0
+	+	309	0
+	+	299	47
+	+	298	43
+	+	292	25
+	+	295	25
+	+	296	36
+	+	121	17
+	+	131	26
+	+	309	4
+	+	291	0
+	+	135	0
+	+	134	0
+	+	291	0
+	+	135	0
+	+	136	0
+	+	135	16
+	+	138	20
+	+	309	10
+	+	118	56
+	+	122	15
+	+	129	14
+	+	139	28
+	+	299	62
+	+	116	19
+	+	132	0
+	+	298	28
+	+	299	61
+	+	139	0
+	+	297	0
+	+	299	37
+	+	299	12
+	+	299	37
+	+	299	0
+	+	299	9
+	+	299	34
+	+	298	7
+	+	299	43
+	+	300	0
+	+	299	9
+	+	299	55
+	+	299	56
+	+	299	91
+	+	299	0
+	+	299	109
+	+	122	24
+	+	299	156
+	+	299	0
+	+	299	115
+	+	299	0
+	+	299	103
+	+	115	0
+	+	122	0
+	+	119	0
+	+	120	0
+	+	120	0
+	+	119	0
+	+	114	32
+	+	114	0
+	+	120	0
+	+	114	48
+	+	115	13
+	+	114	0
+	+	119	0
+	+	1	0
+	+	190	0
+	+	301	0
+	+	301	0
+	+	301	28
+	+	301	0
+	+	301	0
+	+	189	0
+	+	301	0
+	+	296	0
+	+	293	0
+
+> ~/code/wildfire/app_suite/app/coffeescripts/shared/publishing.coffee
+	"	139	4
+
+> ~/code/wildfire/app_suite/app/coffeescripts/business/pages/shared.coffee
+	"	1	0
+
+> ~/code/wildfire/app_suite/app/coffeescripts/shared/wizard.coffee
+	"	155	0
+	.	156	0
+	+	156	0
+	+	156	118
+	+	156	0
+
+> ~/code/wildfire/app_suite/app/coffeescripts/designer/page_templates/show.coffee
+	"	35	4
+
+> ~/code/wildfire/app_suite/app/views/business/pages/_custom_css.html.haml
+	"	2	0
+	^	2	87
+	.	2	0
+	+	2	86
+	+	2	0
+
+> ~/code/wildfire/app_suite/app/views/shared/_appearance.html.haml
+	"	37	0
+	.	38	0
+	+	32	0
+	+	35	123
+	+	34	13
+	+	35	0
+	+	35	37
+	+	36	12
+	+	36	49
+	+	35	66
+	+	36	0
+	+	36	28
+	+	36	0
+	+	38	0
+	+	38	0
+	+	38	0
+	+	36	0
+	+	38	0
+
+> ~/code/wildfire/app_suite/app/views/business/pages/edit.html.haml
+	"	15	0
+	^	15	0
+	.	15	0
+	+	12	0
+	+	13	0
+	+	15	0
+
+> ~/code/wildfire/app_suite/public/stylesheets/sass/business/pages/edit.scss
+	"	168	0
+	^	165	10
+	.	165	9
+	+	36	0
+	+	7	0
+	+	169	25
+	+	170	0
+	+	174	0
+	+	157	0
+	+	160	0
+	+	165	13
+	+	163	9
+	+	166	0
+	+	163	9
+	+	165	9
+
+> ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
+	"	1	0
+	^	22	19
+	.	6	0
+	+	142	5
+	+	11	147
+	+	142	26
+	+	61	25
+	+	62	19
+	+	63	0
+	+	67	0
+	+	66	61
+	+	67	0
+	+	66	24
+	+	60	47
+	+	64	73
+	+	66	35
+	+	142	0
+	+	142	0
+	+	48	0
+	+	22	18
+	+	6	0
+	+	6	0
+
+> ~/code/wildfire/app_suite/app/views/business/pages/edit_iframe.html.haml
+	"	1	0
+	^	4	4
+	.	1	0
+	+	4	0
+	+	1	0
+
+> ~/code/wildfire/app_suite/app/controllers/business/business_controller.rb
+	"	2	2
+	.	1	0
+	+	3	0
+	+	4	0
+	+	3	0
 	+	1	0
 	+	1	0
 	+	1	0
@@ -2119,913 +2243,538 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\/*\\(\\_.\\{-}\\)*\/\\$
 	+	1	0
 	+	1	0
 	+	3	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	3
+	+	1	0
+	+	1	0
+	+	1	9
+	+	1	0
+	+	1	20
+	+	3	0
+	+	3	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	20
+	+	1	35
+	+	1	0
 
-> ~/.rvm/gems/ruby-1.8.7-p352/gems/rspec-core-2.7.1/lib/rspec/core/command_line.rb
+> ~/code/wildfire/app_suite/lib/wf/consumer_auth/base_auth.rb
 	"	1	0
+
+> ~/code/wildfire/app_suite/app/models/account.rb
+	"	23	0
+	^	23	0
+	.	22	1
+	+	22	0
+	+	22	33
+	+	22	13
+	+	22	12
+	+	22	32
+	+	22	0
+	+	22	0
+	+	22	1
+
+> ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
+	"	36	0
+	^	36	53
+	.	35	0
+	+	109	0
+	+	118	0
+	+	117	38
+	+	118	0
+	+	35	55
+	+	37	0
+	+	35	0
+	+	35	0
+	+	35	28
+	+	35	0
+	+	36	52
+	+	35	0
+
+> ~/code/wildfire/app_suite/config/routes.rb
+	"	121	16
+	.	137	0
+	+	137	0
+
+> ~/code/RMO/.git/COMMIT_EDITMSG
+	"	1	17
+	^	1	18
+	.	1	17
+	+	1	17
+
+> ~/code/rails/.git/COMMIT_EDITMSG
+	"	1	57
+	^	1	58
+	.	1	57
+	+	1	57
+
+> ~/code/rails/activemodel/CHANGELOG.md
+	"	9	35
+	^	9	36
+	.	9	35
+	+	9	35
+
+> ~/code/rails/actionpack/lib/action_dispatch/testing/assertions/response.rb
+	"	7	0
+	.	7	0
+	+	7	0
+
+> ~/code/rails/.git/config
+	"	9	42
+	^	9	43
+	.	9	42
+	+	9	42
+
+> ~/code/rails/activemodel/examples/validations.rb
+	"	1	0
+
+> ~/code/rails/activemodel/lib/active_model.rb
+	"	63	0
+	.	1	0
+	+	1	0
+
+> ~/code/rails/activemodel/test/cases/attribute_methods_test.rb
+	"	141	0
+
+> ~/code/words-about-code/.git/COMMIT_EDITMSG
+	"	1	40
+	^	1	41
+	.	1	40
+	+	1	40
+
+> ~/code/words-about-code/2012/04/rails-internals-inside-attribute-methods.md
+	"	161	45
+	^	161	46
+	.	161	45
+	+	1	56
+	+	6	8
+	+	7	18
+	+	43	2
+	+	38	23
+	+	39	30
+	+	40	28
+	+	41	24
+	+	40	22
+	+	22	0
+	+	21	0
+	+	162	0
+	+	53	8
+	+	51	35
+	+	83	0
+	+	55	0
+	+	83	0
+	+	61	0
+	+	61	16
+	+	86	54
+	+	87	72
+	+	89	72
+	+	135	9
+	+	93	0
+	+	99	65
+	+	99	0
+	+	99	65
+	+	138	72
+	+	139	0
+	+	141	0
+	+	140	7
+	+	141	0
+	+	147	24
+	+	147	69
+	+	151	39
+	+	162	27
+	+	162	0
+	+	162	0
+	+	162	0
+	+	157	8
+	+	162	0
+	+	157	39
+	+	155	39
+	+	161	45
+
+> ~/code/words-about-code/README.md
+	"	4	26
+	^	4	27
+	.	4	26
+	+	10	0
+	+	9	50
+	+	4	26
+
+> ~/code/wildfire/app_suite/db/schema.rb
+	"	868	0
+	.	868	0
+	+	868	0
+
+> ~/code/wildfire/app_suite/app/views/business/pages/custom_css.html.haml
+	"	1	0
+	^	1	98
+	.	1	97
+	+	3	25
+	+	3	0
+	+	1	28
+	+	2	0
+	+	1	15
+	+	2	26
+	+	2	86
+	+	2	0
+	+	1	97
+
+> ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+	"	195	20
+	^	195	21
+	.	195	20
+	+	181	0
+	+	213	0
+	+	200	35
+	+	201	29
+	+	204	0
+	+	204	32
+	+	213	0
+	+	209	0
+	+	199	74
+	+	209	0
+	+	209	0
+	+	212	20
+	+	183	0
+	+	182	0
+	+	183	36
+	+	190	55
+	+	192	69
+	+	192	0
+	+	191	21
+	+	204	33
+	+	207	40
+	+	209	82
+	+	205	40
+	+	207	0
+	+	204	23
+	+	205	0
+	+	206	0
+	+	205	32
+	+	211	50
+	+	210	0
+	+	190	68
+	+	190	0
+	+	190	29
+	+	190	0
+	+	190	0
+	+	188	40
+	+	190	0
+	+	188	36
+	+	190	0
+	+	189	0
+	+	202	40
+	+	204	0
+	+	203	0
+	+	183	17
+	+	196	0
+	+	195	33
+	+	188	36
+	+	184	14
+	+	185	0
+	+	188	37
+	+	192	44
+	+	193	0
+	+	194	15
+	+	195	20
+
+> ~/code/wildfire/app_suite/spec/support/ace_editor.rb
+	"	7	0
+	^	6	52
+	.	6	51
+	+	2	41
+	+	3	30
+	+	6	50
+	+	11	0
+	+	6	51
 
 > ~/code/oscardelben/.git/COMMIT_EDITMSG
+	"	1	10
+	^	1	11
+	.	1	10
+	+	1	10
+
+> ~/code/oscardelben/stylesheets/main.css
+	"	7	0
+	^	7	8
+	.	7	7
+	+	9	1
+	+	8	16
+	+	13	0
+	+	12	18
+	+	7	7
+
+> ~/code/oscardelben/GoToFile
+	"	1	0
+	.	12	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	12	0
+
+> ~/code/oscardelben/university.html
+	"	19	13
+	^	19	14
+	.	19	13
+	+	3	19
+	+	6	21
+	+	50	0
+	+	11	12
+	+	9	2
+	+	22	20
+	+	40	11
+	+	48	2
+	+	41	6
+	+	42	8
+	+	41	0
+	+	43	17
+	+	44	31
+	+	45	23
+	+	46	34
+	+	24	30
+	+	49	4
+	+	41	5
+	+	47	8
+	+	28	0
+	+	27	9
+	+	38	0
+	+	29	10
+	+	30	0
+	+	29	12
+	+	30	10
+	+	31	38
+	+	32	24
+	+	33	21
+	+	34	20
+	+	35	14
+	+	36	0
+	+	35	55
+	+	36	21
+	+	38	0
+	+	15	23
+	+	11	20
+	+	37	29
+	+	20	4
+	+	24	36
+	+	18	65
+	+	19	13
+
+> ~/code/oscardelben/university/trigonometry_review.html
+	"	10	39
+	^	10	40
+	.	10	39
+	+	1	0
+	+	3	25
+	+	8	71
+	+	10	39
+
+> ~/code/shoulda-matchers/lib/shoulda/matchers/active_record/association_matcher.rb
+	"	72	12
+
+> ~/code/shoulda-matchers/GoToFile
+	"	1	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/code/examples/issue_5701/app/models/issue.rb
+	"	2	0
+	^	4	36
+	.	2	0
+	+	4	35
+	+	2	0
+
+> ~/code/examples/issue_5701/GoToFile
+	"	1	0
+	.	2	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	2	0
+
+> ~/code/examples/issue_5701/app/models/category.rb
+	"	2	0
+	^	3	30
+	.	3	0
+	+	1	0
+	+	3	0
+
+> ~/code/examples/issue_5701/app/models/tracker.rb
+	"	2	2
+	^	3	62
+	.	2	0
+	+	3	61
+	+	2	0
+
+> ~/code/examples/issue_5701/db/migrate/20120402145010_create_issues.rb
+	"	6	22
+	^	6	23
+	.	6	22
+	+	6	22
+
+> ~/code/wildfire/app_suite/app/helpers/consumer/consumer_helper.rb
+	"	71	0
+	^	71	26
+	.	71	25
+	+	77	7
+	+	71	25
+
+> ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_spec.rb
+	"	207	6
+
+> ~/code/wildfire/app_suite/spec/acceptance/designer/edit_page_template_sections_spec.rb
+	"	390	0
+
+> ~/code/wildfire/app_suite/spec/acceptance/designer/preview_latest_page_template_spec.rb
+	"	27	0
+	^	27	25
+	.	27	0
+	+	27	0
+
+> ~/code/examples/attribute_methods.rb
+	"	5	1
+	^	5	3
+	.	5	2
+	+	4	11
+	+	2	17
+	+	5	2
+
+> ~/code/blog/.git/COMMIT_EDITMSG
 	"	1	7
 	^	1	8
 	.	1	7
 	+	1	7
 
-> ~/code/oscardelben/.rvmrc
-	"	1	12
-	^	1	13
-	.	1	12
-	+	1	12
+> ~/code/blog/_posts/2012-03-30-make-your-own-university.markdown
+	"	20	0
+	^	19	5
+	.	19	4
+	+	16	24
+	+	18	90
+	+	19	4
 
-> ~/code/wildfire/warehouse/app.rb
-	"	2	0
-	.	3	0
-	+	3	0
+> ~/code/blog/_layouts/post.html
+	"	27	36
+	^	27	37
+	.	27	36
+	+	28	0
+	+	40	228
+	+	28	52
+	+	28	0
+	+	27	36
 
-> ~/code/wildfire/warehouse/lib/warehouse.rb
-	"	1	0
-	^	2	22
-	.	2	0
-	+	2	21
-	+	2	0
+> ~/code/oscardelben/_layouts/post.html
+	"	20	0
 
-> ~/code/wildfire/warehouse/Gemfile
-	"	3	0
+> ~/code/oscardelben/_posts/2012-03-30-make-your-own-university.markdown
+	"	40	0
+	^	40	14
+	.	41	0
+	+	1	0
+	+	5	0
+	+	9	10
+	+	8	54
+	+	41	38
+	+	41	47
+	+	9	63
+	+	41	0
+	+	14	14
+	+	12	48
+	+	14	21
+	+	22	70
+	+	23	5
+	+	24	22
+	+	26	1
+	+	29	37
+	+	27	7
+	+	40	13
+	+	41	0
 
-> ~/.rvm/gems/ruby-1.9.3-p0/gems/rspec-core-2.7.1/lib/rspec/core/formatters/html_formatter.rb
-	"	34	0
-
-> ~/.rvm/gems/ruby-1.9.3-p0/gems/rspec-core-2.7.1/GoToFile
-	"	1	0
-	.	3	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	3	0
-
-> ~/.rvm/gems/ruby-1.9.3-p0/gems/rspec-core-2.7.1/lib/rspec/core/formatters/base_formatter.rb
-	"	16	0
-
-> ~/.rvm/gems/ruby-1.9.3-p0/gems/rspec-core-2.7.1/lib/rspec/core/world.rb
-	"	150	0
-
-> ~/.rvm/gems/ruby-1.9.3-p0/gems/rspec-core-2.7.1/features/command_line/example_name_option.feature
-	"	1	0
-
-> ~/.rvm/gems/ruby-1.9.3-p0/gems/rspec-core-2.7.1/features/step_definitions/additional_cli_steps.rb
-	"	15	0
-
-> ~/.rvm/gems/ruby-1.9.3-p0/gems/rspec-core-2.7.1/features/support/env.rb
-	"	1	0
-
-> ~/.tmuxinator/havok.yml
-	"	4	14
-	^	4	15
-	.	4	14
-	+	4	18
-	+	5	25
-	+	7	0
-	+	13	0
-	+	9	28
-	+	13	0
-	+	6	9
-	+	4	14
-
-> ~/Developer/havok/spec/spec_helper.rb
-	"	2	0
-	^	2	31
-	.	2	30
-	+	2	30
-
-> ~/Developer/havok/spec/adapters/rspec/rspec_adapter_spec.rb
-	"	8	6
-	^	6	28
-	.	6	27
-	+	3	11
-	+	27	0
-	+	27	0
-	+	27	0
-	+	27	0
-	+	27	0
-	+	14	0
-	+	13	51
+> ~/code/oscardelben/Rakefile
+	"	13	0
+	^	8	66
+	.	13	0
 	+	22	0
-	+	13	0
-	+	11	0
-	+	6	45
-	+	16	12
-	+	21	32
-	+	24	0
-	+	23	0
-	+	24	27
-	+	25	38
+	+	22	7
+	+	5	21
+	+	22	0
+	+	6	22
+	+	6	0
+	+	8	80
 	+	18	0
-	+	6	29
-	+	6	137
-	+	10	0
+	+	8	42
+	+	11	29
+	+	17	16
+	+	14	17
+	+	15	44
+	+	16	0
+	+	9	30
 	+	11	0
-	+	9	0
-	+	8	51
-	+	7	43
-	+	5	0
-	+	6	27
-
-> ~/.tmuxinator/development.yml
-	"	14	26
-	^	14	28
-	.	14	0
-	+	5	19
-	+	12	19
-	+	19	0
-	+	18	0
+	+	19	55
+	+	21	10
+	+	15	45
 	+	8	0
-	+	15	10
-	+	14	26
-	+	17	53
-	+	14	0
+	+	15	0
+	+	8	0
+	+	7	22
+	+	8	53
+	+	7	0
+	+	2	17
+	+	7	0
+	+	8	65
+	+	13	0
 
-> ~/bin/development
-	"	15	25
-	^	15	26
-	.	15	26
-	+	1	44
-	+	16	0
-	+	16	0
-	+	16	48
-	+	16	69
-	+	16	0
-	+	3	0
-	+	5	0
-	+	10	0
-	+	9	69
-	+	12	70
-	+	15	26
-
-> ~/sort.rb
-	"	6	0
-	^	6	0
+> ~/code/oscardelben/_posts/2012-03-30-Build-your-own-university.markdown
+	"	7	0
+	^	7	0
 	.	6	0
-	+	9	0
-	+	12	23
-	+	9	7
-	+	2	11
-	+	3	9
-	+	9	0
-	+	10	0
-	+	12	22
+	+	1	0
 	+	8	0
+	+	3	22
 	+	6	0
 
-> ~/Developer/wildfire/app_suite/app/models/page_template.rb
-	"	51	150
-	^	51	151
-	.	51	150
-	+	110	35
-	+	118	16
-	+	117	0
-	+	114	60
-	+	118	0
-	+	114	0
-	+	111	0
-	+	114	70
-	+	112	0
-	+	114	72
-	+	116	0
-	+	113	35
-	+	50	0
-	+	48	47
-	+	204	32
-	+	203	47
-	+	48	27
-	+	204	40
-	+	227	63
-	+	232	0
-	+	227	20
-	+	230	65
-	+	231	9
-	+	232	0
-	+	229	21
-	+	230	8
-	+	232	0
-	+	229	0
-	+	228	0
-	+	231	9
-	+	204	0
-	+	48	78
-	+	25	36
-	+	28	0
-	+	24	0
-	+	28	0
-	+	28	121
-	+	24	60
-	+	41	0
-	+	36	0
-	+	32	27
-	+	432	0
-	+	432	0
-	+	433	0
-	+	37	74
-	+	39	48
-	+	344	40
-	+	343	41
-	+	380	0
-	+	30	52
-	+	29	80
-	+	30	34
-	+	36	134
-	+	36	0
-	+	36	39
-	+	36	12
-	+	36	50
-	+	28	41
-	+	28	78
-	+	28	0
-	+	28	28
-	+	28	40
-	+	28	36
-	+	28	36
-	+	28	79
-	+	28	0
-	+	28	0
-	+	28	34
-	+	28	33
-	+	28	35
-	+	28	0
-	+	36	0
-	+	32	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	372	16
-	+	28	39
-	+	28	11
-	+	28	96
-	+	28	0
-	+	28	78
-	+	28	0
-	+	377	42
-	+	30	39
-	+	32	0
+> ~/code/wildfire/challenge/Gemfile
+	"	13	24
+	^	13	25
+	.	13	24
+	+	11	9
+	+	38	0
 	+	33	0
-	+	36	0
-	+	30	0
-	+	29	0
-	+	30	0
-	+	30	33
-	+	53	48
-	+	30	0
-	+	223	47
-	+	71	0
-	+	54	121
-	+	54	0
-	+	51	53
-	+	51	150
-	m	49	119
+	+	11	18
+	+	31	23
+	+	37	15
+	+	13	14
+	+	32	14
+	+	13	24
 
-> ~/Developer/wildfire/app_suite/GoToFile
-	"	1	0
-	.	10	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	19	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	12	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
+> ~/code/wildfire/challenge/features/welcome.feature
+	"	12	0
+	^	12	22
+	.	12	21
+	+	4	0
+	+	5	25
+	+	3	52
+	+	8	61
 	+	10	0
-
-> ~/Developer/wildfire/app_suite/app/helpers/application_helper.rb
-	"	210	4
-	^	209	26
-	.	209	25
-	+	204	116
-	+	204	0
-	+	211	0
-	+	209	25
-
-> ~/Developer/wildfire/app_suite/spec/acceptance/business/edit_pages_spec.rb
-	"	78	0
-	^	78	7
-	.	78	0
-	+	177	27
-	+	85	0
-	+	54	0
-	+	60	0
-	+	55	0
-	+	56	53
-	+	58	61
-	+	72	0
-	+	80	0
-	+	79	0
-	+	109	0
-	+	78	0
-
-> ~/Developer/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
-	"	54	0
-	^	58	44
-	.	58	43
-	+	289	0
-	+	288	0
-	+	293	12
-	+	35	61
-	+	173	99
-	+	44	0
-	+	41	0
-	+	39	92
-	+	41	5
-	+	39	90
-	+	42	51
-	+	40	90
-	+	40	6
-	+	39	6
-	+	43	50
-	+	46	100
-	+	52	12
-	+	52	92
-	+	51	0
-	+	50	0
-	+	50	26
-	+	50	0
-	+	47	130
-	+	48	13
-	+	48	0
-	+	48	0
-	+	52	124
-	+	55	0
-	+	52	128
-	+	61	0
-	+	57	46
-	+	55	45
-	+	60	31
-	+	54	0
-	+	56	0
-	+	57	13
-	+	52	143
-	+	57	0
-	+	57	0
-	+	55	127
-	+	52	126
-	+	60	0
-	+	58	43
-	m	54	0
-
-> ~/Developer/wildfire/app_suite/app/controllers/designer/page_templates_controller.rb
-	"	22	0
-	^	22	52
-	.	22	68
-	+	39	0
-	+	38	26
-	+	37	36
-	+	65	0
-	+	61	137
-	+	61	20
-	+	66	0
-	+	65	72
-	+	65	7
-	+	65	31
-	+	64	34
-	+	65	0
-	+	64	0
-	+	63	57
-	+	5	32
-	+	64	19
-	+	20	68
-	+	93	0
-	+	17	73
-	+	93	0
-	+	97	0
-	+	11	80
-	+	17	0
-	+	161	0
-	+	186	0
-	+	11	82
-	+	7	0
-	+	13	54
-	+	93	0
-	+	150	0
-	+	13	77
-	+	158	0
-	+	10	84
-	+	10	0
-	+	13	67
-	+	158	0
-	+	14	66
-	+	15	69
-	+	23	0
-	+	22	105
-	+	23	0
-	+	22	193
-	+	22	0
-	+	22	175
-	+	22	69
-	+	22	4
-	+	22	105
-	+	23	0
-	+	22	68
-
-> ~/Developer/wildfire/app_suite/app/models/company.rb
-	"	1	0
-
-> ~/Developer/wildfire/app_suite/spec/models/page_template_spec.rb
-	"	251	0
-	^	251	69
-	.	251	68
-	+	1	57
-	+	1	13
-	+	1	112
-	+	1	62
-	+	1	0
-	+	1	47
-	+	1	115
-	+	1	18
-	+	1	122
-	+	1	0
-	+	1	158
-	+	1	114
-	+	1	122
-	+	1	12
-	+	1	8
-	+	1	42
-	+	1	8
-	+	1	39
-	+	1	44
-	+	1	104
-	+	1	0
-	+	1	0
-	+	1	13
-	+	1	51
-	+	1	119
-	+	1	113
-	+	1	18
-	+	1	46
-	+	1	13
-	+	1	39
-	+	1	126
-	+	1	6
-	+	1	71
-	+	1	46
-	+	1	0
-	+	1	63
-	+	1	128
-	+	1	0
-	+	1	0
-	+	1	28
-	+	1	18
-	+	1	58
-	+	1	13
-	+	1	6
-	+	1	77
-	+	1	20
-	+	1	28
-	+	1	28
-	+	1	106
-	+	1	106
-	+	1	47
-	+	1	63
-	+	1	50
-	+	1	163
-	+	1	150
-	+	1	150
-	+	1	93
-	+	564	0
-	+	18	106
-	+	19	106
-	+	34	101
-	+	44	61
-	+	45	145
-	+	44	90
-	+	550	0
-	+	383	4
-	+	383	32
-	+	383	0
-	+	383	0
-	+	383	72
-	+	383	71
-	+	383	44
-	+	383	0
-	+	383	0
-	+	259	0
-	+	244	0
-	+	244	0
-	+	244	0
-	+	247	33
-	+	244	0
-	+	238	44
-	+	247	37
-	+	237	29
-	+	246	72
-	+	253	0
-	+	251	0
-	+	239	41
-	+	243	0
-	+	246	60
-	+	251	63
-	+	256	0
-	+	258	0
-	+	256	36
-	+	257	60
-	+	259	0
-	+	256	40
-	+	251	40
-	+	246	40
-	+	252	0
-	+	251	68
-
-> ~/Developer/wildfire/app_suite/app/views/designer/page_templates/_page_template.html.haml
-	"	16	30
-	^	16	31
-	.	16	30
-	+	16	30
-
-> ~/Developer/wildfire/app_suite/app/helpers/designer/page_templates_helper.rb
-	"	123	0
-	^	123	142
-	.	123	141
-	+	105	27
-	+	119	0
-	+	125	0
-	+	122	4
-	+	121	38
-	+	122	21
-	+	122	32
-	+	123	13
-	+	123	102
-	+	124	6
-	+	122	8
-	+	124	11
-	+	123	81
-	+	124	0
-	+	122	0
-	+	123	141
-
-> ~/Developer/wildfire/app_suite/app/helpers/permission_helper.rb
-	"	13	4
-	^	13	12
-	.	13	11
-	+	12	32
-	+	14	0
-	+	13	11
-
-> ~/Developer/fake_test/spec/lib/fake_test_spec.rb
-	"	5	0
-	^	9	114
-	.	9	113
-	+	10	0
-	+	9	113
-
-> ~/Developer/fake_test/lib/fake_test.rb
-	"	1	0
-
-> ~/Developer/havok/README.rdoc
-	"	23	0
-	^	7	5
-	.	7	4
-	+	6	69
-	+	7	4
-
-> ~/Developer/havok/GoToFile
-	"	1	0
-	.	3	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	3	0
-
-> ~/Developer/havok/lib/adapters/rspec/rspec_adapter.rb
-	"	1	0
-	^	1	6
-	.	1	0
-	+	2	0
-	+	1	0
-
-> ~/Developer/havok/Gemfile
-	"	12	12
-	^	12	13
-	.	12	12
 	+	9	0
-	+	13	0
-	+	12	12
-
-> ~/Developer/havok/.git/COMMIT_EDITMSG
-	"	1	26
-	^	1	27
-	.	1	26
-	+	1	26
-
-> ~/Developer/wildfire/app_suite/.git/COMMIT_EDITMSG
-	"	1	22
-	^	1	23
-	.	1	22
-	+	1	33
-	+	7	25
-	+	1	14
-	+	4	37
-	+	1	2
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	2
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	2
-	+	1	35
-	+	1	2
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	49
-	+	3	28
-	+	1	2
-	+	1	2
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	2
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	71
-	+	2	12
-	+	1	22
-
-> ~/Developer/pow/.git/COMMIT_EDITMSG
-	"	1	12
-	^	1	13
-	.	1	12
-	+	1	2
-	+	1	12
-
-> ~/Developer/pow/VERSION
-	"	1	0
-
-> ~/Developer/wildfire/app_suite/app/controllers/business/page_templates_controller.rb
-	"	5	0
-	.	5	0
-	+	5	0
-
-> ~/Developer/wildfire/app_suite/app/views/designer/page_templates/index.html.haml
-	"	10	32
-	^	6	269
-	.	7	0
-	+	6	125
-	+	6	0
-	+	6	200
-	+	6	137
-	+	6	0
-	+	6	197
-	+	6	135
-	+	6	0
-	+	6	197
-	+	7	0
-	+	6	268
-	+	7	0
-
-> ~/Developer/wildfire/app_suite/app/controllers/api/v1/page_templates_controller.rb
-	"	7	4
-	^	7	68
-	.	7	0
-	+	7	0
-
-> ~/Developer/wildfire/app_suite/app/views/business/pages/edit.html.haml
-	"	1	0
-
-> ~/Developer/wildfire/app_suite/app/views/shared/_current_channel_controls.html.haml
-	"	1	0
-	^	1	2
-	.	1	0
-	+	1	0
-	+	1	0
-
-> ~/Developer/wildfire/app_suite/app/helpers/business/pages_helper.rb
-	"	60	0
-
-> ~/Developer/wildfire/app_suite/app/controllers/business/pages_controller.rb
-	"	16	34
-	^	9	135
-	.	9	134
-	+	131	0
-	+	130	37
-	+	9	134
-
-> ~/Developer/wildfire/app_suite/app/views/business/pages/edit_iframe.html.haml
-	"	1	0
-
-> ~/Developer/wildfire/app_suite/app/models/page.rb
-	"	108	0
-	^	72	98
-	.	72	97
-	+	6	12
-	+	103	0
-	+	103	4
-	+	41	36
-	+	273	82
-	+	275	0
-	+	272	0
-	+	272	0
-	+	274	0
-	+	273	68
-	+	272	0
-	+	103	0
-	+	102	23
-	+	272	0
-	+	10	27
-	+	75	70
-	+	75	0
-	+	77	50
-	+	78	0
-	+	79	60
-	+	80	0
-	+	82	0
-	+	82	0
-	+	82	0
-	+	81	24
-	+	75	27
-	+	83	0
-	+	81	14
-	+	17	42
-	+	18	56
-	+	19	0
-	+	18	56
-	+	17	18
-	+	74	0
-	+	114	12
-	+	115	0
-	+	115	0
-	+	114	8
-	+	115	16
-	+	115	8
-	+	114	17
-	+	114	17
-	+	68	56
-	+	68	0
-	+	68	55
-	+	68	0
-	+	68	138
-	+	68	0
-	+	68	0
-	+	72	154
-	+	72	92
-	+	68	0
-	+	72	143
-	+	72	0
-	+	72	154
-	+	74	0
-	+	68	0
-	+	74	8
-	+	74	0
-	+	74	9
-	+	74	102
-	+	74	70
-	+	74	0
-	+	68	0
-	+	72	141
-	+	72	0
-	+	72	186
-	+	66	141
-	+	67	47
-	+	67	3
-	+	66	60
-	+	67	0
-	+	72	129
-	+	67	6
-	+	69	4
-	+	69	126
-	+	72	39
-	+	66	69
-	+	67	0
-	+	52	106
-	+	66	0
-	+	115	0
-	+	114	0
-	+	115	0
-	+	114	4
-	+	53	0
-	+	54	0
-	+	56	66
-	+	53	95
-	+	70	0
-	+	71	66
-	+	72	97
+	+	10	16
+	+	11	0
+	+	12	21

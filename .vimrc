@@ -1,6 +1,18 @@
 " To install vim with Ruby support:
 " http://blog.jerodsanto.net/2011/08/brew-install-vim/
 
+" List of plugins (for self reference):
+" command-t
+" tComment
+" vim-fugitive
+" vim-markdown
+" vim-ruby
+" supertab
+" vim-coffee-script
+" vim-less
+" vim-rails
+
+
 " Don't care about vi compatibility
 set nocompatible
 
@@ -86,8 +98,8 @@ map <Right> :echo "no!"<cr>
 map <Up> :echo "no!"<cr>
 map <Down> :echo "no!"<cr>
 
-" Disable automatic comments
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" Disable automatic comments (no! let's write documentation instead!)
+" autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " highlight current line
 set cursorline
@@ -147,8 +159,20 @@ map <leader>T :call RunNearestTest()<cr>
 " Run all test files
 map <leader>a :call RunTests('spec')<cr>
 
+" Execute ruby file
+map <leader>r :w<cr> :!ruby %:p<cr>
+
 " Switch between the last two files
 noremap <leader><leader> <c-^>
 
 " Exit insert mode
 :imap jj <Esc>
+
+" Generate tags for all gems
+map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
+
+" use ,F to jump to tag in a vertical split
+nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
+
+" use ,gf to go to file in a vertical split
+nnoremap <silent> ,gf :vertical botright wincmd f<CR>
