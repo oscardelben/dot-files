@@ -120,9 +120,6 @@ map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
 " Switch between the last two files
 noremap <leader><leader> <c-^>
 
-" Exit insert mode
-:imap jj <Esc>
-
 " Generate tags for all gems
 map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
 
@@ -136,3 +133,6 @@ nnoremap <silent> ,gf :vertical botright wincmd f<CR>
 let VimuxUseNearestPane = 1
 " Tell vim-vroom to use vimux
 let g:vroom_use_vimux = 1
+
+" Map <leader>c to Gcommit
+noremap <leader>c :Gcommit<cr>
