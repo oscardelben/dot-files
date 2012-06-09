@@ -8,31 +8,188 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/auto
+~MSle0~/color
 
 # Last Substitute Search Pattern:
-~MSle0&mountain
+~MSle0&wizard_section.
 
 # Last Substitute String:
-$\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$", "\" %s")
+$accordion-group.
 
 # Command Line History (newest to oldest):
-:wq
 :q
-:q!
 :w
-:vsp server.rb
-:W
+:vsp
+:set paste
+:help t_Co
+:man t_Co
+:set cursorline bgterm=white
+:help cursorline
+:help hidden
+:help 'shell'
+:Gblame
 :checktime
+:noh
+:!ctags --extra=+f --exclude=.git --exclude=log -R * ~/.rbenv/versions/1.8.7-p358/lib/ruby/gems/1.8/gems/*
+:!ctags --extra=+f --exclude=.git --exclude=log -R * .rbenv/versions/1.8.7-p358/lib/ruby/gems/1.8/gems/*
+:source ~/.vimrc
+:qa!
+:rubytags
+:tags
+:%s/wizard_section./accordion-group./g
+:%s/accordion-inner//g
+:%s/accordion-body//g
+:%s/accordion-heading//g
+:%s/wizard_section/accordion-group/g
+:!ack 'wizard_section'
+:%s/accordion-group//g
+:%s/accordion-toggle//g
+:!ack 'collapse'
+:vs app/helpers/application_helper.rb
+:vs
+:vs Gemfile
+:!git grep publish_fb
+:e app/
+:!ack publish_fb_page
+:W
+:!ack edit_page
+:!ack 'submit_wpr'
+:!ack resizeFileInputs
+:!ack 'edit_widget'
+:!ack 'render_partial_for_widget'
+:!tree app/assets/st
+:wq
+:q!
+:!ack 'toggleSidebar'
+:!ack 'accordionOpened'
+:Q
+:!ack 'resizeIframe'
+:!ack 'resizeable'
+:!ack 'accordionopened'
+:!g st
+:x
+:qw
+:sp
+:!ack page_wizard_subnav_wpr
+:!ack page_wizard_wpr
+:e app/views/layouts/page_wizard.html.haml
+:!ack 'wizard_accordion'
+:!ack 'show_wizard'
+:'<,'>Gblame
+:!ack 'dialog'
+:!ack 'custom_css_dialog'
+:!ack 'custom_css_dialod'
+::w
+:!ack edit_custom_css
+:!ack #custom_css_dialog
+:!ack cust
+:!ack page_custom_css
+:e lib/publishable.rb
+:vs ../layouts/_ui_nav.html.haml
+:Gdiff HEAD~1
+:!make test_adam
+:!./test_adam
+:!man execlp
+:Gcommit
+:gblame
+:e spec/support/within.rb
+:366
+:336
+:e .gitignore
+:e views/welcome/index.jade
+:e package.json
+:e lib/controllers/welcome.js
+:e lib/routes.js
+:e lib/server.js
+:noph
+:q1
+:e config/blackburn_client.yml
+:e spec/controllers/consumer/pages_controller_spec.rb
+:e app/controllers/consumer/consumer_controller.rb
+:e lib/wf/consumer_auth/facebook_auth.rb
+:e lib/wf/consumer_auth/consumer_identity.rb
+:sp lib/wf/consumer_auth/cookie_auth.rb
+:e lib/wf/consumer_auth/cookie_auth.rb
+:e
+:10
+:15
+::
+:e spec/controllers/consumer/fb_tabs_controller_spec.rb
+:set nopaste
+:event_type => 'facebook:access_token',
+:e config/initializers/blackburn_client.rb
+:e Gemfile
+:e config/initializers/paranoid.rb
+:vsp Gemfile
+:!cat %:p
+::q
+:sp app/models/widget_widget_set.rb
+:=
+:e /Users/oscardelben/.rvm/gems/ruby-1.8.7-p358/bundler/gems/wf-3a4e20f6cff0/lib/wf/value_object.rb
+:sp app/models/widget_set.rb
+:Gcomit
+:Gstatus
+:q!~
+:set clipboard=unnamed
+:e LIb/firebase/request.rb
+:e LIb/firebase/model.rb
+:e spec/firebase/model_spec.rb
+:!open %:p
+:vsp test.html
+:e /Users/oscardelben/.rvm/gems/ruby-1.9.3-p125/gems/rack-1.4.1/lib/rack/methodoverride.rb
+:e /Users/oscardelben/.rvm/gems/ruby-1.9.3-p125/gems/rack-1.4.1/lib/rack/runtime.rb
+:e /Users/oscardelben/.rvm/gems/ruby-1.9.3-p125/gems/rack-1.4.1/lib/rack/lock.rb
+:e railties/lib/rails/configuration.rb
+:e actionpack/lib/action_dispatch/routing/route_set.rb
+:e railties/lib/rails/engine.rb
+:vsp ~/Desktop/request_lifecycle.txt
+:vsp /Users/oscardelben/.rvm/gems/ruby-1.9.3-p125/gems/rack-1.4.1/lib/rack/handler/webrick.rb
+:e /Users/oscardelben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.1.4/lib/action_controller/metal/helpers.rb
+:q; Gcommit
+:q :Gcommit
+:e activemodel/test/models/`
+:e ../words-about-code/2012/04/rails-internals-secure-password.md
+:e ../words-about-code/2012/04/rails-internals-secure-password.rb
+:vs[
+:e ex8.c
+:e ex7.c
+:e ex6.c
+:e ex5.c
+:e ex4.c
+:e ex4.sh
+:vsp Makefile
+:e Makefile
+:e ex1.c
+:map <leader>r <cr>:call RunVimTmuxCommand("rake test")<cr>
+:e activemodel/test/cases/string_inquirer_test.rb
+:e activemodel/lib/active_model/string_inquirer.rb
+:nph
+:vsp 
+:call RunVimTmuxCommand("ls")
+:call RunVimTmuxCommand("s")
+:call RunVimTmuxCommand("pwd")
+:g
+:VimuxUseExistingPane
+:g:VimuxUseExistingPane
+:vsp lib/wf/consumer_auth/twitter_auth.rb
+:e spec/lib/wf/consumer_auth/twitter_auth_spec.rb
+:e lib/wf/consumer_auth/twitter_auth.rb
+:vsp app/controllers/business/twitter_publications_controller.rb
+:vsp app/controllers/business/social_apps_controller.rb
+:e ../words-about-code/2012/04/rails-internals-mass-assignment-security.md
+:w ../words-about-code/2012/04/rails-internals-mass-assignment-security.md
+:Explore ../words-about-code/2012/
+:e ../words-about-code/2012/04/rails-internals-inside-mass_assignment_security.rb
+:e activemodel/lib/active_model/mass_assignment_security.rb
+:e activemodel/lib/active_model/lint.rb
+:e lib/active_model/lint.rb
+:vsp server.rb
 :vsp app/controllers/business/pages_controller.rb
 :xhecktime
 :vsp app/controllers/business/business_controller.rb
-:noh
 :vsp app/coffeescripts/business/pages/shared.coffee
 :vsp spec/spec_helper.rb
-::w
 :e spec/support/ace_editor.rb
-:vsp
 :vsp app/coffeescripts/designer/page_templates/show.coffee
 :e spec/lib/trek_spec.rb
 :! mkdir spec/lib
@@ -80,7 +237,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 :colorscheme raggi
 :e app/views/layouts/business/business.html.haml
 :vsp app/views/designer/page_templates/_page_template.html.haml
-:Q
 :vsp lib/fake_test.rb
 :!ack 'debugger'
 :e spec/files/templates/multi_menu/mobile.liquid
@@ -98,8 +254,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 :!mkdir lib/designer
 :!ack publish_to_facebook_button
 :e app/views/designer/page_templates/blank.html.haml
-:nph
-:noph
 :s
 :e lib/zooppa_admin/auth.rb
 :%s/)//g
@@ -110,7 +264,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 :!g blame !$
 :e spec/sample_specs/simple_spec.rb
 :e app/helpers/business/page_groups_helper.rb
-:e
 :'<,'>w
 :e app/views/business/publication_jobs/publishing_retry.html.haml
 :e spec/lib/publishable_spec.rb
@@ -124,7 +277,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 :e request_handlers.js
 :e router.js
 :e index.js
-:vs
 :%s/categories/events/g
 :e app/views/events/index.html.haml
 :e app/views/tasks/edit.html.haml
@@ -153,14 +305,12 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 :!be rspec %:p
 :!rspec %:p
 :ruby puts RUBY_VERSION
-:vs[
 :e app/coffeescripts/business/pages/edit.coffee
 :L
 :!g blame %:p
 :'<,'>s/^/#/g
 :'<,'>s/^#//g
 :e query.sql
-:sp
 :'<,'>s/^//g
 :'<,'>
 :116
@@ -260,7 +410,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 :syntax erb
 :syntax html
 :vsp gilded_rose.cs
-:e Gemfile
 :w ~/Desktop/katas.txt
 :e .vimrc
 :e _config.yml
@@ -299,7 +448,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 :e lib/active_model.rb
 :e examples/validations.rb
 :e test/_helper.js
-:e package.json
 :e test/apps/authentication-test.coffee
 :vsp package.json
 :e bin/devserver
@@ -319,18 +467,558 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 :vsp test/cases/configuration_test.rb
 :vsp
 :e .rspec
+:vsp LIb/sheet.rb
+:e .git/config
+:e bin/sheet
+:e spec/sheet/list_spec.rb
+:e lib/sheet/list.rb
+:e spec/sheet/write_spec.rb
+:e lib/sheet/write.rb
+:e spec/sheet/open_spec.rb
+:vsp lib/sheet/open.rb
+:vsp lib
+:vsp spec/sheet/sheet_spec.rb
+:e spec/sheet_spec.rb
+:!touch contributions.json
+:e .meteor/local/build/app/packages/mongo-livedata/
+:vsp client.coffee
+:vsp meteor.coffee
+:e .meteor/
+:vsp try_meteor.coffee
+:vsp app_suite/config/staging/seeds_local.rb
+:!ls
+:vsp lib/sheet.rb
+:vsp lib/sheet
+:e spec/sheet/sheet_spec.rb
+:vsp leaderboard.html
+:e doc/vimux.txt
+:call RunVimTmuxCommand(:q
+:Gdiff
+:vsp app/controllers/application_controller.rb
+:e spec/acceptance/consumer/microsite_spec.rb
+:e scripts/install_ruby.sh
+:! foo . bar
+:foo . bar
+:vsp lib/active_model.rb
+:e spec/liquid/tags/mobile_viewport_spec.rb
+:e app/liquid/tags/mobile_viewport.rb
+:e app/liquid/tags/marker.rb
+:%s/use_vmux/use_vimux/g
+:checkt
+:vsp css/main.css
+:cjecktime
+:j
+:e test_observers.rb
+:!pwd
+:e spec/support/capybara.rb
+:e spec/acceptance/consumer/mobile_spec.rb
+:vsp spec/acceptance/business/edit_pages_spec.rb
+:!ack 'def set_cookie'
+:!ack 'def set
+:vsp rnotes.html
+:e spec/lib/database_yml_spec.rb
+:.!
+:vsp lib/my_queue.rb
+:e config/application.rb
+:vsp ../words-about-code/README.md
+:e ../words-about-code/2012/04/rails-edge-queue.md
+:e /Users/oscardelben/.rvm/gems/ruby-1.9.3-p125/bundler/gems/rails-8de4d71f5dab/railties/lib/rails/engine.rb
+:1
+:vsp config/routes.rb
+:'<,'>%/^//g
+:e js/app.js
+:!mkdir js
+:!ls spec/shared/
+:w<cr>:!ruby %:p
+:!ruby`
+:!
+:e test/core_ext/object/send_if_responds_to_test.rb
+:e lib/active_support/core_ext/object/send_if_responds_to.rb
+:e activerecord/lib/active_record/
+:Man
+:Man assert
+:!ruby test.rb
+:e requestHandlers.js
+:vsp index.js
+:Gdiff US6566_rails_32
+:!ack 'layout nil'
+:!ggpull
+:!ack 'publish_button'
+:G
+:!ack 'fade'
+:!ack 'publish_to_microsite'
+:%s/.ui-dialog-content/.modal-body/g
+:!ack 'app_select_wpr'
+:!ack 'erroneous'
+:!ack updat
+:Gbrowse
+:697
+:!ack user_dismissals
+:ws
+:220
+:Gdiff HEAD
+:!ack 'pubishings_errors'
+:!ack 'pubishing_errors'
+:!ack 'One or more publications'
+:Gremove
+:hj
+:!ack 'new_publication_job'
+:Gdiff 
+:Gdiff master
+:!ggpush
+:nohlserach
+:vso
+:Gmove! edit_iframe.html.haml
+:Gmove edit_iframe.html.haml
+:!git add %:p
+:!git rm -f %:p
+:!rm %:p
+:!git rm %:p
+:'<,'>Rextract shared/edit_iframe
+:Rextract shared/edit_iframe
+:!ack 'edit_iframe'
+:!acl 
+:!ack 'yield :head'
+:!ack 'yield head'
+:!ack 'FB.login'
+:!ack 'requireAuthentication'
+:!git checkout .
+:!git pull
+:help register
+:!ruby rails_guides.rb
+:!gem install rails
+:!gem install RedCloth
+:!gem install redcloth
+:vsp rails_guides.rb
+:%!ruby %:p
+:e app/views/layouts/test.html.haml
+:e Gemfile.lock
+:vsp config/initializers/inflections.rb
+:vsp /Users/oscardelben/.rvm/gems/ruby-1.8.7-p358/bundler/gems/rack-health-10634df473f9/lib/rack/health.rb
+:Gsta
+:Gs
+:Gvommit
+:e source/initialization.textile
+:!cat %p
+:!cat :p
+:%p
+:!cat :%p
+:sp app/views/business/pages/_page_unarchived.html.haml
+:e app/views/business/pages/_page_archived.html.haml
+:%s/select_button/select_tag/g
+:%s/select_button(/select_tag /g
+:e index.html
+:e vendor/assets/javascripts/ace.js
+:w!
+:!cp %:p ~/Dropbox/
+:!echo %:l
+:%:p
+:Git push
+:e app/views/designer/page_templates/_wizard_content_section.html.haml
+:e app/views/business/pages/_wizard_publish_section.html.haml
+:e app/views/business/pages/_wizard_fangate_section.html.haml
+:e app/views/business/pages/_wizard_appearance_section.html.haml
+:e app/assets/javascripts/shared/wizard.coffee.erb
+:Git grep setUrlSectionIdentifier
+:Ack setUrlSection
+:e app/views/business/pages/_wizard_content_section.html.haml
+:e app/views/business/pages/_wizard_accordion.html.haml
+:'<,'>Rextract wizard_privacy_section.html.haml
+:e app/views/designer/page_templates/_wizard_tags_section.html.haml
+:e app/views/designer/page_templates/_wizard_categories_accordion.html.haml
+:e app/views/designer/page_templates/_wizard_screenshot_accordion.html.haml
+:e app/views/designer/page_templates/_wizard_appearance_accordion.html.haml
+:e app/views/designer/page_templates/_wizard_content_accordion.html.haml
+:sp app/views/business/pages/_wizard_content_section.html.haml
+:e app/controllers/designer/page_layout_assets_controller.rb
+:e app/assets/javascripts/page_templates_editor.js
+:vsp app/assets/javascripts/page_template_wizard.js
+:e app/views/layouts/application.html.haml
+:vsp app/assets/javascripts/page_templates_preview.js
+:! git rm app/views/layouts/designer/preview.html.haml
+:sp app/views/designer/page_templates/
+:e /Usr/include/sys/dirent.h
+:vsp myls.c
+:vsp apue.h
+:'<,'>s/$/,/g
+:'<,'>s/^/,/g
+:Man getpid
+:!rm test.c
+:view test.c
+:!;s
+:!cat myls.c|./myecho > test.c
+:!./myecho myls.c test.c
+:!./myecho myls.c
+:!./myecho
+:!make myecho
+:help man
+:!man read
+:Man read
+:man read
+:e /Usr/include/sys/unistd.h
+:vsp repl.md
+:!./ex17 test.db g 3
+:!./ex17
+:!make ex17
+:!./ex17 test.db c
+:!valgrind ./ex17 test.db l
+:!./ex17 test.db g 2
+:!./ex17 test.db s 3 oscar info@oscardelben.com
+:vsp ex19.c
+:e object.c
+:!man size_t
+:e Readme.md
+:!./myls
+:!make myls
+:e app/views/recipes/_form.html.erb
+:e app/views/recipes/new.html.erb
+:Rails generate controller recipes
+:Rails 
+:!./shell
+:!make shell
+:vsp apue.c
+:!man strsep
+:!man execvp
+:!man strtok
+:!man strok
+:!cat %:P
+:!man fork
+:.!d
+:!man strcmp
+:ls
+:!man waitpid
+:!man strncmp
+:man execlp
+:e shell.c
+:!make %:p
+:!rm myecho
+:!rm myecho.a
+:vsp myecho.c
+:!ack 'registerToggle'
+:!ack 'registerTogg
+:!ack 'toggleIframe'
+:!ack 'brand'
+:Q!
+:hi cursorline ctermbg=light:q
+:hi cursorline ctermbg=light
+:hi cursorline ctermbg=blue
+:hi cursorline ctermbg=white
 
 # Search String History (newest to oldest):
+?/color
+?/highli
+?/current
+?/<leader><l
+?/hidden
+?/selected
+?/sleep
+?/value
+?/appearance
+? wizard_section.
+?/wizard_section
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+?/wizard_sec
+?/currentSec
+?/current_sect
+? accordion-group
+? accordion-toggle
+?/accordion-bo
+?/collapse
+?/wizard_acc
+? \V\^  \zs\(\_.\{-}\)\$
+?/toolk
+?/select
+?/resize
+?/dataForA
+?/resizeFile
+?/edit_widget
+?/wdget
+?/publis
+?/edit_wit
+? \V\^      \zs\(\_.\{-}\)\$
+?/openaccor
+?/wizard_conte
+?/show
+?/shown
+?/accordion
+?/accordionope
+? \V\^    \zs\(\_.\{-}\)\$
+?/resizeIf
+?/resizeIfr
+?/resizeable
+?/height
+?/accordionop
+?/accordionopen
+?/iframere
+?/resizeIframe
+?/iframe
+?/toggleSide
+?/wizard_visi
+?/wizard_subnav
+?/body_conte
+?/wizard_ac
+?/toggleSidebar
+?/wizard_v
+?/show_wizard
+?/wizard
+?/fan_slidetoggle
+?/fan_slide
+?/fanchec
+?/fan
+?/em
+?/4
+?/custom_css_dia
+?/custom
+?/initial
+?/edit_custom_css
+?/custom_css_dialog
+? \%(^parent\)\@<! 
+?/setEditorMode
+?/seteditorMode
+?/attachEditor
+?/attachEditor()
+?/app_types
+?/>>>
+?/2012
+?/2011
+?/remi
+?/<<<
+?/err_ret
+?/wait_time
+?/wait
+?/rvm
+?/rb_exec_err
+?/rb_exec
+?/execl
+?/execv
+?/data-initiall
+?/checkbox
+?/.modal
+?/am_soci
+?/am_social
+?/def am_so
+?/:js => true
+?/true
+?/transaction
+?/dis
+?/user_dismi
+?/accep
+?/accepta
+?/@company =
+?/accept
+?/pending
+?/@company 
+?/company
+?/social_properties[
+?/resq
+?/clear
+?/setup_s
+?/@publication_ids
+?/@social_pages
+?/sync_s
+?/obsolete_company_social_page
+?/company_social_pages
+?/social_page
+?/def com
+? \V\^        \zs\(\_.\{-}\)\$
+?/checke
+?/not_
+?/publication_ids
+?/page
+?/wf
+?/>>
+?/mongre
+?/mongo
+?/def page_layout
+?/unscoped
+?/page_layout_version
+?/delete_a
+?/delete_asse
+?/page_layout_b
+?/version
+?/broke
+?/cooki
+? \V\^          \zs\(\_.\{-}\)\$
+?/def socia
+?/def set_so
+?/def create_from
+?/@social_pages = 
+?/set_social
+?/set_social_
+?/am_soc
 ? \V\^\zs\(\_.\{-}\)\$
+?/def am_
+?/def am_s
+?/strea
+?/count
+?/redire
+?/social_pa
+?/social
+?/def set_s
+?/set_social_page
+?/parse_signed
+?/post
+?/fb_pa
+? \<BlackburnClient\>
+?/log_
+?/burn
+?/black
+?/debugg
+?/set_tem
+?/image_widget)at
+?/widgets
+?/debug
+?/debugge
+?/before_sa
+?/widget_set
+?/before_s
+?/build_w
+?/def build_w
+?/def widget_set
+?/widget_w
+?/eager_
+?/click_
+?/setti
+?/capyb
+?/bin/tmux-panes -v
+?/internal_w
+?/def ed
+?/def fi
+? \V\^            \zs\(\_.\{-}\)\$
+?/def rena
+?/valid_attr
+?/step
+?/step3
+?/new_step_3
+?/new_step
+?/create
+?/page_layout_ass
+?/index
+?/widgets_routes
+?/internal_wid
+?/page_layout_asse
+?/def create
+?/widg
+?/Widget
+?/widget
+?/WidgetW
+?/vali
+?/WidgetWi
+?/facto
+?/def u
+?/access
+?/page_tem
+?/unless !
+?/def thread_
+?/build
+?/def routes
+?/middlewarest
+?/def default
+?/config
+?/:config
+?/def path
+?/build_origina
+?/def cal
+?/def pa
+?/paths
+?/def paths
+?/draw_paths
+?/def draw_paths
+?/def build_
+?/def incl
+?/has_key?
+?/def add_te
+?/def helpers_
+?/def all_a
+?/def modul
+?/def module
+?/def new_co
+?/def load_f
+?/def req
+?/module De
+?/def require
+?/def local
+?/validates_with
+?/def set
+?/validate 
+?/validate
+?/depreca
+?/included
+?/@password
+?/railtie
+?/pry
+?/focusAnd
+?/showHide
+?/closeD
+?/w
+?/showHidef
+?/custom_
+?/regre
+?/brok
+? VimuxUseExistingPane
+?/updateFl
+?/retr
+?/wizardA
+?/updateF
+?/unpublishing
+?/finishUn
+?/updateFlas
+?/updatePublis
+?/unpublish_al
+?/showhidemi
+?/showhidemico
+?/sectionLoad
+?/wiza
+?/closeDia
+?/setupdatepre
+?/step_1
+?/autocom
+?/fanChec
+?/updatepu
+?/showHol
+?/setC
+?/closedialog
+?/openW
+?/replaceModa
+?/focusA
+?/stopP
+?/changeS
+?/showhidef
+?/submitS
+?/createS
+?/updatePublishedIc
+?/enableS
+?/submitP
+?/publish_pa
+?/publication
+?/linkedin
+?/linke
+?/link
+?/app
+?/access_t
+?/identi
+?/app_id
+?/publish
+?/linked
+?/showhidem
+?/showhideMic
+?/showhidemicro
+?/micro
+?/microsite
+?/publish_to
+?/publish_
+?/optiona
+?/accessible_attr
+?/Permission
+?/protected_attributes_con
+?/active_a
 ?/auto
 ?/feedz
 ?/ui-too
 ?/new
-? \V\^      \zs\(\_.\{-}\)\$
-? \V\^    \zs\(\_.\{-}\)\$
-? \V\^  \zs\(\_.\{-}\)\$
-?/def ed
-?/show
 ?/moc
 ?/hoptoa
 ?/koala
@@ -364,12 +1052,9 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/atta
 ?/attacheE
 ?/setEditorM
-? \V\^        \zs\(\_.\{-}\)\$
 ? \V\%6c \zs\(\_.\{-}\)\%8c
-?/custom
 ?/update_c
 ?/def upda
-?/publication
 ?/delete
 ?/css
 ?/wait_for_mo
@@ -388,10 +1073,7 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/escape
 ?/setup_new
 ?/social_app
-?/wait_time
-? \V\^            \zs\(\_.\{-}\)\$
 ? publication_social_app_id
-?/>>
 ?/pol
 ?/publications
 ? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
@@ -414,9 +1096,7 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/previous_pu
 ?/destroy_
 ?/overrid
-?/selected
 ?/isPubl
-?/submitP
 ?/publish_pages
 ?/erro
 ?/isPu
@@ -435,7 +1115,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/publica
 ?/fbca
 ?/slee
-?/validate
 ?/val
 ?/destro
 ?/build_
@@ -451,7 +1130,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/web
 ?/for_
 ?/wom
-?/color
 ?/theme
 ?/back
 ?/colo
@@ -466,7 +1144,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/pho
 ?/40
 ?/debu
-?/create
 ?/def con
 ?/content
 ?/liquid_
@@ -495,21 +1172,15 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/api
 ?/tag
 ?/templa
-?/index
 ?/page_temp
 ?/tags_for_cate
 ?/tag_cate
 ?/order
-?/link
 ?/remoti
 ?/Design
 ?/edit te
-?/select
-?/widget
-?/widget_set
 ?/current_
 ?/panel1
-?/page_layout_version
 ?/ensure
 ?/draft
 ?/blank
@@ -530,7 +1201,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/create_from
 ?/for_plu
 ?/create_pa
-?/page_tem
 ?/v1
 ?/15.
 ?/title_w
@@ -548,7 +1218,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/gm
 ?/attr_a
 ?/part
-?/accep
 ?/comple
 ?/@publishable =
 ?/@publishable
@@ -558,7 +1227,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/fbfanpage_tab_publication_form
 ?/submit
 ?/new_publication_job
-?/pending
 ?/Edit T
 ?/edit_te
 ?/confirm
@@ -586,7 +1254,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/have_css
 ?/there are
 ?/select_button
-? \V\^          \zs\(\_.\{-}\)\$
 ?/selen
 ?/spe
 ?/res
@@ -599,7 +1266,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/repea
 ?/displayPub
 ?/proces
-?/micro
 ?/header
 ?/json
 ?/publisha
@@ -608,7 +1274,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/mobile
 ?/consumer
 ?/reques
-?/toolk
 ?/url
 ?/tab
 ?/parsed
@@ -619,8 +1284,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/social_proper
 ?/@social_app
 ?/create_p
-?/page
-?/app
 ?/availa
 ?/csp
 ? create_from_social_property_and_company
@@ -633,7 +1296,6 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/and the user already pubilshed two pages
 ?/fb_data
 ?/elap
-?/am_soci
 ?/set_publ
 ?/setup_publi
 ?/parse
@@ -646,17 +1308,14 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/social_app_id
 ?/chane
 ?/url_for_p
-?/debugg
 ?/checked
 ?/check
 ?/describe
-?/step3
 ?/available
 ? ^#
 ?/availab
 ?/availabl
 ?/avai
-?/@social_pages
 ?/stub_gr
 ?/9999
 ?/js
@@ -674,13 +1333,11 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/page_group_publications
 ?/openPu
 ?/renderP
-?/social
 ?/company.socia
 ? \<acceptance_login_as\>
 ?/stub_gra
 ?/Publishing
 ?/publishing
-?/step
 ?/f
 ?/Company.any
 ?/social_pro
@@ -694,15 +1351,12 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ?/addPublicatio
 ?/ispub
 ?/submitpub
-?/publis
 ?/select_butt
-?/widg
 ?/trunca
 ?/arti
 ?/sele
 ?/wait_un
 ?/video
-?/4
 ?/5
 ?/poll
 ?/lambda
@@ -1053,6 +1707,36 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ? #
 ? #
 ? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
 ? #
 ? #
 ? #
@@ -1321,6 +2005,8706 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 ? #
 ? #
 ? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
+? )
+? (
+? categories
+? category
+? categoriey
+? create_from_social_property_and_company
+? ^#
+? \<acceptance_login_as\>
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? #
+? wizard_section.
+? accordion-inner
+? accordion-body
+? accordion-heading
+? wizard_section
+? accordion-group
+? accordion-toggle
+? \V\^  \zs\(\_.\{-}\)\$
+? \V\^      \zs\(\_.\{-}\)\$
+? \V\^    \zs\(\_.\{-}\)\$
+? \%(^parent\)\@<! 
+? \V\^        \zs\(\_.\{-}\)\$
+? \V\^          \zs\(\_.\{-}\)\$
+? \V\^\zs\(\_.\{-}\)\$
+? \<BlackburnClient\>
+? \V\^            \zs\(\_.\{-}\)\$
+? VimuxUseExistingPane
+? \V\%6c \zs\(\_.\{-}\)\%8c
+? mountain
+? trekking
+? publication_social_app_id
+? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
 
 # Expression History (newest to oldest):
 
@@ -1329,319 +10713,314 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	CHAR	0
-	f
-"1	LINE	0
-	" Open splits vertically by default
-"2	LINE	0
-	"
-"3	LINE	0
-	"
-"4	LINE	0
-	set :vertical
-"5	LINE	0
+"0	LINE	0
+	" Generate tags for all gems
+	map <Leader>t :!ctags --extra=+f --exclude=.git --exclude=log -R * ~/.rbenv/versions/1.8.7-p358/lib/ruby/gems/1.8/gems/*<CR><CR>
+	
 	" use ,F to jump to tag in a vertical split
+	nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
+	
+	" use ,gf to go to file in a vertical split
+	nnoremap <silent> ,gf :vertical botright wincmd f<CR>
+	
+	" Map <leader>c to Gcommit
+	noremap <leader>c :Gcommit<cr>
+"1	LINE	0
+	
+	" Colors
+	hi Comment ctermfg=darkgray
+	
+	hi StatusLine ctermbg=darkgrey ctermfg=white
+	hi StatusLineNC ctermbg=black ctermfg=lightgrey
+	hi VertSplit ctermbg=black ctermfg=lightgrey
+	hi LineNr ctermfg=darkgray
+	hi CursorLine     guifg=NONE        guibg=#121212     gui=NONE      ctermfg=NONE        ctermbg=234
+	hi Function         guifg=#FFD2A7     guibg=NONE        gui=NONE      ctermfg=yellow       ctermbg=NONE        cterm=NONE
+	hi Visual           guifg=NONE        guibg=#262D51     gui=NONE      ctermfg=NONE        ctermbg=236    cterm=NONE
+	
+	hi Error            guifg=NONE        guibg=NONE        gui=undercurl ctermfg=16       ctermbg=red         cterm=NONE     guisp=#FF6C60 " undercurl color
+	hi ErrorMsg         guifg=white       guibg=#FF6C60     gui=BOLD      ctermfg=16       ctermbg=red         cterm=NONE
+	hi WarningMsg       guifg=white       guibg=#FF6C60     gui=BOLD      ctermfg=16       ctermbg=red         cterm=NONE
+	hi SpellBad       guifg=white       guibg=#FF6C60     gui=BOLD      ctermfg=16       ctermbg=160         cterm=NONE
+	
+	" ir_black doesn't highlight operators for some reason
+	hi Operator        guifg=#6699CC     guibg=NONE        gui=NONE      ctermfg=lightblue   ctermbg=NONE        cterm=NONE
+	
+	highlight DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=16
+	highlight DiffChange term=reverse cterm=bold ctermbg=lightblue ctermfg=16
+	highlight DiffText term=reverse cterm=bold ctermbg=lightgray ctermfg=16
+	highlight DiffDelete term=reverse cterm=bold ctermbg=lightred ctermfg=16
+	
+	highlight PmenuSel ctermfg=16 ctermbg=156
+"2	LINE	0
+	:set t_Co=256 " 256 colors
+"3	LINE	0
+	:set t_Co=256 " 256 colors
+"4	LINE	0
+	set cursorline
+"5	LINE	0
+	:set background=dark
+	:color grb256
 "6	LINE	0
-	nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd
-	w<cr>:exec("tag ". word)<cr>
-	"
-	" " use ,gf to go to file in a vertical split
-	" nnoremap <silent> ,gf :vertical botright wincmd f<CR
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 "7	LINE	0
-	    ws.send "Hello client"
+	
 "8	LINE	0
-	    <di
-	
-	      <div id="container">  
-	
-	        <h1>WebSockets Client</h1>  
-	
-	        <div id="chatLog">  
-	
-	        </div><!-- #chatLog -->  
-	        <p id="examples">e.g. try
-	        'hi', 'name', 'age',
-	        'today'</p>  
-	
-	        <input id="text"
-	        type="text" />  
-	        <button
-	          id="disconnect">Disconnect</button>  
-	
-	      </div><!--
-	      #container
-	      -->  
-	
-	    </div>  
+	""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	" InsertTime COMMAND
+	" Insert the current time
+	""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 "9	LINE	0
-	  gem 'rspec-rails-mocha', '~> 0.3.1', :require => false
-"j	CHAR	0
-	1739
-<jjwjjjodef complaete€kb€kb€kb€kbete!kddAEvent.create!(:name => name, :points => pp€kboints)end,twjjjjjjjjjj,,,,,kkkkkkkkkkkkyyjjjjjjjjjjjjjjjpwwwwwwwwwwwwwinon wkjwwwwwwcw0wwwwwcwfalseja do34ggV5jjjyj4j4j4jjpkOjjjjjjjwwwwwwwwinon jbcw4cw0jo,tkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjoshared_s€kbexamples_for 'should create€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb"should create a task" dpa€kb0a€kb0aoi€kbjjjjjjjkkVjjjjjjjkkkkkkkkkkkkwwwbjjjjjjjkkkVjjjjjjjjjjkkdkkkkpOkwwwwwi€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kbjjjjjjjjjjoendkkddkkkkkkwwwwwjjwwwwwwwwci(event.namejbclevent.pointsjjjjjjjjki			it { behaves_like €ýc€ýbbbxxi€kb_€ýc€ýblllllllxhhhhhhishould_A'a task"€kb'kkjja€kb"bbi€kb"okkkkkkkkkkkkkkkkkwwi€kbu,touia ,t47ggyyjjjjjjjjPjV4jj4jjjkkdOjA dotask.complete!ot€kbTask.find(task.id_€kb).should be_niloend,twOdestroy,twkwwcwexists?wwwwwwwbCbe_false,tVkykkkkkkkkkpkA dojjoendkA€kb€kb€kb€kb€kbtrue,twa unless repeating?,t€ý,€ý...uukkoit "so€kbhould clear h€kbthe parent id og€kbf its children"lllkkkkkkkkkkkkkkkkoit "should have many taks€kb€kbsks €kb" dookkkkkkkyyjjjjjjpochild_1 = Fac	(:task)child			_2 = F	(:task)parent.tasks << [chi€kb€kb€kb€kb€kb€kb€kb€kb = [child_1, child_2]parent.tasks.should == [child_1, child_2]end,t€ýbwkkkkkkkohas_n€kbmany :tasks, Lc€kb€kb:cl	 => 't€kbTask',tbbbbbwCforeign_key => :parent_id,tw53ggA dotask = Fac	(:task)2.times { task.tasks << Fac	(:ts€kbask) }task.complee€kbte!tasks€kb.children.all?(€kb {|t}€kb| t.parent_id.blak€kbnk? }.should be_trueend,tkwwcwtasks,twjjjjjjotasks.each { |t| t.update_attribute €kb(:parent_id, nil) }ddopkdd,t€ýc€ýb,fspeccon:e sp	con		tasks_controller_spec.rb
+	
+"a	CHAR	0
+	386
+<lwgcc:wnnofind("#pb€kbublication_job_social_app_od€kb€kbaid)€kb')€kbr"kjjkkkjjjkkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjjkjkjkjkjkjkjkljkjkjkjkjkllkkodebuggerjVJuVjgc:wkkkggjjjjkkkjjjjjjjjkkkkkkkjkobefore doendkki		SocialApp.any-insan€kb€kb€kb€kb€kb€kb_instnace.stubs(:bbbhciwany_instanceAst€kbet_fb_app_settings):wnjk/jjjjjjjVykkkggjjjjp:w=="w:w409Gj
+"d	CHAR	0
+	dddd:ww,gabj
+"g	CHAR	0
+	au
+"j@	CHAR	0
+	jjjjjjjjjjjjjj:wjjjjjjj
+"l	CHAR	0
+	454
+<llllllllllllllllllllllllllai/wdgetaijjkkkkkkkkkkkkjjjjjjkkkkkkkkkkkkkkkk:wjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkkkkkkkkkkk:wkwwwwgfwwwwwwwwwwwwwwjw,gvwizarcongfwjjwwwwwwwgfjjwjwjjwkwkkwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwbbbbbbwcwplugin_edit€kb€kb€kb€kb€kb-editjjwwwww.:w,,kkkkjjwwwwwwwwwgfjjjj:Gblame:qddjjjjjjjjjjjddkkkkkkkkkkkkkjjjuuuuuuuuuuu:w,,,,w,,kkwcwplugin-edit:ww,gastybusi€kb
+"q	CHAR	0
+	
 "t	LINE	0
 	      social_pages = [SocialPage.gen, SocialPage.gen]
 	      company = Company.gen
+"v	CHAR	0
+	1624
+<GdVkkkkkkdddddddddddddddddddddduuuuuuuuVjjddd:w,gvlayoupajjjjjjjjjkeeeeeeeekeekkjjllllgfjjjjjjjjwwwwwwwllllllllllllllllgfjjjjjjjkkkeeeeebbbbwwwjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjkkkjjjo€kbjj€kb€kbwjji.togg€kb€kb€kb€kb€kbkkkkkjkkjjjjjhhhhhhi.fan_slie€kb€kbidetogglebbkwwwwbbjkjblllllllllhhhhhhhhlllllllllllllli€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kbgate+bu€kb€kb€kb+€kb_€kb-buttona€kb€kb€kb€kb€kb€kb€kb:wwjlkjli-button:was:wwkA€kb	$('€kb"..gfa€kb€kb€kb€kbfa€kbd€kb€kbfangate-buttons'€kb").live('€kb"click", wizard.€kb€kb€kb€kb€kb€kb€kbfunction(event) {}_€kb);A€kbA€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb(event) ->bbbbbbbr :wofan€kb€kb€kbif $(this).e€kbhasClass("yes")kkwwwi buttonjo$(ddkkofangate_slidetogge€kble€kb€kb€kb€kb€kbogl€kbgle = $("input[name€kbe='fangate_slidetoggle'€kb']")jofangate_slidetoggle.attr("checked", "checked"(€kb)A€kbbbbbbr ofangate_slidetoggle.trigger("change")€kbelsefangate_slidetoggle_€kb.remote€kb€kbveAttr("€kb€kb "checked"fangate_slidetoggle.trigger"€kb "Chan€kb€kb€kb€kbchage€kb€kbnge"kkkwbllxbhhx:wi :wkkko:wjjkwwwwwwwr A€kb:wkkhr A€kb:wjjjjlkkjjka if $(this).ha	 "yes" else "no"jdjkkjkkddjjVjjdkkVjMjjjjjjjjjjjjjjjjjjjVj<:wjkkoif $(this).hasClass("€kb€kb "yes"jwwwwwwwwi€kb€kb€kb€kb€kb€kb€kb€kbbhd2f"udf"wwwwwwbbbbbbiif wwwwwwwcwcheckedwwwwdwjkbbbbbbbwbbbbbhhhhhhwwwwwbbwwwwwwciwyesbbbbbbbA€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb"checked"kok==oelsefangate_slde€kb€kb	ide€kb€kb€kb.removeAttr "checked":wkkkkkbjjjjjjjjjjjjkkkkkhhhhhhhhh	
 "w	CHAR	0
 	wwwwwwww
 ""-	CHAR	0
-	 
+	ir_black
 
 # File marks:
-'0  3  4  ~/.gitignore
-'1  50  1  ~/.gitconfig
-'2  2  3  ~/.gitignore
-'3  37  38  ~/.zshrc
-'4  175  68  ~/.vimrc
-'5  101  68  ~/.vimrc
-'6  17  19  ~/code/websockets/sockets/index.html
-'7  4  25  ~/code/websockets/goliath-example/server.rb
-'8  10  0  ~/code/websockets/goliath-example/server.rb
-'9  1  0  ~/code/wildfire/app_suite/Gemfile
+'0  235  12  ~/.vimrc
+'1  99  12  ~/.vimrc
+'2  101  0  ~/.vimrc
+'3  314  0  ~/.vimrc
+'4  503  0  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+'5  1  0  ~/code/wildfire/app_suite/rspec
+'6  101  55  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+'7  1  28  ~/code/wildfire/app_suite/.git/COMMIT_EDITMSG
+'8  8  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
+'9  23  6  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
 
 # Jumplist (newest first):
--'  3  4  ~/.gitignore
--'  2  0  ~/.gitignore
--'  50  1  ~/.gitconfig
--'  51  49  ~/.gitconfig
--'  1  0  ~/.gitconfig
--'  1  0  ~/.gitignore
--'  37  38  ~/.zshrc
--'  48  0  ~/.zshrc
--'  175  68  ~/.vimrc
--'  179  54  ~/.vimrc
--'  13  10  ~/.vimrc
+-'  235  12  ~/.vimrc
+-'  99  12  ~/.vimrc
+-'  314  0  ~/.vimrc
+-'  315  0  ~/.vimrc
+-'  100  0  ~/.vimrc
+-'  29  13  ~/.vimrc
+-'  208  22  ~/.vimrc
+-'  205  29  ~/.vimrc
+-'  159  9  ~/.vimrc
+-'  152  29  ~/.vimrc
+-'  96  5  ~/.vimrc
 -'  101  0  ~/.vimrc
--'  102  77  ~/.vimrc
--'  62  8  ~/.vimrc
--'  14  0  ~/.vimrc
 -'  1  0  ~/.vimrc
--'  17  19  ~/code/websockets/sockets/index.html
--'  24  71  ~/code/websockets/sockets/index.html
--'  1  0  ~/code/websockets/sockets/index.html
--'  4  25  ~/code/websockets/goliath-example/server.rb
--'  10  0  ~/code/websockets/goliath-example/server.rb
--'  1  0  ~/code/websockets/goliath-example/server.rb
--'  1  0  ~/code/wildfire/app_suite/Gemfile
--'  26  5  ~/code/wildfire/app_suite/Gemfile
--'  50  114  ~/code/wildfire/app_suite/Gemfile
--'  4  9  ~/code/wildfire/app_suite/Gemfile
--'  8  12  ~/code/wildfire/app_suite/Gemfile
--'  11  13  ~/code/wildfire/app_suite/Gemfile
--'  12  16  ~/code/wildfire/app_suite/Gemfile
--'  14  11  ~/code/wildfire/app_suite/Gemfile
--'  35  18  ~/code/wildfire/app_suite/Gemfile
--'  75  19  ~/code/wildfire/app_suite/Gemfile
--'  76  25  ~/code/wildfire/app_suite/Gemfile
--'  78  15  ~/code/wildfire/app_suite/Gemfile
--'  92  26  ~/code/wildfire/app_suite/Gemfile
--'  93  31  ~/code/wildfire/app_suite/Gemfile
--'  97  24  ~/code/wildfire/app_suite/Gemfile
--'  104  13  ~/code/wildfire/app_suite/Gemfile
--'  106  17  ~/code/wildfire/app_suite/Gemfile
--'  107  33  ~/code/wildfire/app_suite/Gemfile
--'  108  18  ~/code/wildfire/app_suite/Gemfile
--'  109  15  ~/code/wildfire/app_suite/Gemfile
--'  111  15  ~/code/wildfire/app_suite/Gemfile
--'  124  2  ~/code/wildfire/app_suite/Gemfile
--'  51  2  ~/code/wildfire/app_suite/Gemfile
--'  36  0  ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
--'  35  37  ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
--'  117  8  ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
--'  23  0  ~/code/wildfire/app_suite/app/models/account.rb
--'  22  29  ~/code/wildfire/app_suite/app/models/account.rb
--'  1  0  ~/code/wildfire/app_suite/lib/wf/consumer_auth/base_auth.rb
--'  6  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
--'  4  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
--'  48  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
--'  1  0  ~/code/wildfire/app_suite/app/views/business/pages/edit_iframe.html.haml
--'  4  3  ~/code/wildfire/app_suite/app/views/business/pages/edit_iframe.html.haml
--'  51  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
--'  1  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
--'  142  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
--'  17  5  ~/code/wildfire/app_suite/Gemfile
--'  74  28  ~/code/wildfire/app_suite/Gemfile
--'  85  61  ~/code/wildfire/app_suite/Gemfile
--'  1  0  ~/code/wildfire/app_suite/Gemfile
--'  26  5  ~/code/wildfire/app_suite/Gemfile
--'  50  114  ~/code/wildfire/app_suite/Gemfile
--'  4  9  ~/code/wildfire/app_suite/Gemfile
--'  8  12  ~/code/wildfire/app_suite/Gemfile
--'  11  13  ~/code/wildfire/app_suite/Gemfile
--'  12  16  ~/code/wildfire/app_suite/Gemfile
--'  14  11  ~/code/wildfire/app_suite/Gemfile
--'  35  18  ~/code/wildfire/app_suite/Gemfile
--'  75  19  ~/code/wildfire/app_suite/Gemfile
--'  76  25  ~/code/wildfire/app_suite/Gemfile
--'  78  15  ~/code/wildfire/app_suite/Gemfile
--'  92  26  ~/code/wildfire/app_suite/Gemfile
--'  93  31  ~/code/wildfire/app_suite/Gemfile
--'  97  24  ~/code/wildfire/app_suite/Gemfile
--'  104  13  ~/code/wildfire/app_suite/Gemfile
--'  106  17  ~/code/wildfire/app_suite/Gemfile
--'  107  33  ~/code/wildfire/app_suite/Gemfile
--'  108  18  ~/code/wildfire/app_suite/Gemfile
--'  109  15  ~/code/wildfire/app_suite/Gemfile
--'  111  15  ~/code/wildfire/app_suite/Gemfile
--'  124  2  ~/code/wildfire/app_suite/Gemfile
--'  51  2  ~/code/wildfire/app_suite/Gemfile
--'  36  0  ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
--'  35  37  ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
--'  117  8  ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
--'  23  0  ~/code/wildfire/app_suite/app/models/account.rb
--'  22  29  ~/code/wildfire/app_suite/app/models/account.rb
--'  1  0  ~/code/wildfire/app_suite/lib/wf/consumer_auth/base_auth.rb
--'  6  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
--'  4  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
--'  48  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
--'  1  0  ~/code/wildfire/app_suite/app/views/business/pages/edit_iframe.html.haml
--'  4  3  ~/code/wildfire/app_suite/app/views/business/pages/edit_iframe.html.haml
--'  51  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
--'  1  0  ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
+-'  503  0  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  195  8  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  69  2  ~/code/wildfire/app_suite/Gemfile
+-'  213  0  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  198  87  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  1  0  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  225  13  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  224  12  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  234  10  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  487  8  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  449  8  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  436  8  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  395  10  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  388  10  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  328  14  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  280  10  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  277  69  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  267  58  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  259  87  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  244  35  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  210  8  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  203  6  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  194  8  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  108  2  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  101  8  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  1  0  ~/code/wildfire/app_suite/rspec
+-'  79  6  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  497  10  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  59  15  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  2  0  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+-'  5  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_content_section.html.haml
+-'  3  12  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
+-'  9  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
+-'  1  22  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
+-'  300  17  ~/code/wildfire/app_suite/app/helpers/application_helper.rb
+-'  6  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
+-'  7  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
+-'  8  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
+-'  77  0  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  75  15  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  52  6  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  57  26  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  60  19  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  61  8  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  39  8  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  38  27  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  68  19  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  63  30  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  6  6  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_publish_section.html.haml
+-'  41  0  ~/code/wildfire/app_suite/app/assets/stylesheets/shared/wizard.scss.erb
+-'  49  0  ~/code/wildfire/app_suite/app/assets/stylesheets/shared/wizard.scss.erb
+-'  207  0  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+-'  115  0  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+-'  157  6  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+-'  128  4  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+-'  124  13  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+-'  159  5  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+-'  13  21  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+-'  7  21  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+-'  195  21  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+-'  158  0  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+-'  1  0  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+-'  208  0  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+-'  2  0  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+-'  5  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_content_section.html.haml
+-'  3  12  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
+-'  9  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
+-'  1  22  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
+-'  300  17  ~/code/wildfire/app_suite/app/helpers/application_helper.rb
+-'  6  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
+-'  7  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
+-'  8  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
+-'  77  0  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  75  15  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  52  6  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  57  26  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  60  19  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  61  8  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+-'  1  0  ~/code/wildfire/app_suite/spec/models/company_spec.rb
+-'  1  0  ~/code/wildfire/app_suite/app/models/company.rb
+-'  65  0  ~/code/wildfire/app_suite/app/models/company.rb
+-'  14  0  ~/code/wildfire/app_suite/app/models/company.rb
+-'  29  0  ~/code/wildfire/app_suite/app/models/company.rb
+-'  32  0  ~/code/wildfire/app_suite/app/models/company.rb
 
 # History of marks within files (newest to oldest):
 
-> ~/.gitignore
-	"	3	4
-	^	3	5
-	.	3	4
-	+	2	3
-	+	3	4
-
-> ~/.gitconfig
-	"	50	1
-	.	51	0
-	+	51	0
-
-> ~/.zshrc
-	"	37	38
-	^	37	39
-	.	37	38
-	+	48	54
-	+	37	38
-
 > ~/.vimrc
-	"	175	68
-	^	174	2
-	.	175	68
-	+	162	0
-	+	163	34
-	+	14	0
-	+	102	0
-	+	101	69
-	+	11	12
-	+	13	11
-	+	14	0
-	+	172	94
-	+	171	28
-	+	179	53
-	+	173	0
-	+	179	0
-	+	179	0
-	+	179	0
-	+	174	34
-	+	179	0
-	+	179	0
-	+	178	0
-	+	175	69
-	+	175	0
-	+	177	0
-	+	177	0
-	+	176	0
-	+	177	0
-	+	174	1
-	+	175	68
+	"	235	12
+	^	235	13
+	.	235	12
+	+	315	68
+	+	315	0
+	+	315	0
+	+	315	15
+	+	315	40
+	+	315	13
+	+	315	0
+	+	315	13
+	+	315	0
+	+	315	0
+	+	315	10
+	+	315	0
+	+	315	0
+	+	315	0
+	+	315	29
+	+	315	0
+	+	315	13
+	+	315	2
+	+	5	33
+	+	315	0
+	+	5	0
+	+	185	0
+	+	188	78
+	+	315	0
+	+	189	0
+	+	237	0
+	+	287	0
+	+	302	0
+	+	303	0
+	+	303	0
+	+	315	0
+	+	101	0
+	+	100	19
+	+	101	6
+	+	29	13
+	+	100	0
+	+	315	0
+	+	315	0
+	+	315	25
+	+	315	0
+	+	315	0
+	+	101	7
+	+	99	0
+	+	234	12
+	+	235	12
 
-> ~/code/rails/activemodel/lib/active_model/attribute_methods.rb
-	"	247	6
-	^	246	77
-	.	247	0
-	+	106	0
-	+	324	0
-	+	216	33
-	+	106	0
-	+	143	0
-	+	181	0
-	+	216	0
-	+	387	52
-	+	387	0
-	+	393	0
-	+	246	0
-	+	247	0
-	+	247	68
-	+	247	0
-	+	247	20
-	+	247	68
-	+	247	0
-	+	393	0
-	+	246	76
-	+	247	0
-	n	187	10
-
-> ~/code/rails/activemodel/test/cases/configuration_test.rb
+> ~/code/wildfire/app_suite/app/models/company.rb
 	"	1	0
 
-> ~/code/rails/activemodel/lib/active_model/callbacks.rb
-	"	91	0
-	.	106	0
-	+	106	0
-	+	106	6
-	+	106	0
-	+	106	36
-	+	132	0
-	+	106	0
-	+	106	23
-	+	106	45
-	+	103	53
-	+	106	0
-
-> ~/code/rails/activesupport/lib/active_support/concern.rb
-	"	124	0
-
-> ~/code/rails/activemodel/test/cases/callbacks_test.rb
-	"	2	0
-
-> ~/code/rails/activemodel/GoToFile
-	"	1	0
-	.	20	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	20	0
-
-> ~/code/rails/activemodel/lib/active_model/configuration.rb
-	"	1	0
-	^	110	55
-	.	110	54
-	+	6	36
-	+	98	70
-	+	111	0
-	+	110	54
-	+	120	65
-	+	98	70
-	+	120	65
-	+	110	54
-
-> ~/code/rails/activesupport/lib/active_support/configurable.rb
+> ~/code/wildfire/app_suite/spec/models/company_spec.rb
 	"	1	0
 
-> ~/code/rails/activemodel/lib/active_model/conversion.rb
-	"	71	2
-	.	43	0
-	+	43	12
-	+	43	0
-	+	43	0
+> /usr/local/Cellar/vim/7.3.333/share/vim/vim73/doc/options.txt
+	"	2287	3
 
-> ~/code/rails/activemodel/lib/active_model/dirty.rb
-	"	168	2
-
-> ~/code/rails/activemodel/lib/active_model/errors.rb
-	"	117	31
-	^	117	33
-	.	117	0
-	+	117	0
-
-> ~/code/wildfire/app_suite/app/controllers/application_controller.rb
-	"	81	6
+> /usr/local/Cellar/vim/7.3.333/share/vim/vim73/doc/term.txt
+	"	244	26
 
 > ~/code/wildfire/app_suite/GoToFile
 	"	1	0
@@ -1684,6 +11063,15 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 	+	1	0
 	+	1	0
 	+	1	0
+	+	85	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	72	0
+	+	71	0
 	+	1	0
 	+	1	0
 	+	1	0
@@ -1707,10 +11095,7 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 	+	1	0
 	+	1	0
 	+	1	0
-	+	1	0
-	+	1	0
-	+	43	0
-	+	1	0
+	+	70	0
 	+	1	0
 	+	1	0
 	+	1	0
@@ -1718,14 +11103,12 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 	+	1	0
 	+	1	0
 	+	1	0
+	+	58	0
 	+	1	0
 	+	1	0
 	+	1	0
 	+	42	0
-	+	1	0
-	+	1	0
-	+	25	0
-	+	1	0
+	+	23	0
 	+	1	0
 	+	1	0
 	+	1	0
@@ -1737,131 +11120,310 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 	+	1	0
 	+	1	0
 	+	1	0
-	+	1	0
-	+	1	0
-	+	20	0
-	+	17	0
 	+	1	0
 	+	1	0
 	+	1	0
 	+	1	0
 	+	2	0
 
-> ~/.rvm/gems/ruby-1.8.7-p352/gems/activeadmin-0.3.4/spec/support/templates/cucumber.rb
-	"	9	0
-
-> ~/code/wildfire/app_suite/
+> ~/code/wildfire/app_suite/app/controllers/api/api_controller.rb
 	"	1	0
 
+> ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
+	"	503	0
+	^	156	46
+	.	156	45
+	+	224	0
+	+	213	0
+	+	203	0
+	+	204	20
+	+	217	20
+	+	204	0
+	+	204	39
+	+	203	0
+	+	204	0
+	+	195	0
+	+	195	0
+	+	196	0
+	+	195	0
+	+	225	0
+	+	225	0
+	+	230	18
+	+	268	0
+	+	268	0
+	+	234	0
+	+	247	0
+	+	245	0
+	+	268	0
+	+	277	0
+	+	267	11
+	+	267	0
+	+	267	0
+	+	266	0
+	+	280	0
+	+	280	41
+	+	280	12
+	+	280	0
+	+	280	22
+	+	280	0
+	+	280	0
+	+	280	0
+	+	280	16
+	+	280	0
+	+	280	0
+	+	280	0
+	+	283	0
+	+	304	0
+	+	283	0
+	+	304	0
+	+	316	0
+	+	315	0
+	+	304	0
+	+	328	0
+	+	328	0
+	+	304	49
+	+	328	0
+	+	328	15
+	+	328	0
+	+	315	26
+	+	315	0
+	+	328	24
+	+	328	0
+	+	328	110
+	+	328	0
+	+	328	67
+	+	328	18
+	+	328	18
+	+	328	0
+	+	335	0
+	+	337	0
+	+	335	0
+	+	338	0
+	+	354	0
+	+	365	0
+	+	369	0
+	+	372	18
+	+	379	0
+	+	380	18
+	+	388	0
+	+	395	0
+	+	408	0
+	+	409	0
+	+	410	0
+	+	425	0
+	+	430	0
+	+	436	0
+	+	449	0
+	+	457	0
+	+	461	0
+	+	467	0
+	+	469	0
+	+	474	0
+	+	479	0
+	+	487	0
+	+	488	0
+	+	493	0
+	+	495	0
+	+	498	0
+	+	502	0
+	+	155	0
+	+	155	0
+	+	155	20
+	+	155	10
+	+	155	0
+	+	157	0
+	+	156	45
+
+> ~/code/wildfire/app_suite/spec/spec_helper.rb
+	"	215	0
+	^	215	59
+	.	215	58
+	+	219	58
+	+	215	58
+
 > ~/code/wildfire/app_suite/Gemfile
-	"	75	18
-	^	76	5
-	.	75	18
-	+	15	25
-	+	21	0
-	+	25	18
-	+	122	0
-	+	15	0
-	+	31	0
-	+	56	0
-	+	50	114
-	+	4	8
-	+	8	11
-	+	11	13
-	+	12	16
-	+	14	10
-	+	35	17
-	+	75	18
-	+	76	25
-	+	78	14
-	+	92	25
-	+	93	30
-	+	97	23
-	+	104	12
-	+	106	16
-	+	107	32
-	+	108	17
-	+	109	14
-	+	50	0
-	+	75	18
-
-> ~/code/wildfire/app_suite/.rspec
-	"	4	0
-	^	4	12
-	.	4	11
-	+	4	11
-
-> ~/code/wildfire/app_suite/spec/acceptance/business/targeting_spec.rb
-	"	247	8
-
-> ~/code/websockets/sockets/index.html
-	"	17	19
-	^	17	20
-	.	17	19
-	+	24	71
-	+	6	0
-	+	2	6
-	+	1	0
-	+	3	7
-	+	5	84
-	+	7	35
-	+	21	8
-	+	22	7
-	+	23	8
-	+	24	6
-	+	5	59
-	+	19	0
-	+	14	0
-	+	10	6
-	+	18	0
-	+	17	19
-
-> ~/code/websockets/sockets/server.rb
-	"	18	5
-	^	18	6
-	.	18	5
-	+	22	0
-	+	21	0
-	+	3	9
+	"	69	2
+	.	69	2
+	+	64	0
+	+	63	0
+	+	64	0
+	+	64	0
+	+	63	0
+	+	64	126
+	+	61	0
+	+	64	0
+	+	12	0
+	+	117	0
+	+	12	0
 	+	13	0
-	+	10	30
+	+	70	0
+	+	70	127
+	+	69	0
+	+	70	0
+	+	69	2
+
+> ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+	"	88	6
+	.	89	0
+	+	194	0
+	+	193	0
+	+	194	0
+	+	194	0
+	+	194	37
+	+	194	0
+	+	194	60
+	+	194	0
+	+	194	25
+	+	194	58
+	+	194	20
+	+	194	20
+	+	194	0
+	+	194	0
+	+	194	0
+	+	188	0
+	+	194	0
+	+	193	0
+	+	194	0
+	+	193	0
+	+	188	0
+	+	188	0
+	+	190	0
+	+	186	35
+	+	188	0
+	+	193	0
+	+	192	0
+	+	190	0
+	+	192	46
+	+	193	0
+	+	192	0
+	+	191	43
+	+	192	0
+	+	190	0
+	+	188	0
+	+	191	35
+	+	191	29
+	+	192	0
+	+	185	0
+	+	186	15
+	+	187	14
+	+	189	14
+	+	134	0
+	+	134	115
+	+	134	0
+	+	183	0
+	+	194	0
+	+	123	0
+	+	133	0
+	+	126	0
+	+	124	20
+	+	132	40
+	+	129	6
+	+	132	54
+	+	124	12
+	+	129	0
+	+	131	20
+	+	132	0
+	+	23	6
+	+	23	0
+	+	24	0
+	+	23	46
+	+	23	0
 	+	17	0
-	+	16	0
-	+	21	0
-	+	12	0
-	+	11	0
-	+	12	0
-	+	20	0
-	+	19	32
-	+	18	5
+	+	23	6
+	+	24	23
+	+	23	6
+	+	24	0
+	+	23	6
+	+	207	0
+	+	206	0
+	+	207	0
+	+	159	0
+	+	157	0
+	+	23	6
+	+	41	55
+	+	86	0
+	+	86	0
+	+	83	72
+	+	9	41
+	+	42	0
+	+	23	28
+	+	23	30
+	+	23	20
+	+	23	36
+	+	24	0
+	+	23	0
+	+	24	0
+	+	23	6
+	+	23	39
+	+	23	7
+	+	18	39
+	+	21	40
+	+	22	6
+	+	24	7
+	+	24	97
+	+	24	0
+	+	24	114
+	+	24	0
+	+	89	0
 
-> ~/code/nodejs/HotPie/app.js
-	"	7	0
-	^	8	33
-	.	8	32
-	+	36	11
-	+	6	24
-	+	33	43
-	+	9	0
-	+	8	32
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vtkomdF/1.fugitiveblame
+	"	230	0
 
-> ~/code/nodejs/HotPie/GoToFile
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vtkomdF/3.fugitiveblame
+	"	246	0
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vtkomdF/5.fugitiveblame
+	"	275	0
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vtkomdF/7.fugitiveblame
+	"	327	0
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vtkomdF/9.fugitiveblame
+	"	351	0
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vtkomdF/11.fugitiveblame
+	"	355	0
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vtkomdF/13.fugitiveblame
+	"	521	0
+
+> ~/code/wildfire/app_suite/.git/COMMIT_EDITMSG
+	"	1	22
+	^	1	23
+	.	1	22
+	+	1	32
+	+	23	0
+	+	1	8
+	+	23	0
+	+	14	0
+	+	1	23
+	+	14	0
+	+	1	50
+	+	13	55
+	+	1	17
+	+	11	11
+	+	1	35
+	+	4	44
+	+	1	22
+
+> ~/code/wildfire/ui-toolkit/.git/COMMIT_EDITMSG
+	"	1	0
+	^	1	19
+	.	1	18
+	+	1	18
+
+> ~/code/wildfire/ui-toolkit/app/assets/stylesheets/sidebar.css
+	"	248	0
+	.	249	0
+	+	249	0
+	+	249	0
+
+> ~/code/wildfire/ui-toolkit/GoToFile
 	"	1	0
 	.	20	0
 	+	1	0
 	+	1	0
 	+	1	0
-	+	66	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	50	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	36	0
 	+	1	0
 	+	1	0
 	+	1	0
@@ -1878,7 +11440,80 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 	+	1	0
 	+	1	0
 	+	1	0
-	+	33	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
 	+	1	0
 	+	1	0
 	+	1	0
@@ -1886,895 +11521,787 @@ $\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$
 	+	1	0
 	+	20	0
 
-> ~/code/nodejs/HotPie/server.js
+> ~/code/wildfire/ui-toolkit/app/assets/stylesheets/ui-toolkit.css
+	"	16	0
+	^	15	0
+	.	16	0
+	+	2	0
+	+	2	0
+	+	19	0
+	+	15	0
+	+	16	0
+
+> ~/code/wildfire/ui-toolkit/vendor/assets/stylesheets/bootstrap.css
+	"	3615	9
+	^	1792	32
+	.	1792	31
+	+	1781	31
+	+	1792	31
+
+> ~/code/wildfire/app_suite/rspec
 	"	1	0
 
-> ~/code/nodejs/HotPie/routes/index.js
+> ~/code/wildfire/app_suite/app/assets/stylesheets/business/pages/edit.scss.erb
 	"	1	0
+	.	1	0
+	+	1	0
 
-> ~/code/nodejs/HotPie/public/assets/js/application.coffee
-	"	1	0
-
-> ~/code/nodejs/HotPie/apps/authentication/routes.coffee
-	"	2	4
-	.	3	0
-	+	7	22
-	+	2	8
-	+	9	22
-	+	2	16
-	+	4	0
-	+	5	28
+> ~/code/wildfire/app_suite/app/assets/stylesheets/shared/wizard.scss.erb
+	"	41	0
+	.	50	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	11	0
+	+	5	24
+	+	6	24
+	+	11	0
+	+	27	0
+	+	14	23
+	+	14	14
+	+	50	0
+	+	5	29
+	+	1	19
 	+	3	0
-
-> ~/code/nodejs/HotPie/apps/authentication/views/login.jade
-	"	6	0
-	^	6	14
-	.	6	13
-	+	5	6
-	+	7	33
-	+	8	29
-	+	3	13
-	+	6	13
-
-> ~/code/nodejs/HotPie/views/layout.jade
-	"	6	5
-	^	9	15
-	.	9	14
-	+	5	58
-	+	4	25
-	+	11	3
-	+	9	14
-
-> ~/code/nodejs/HotPie/bin/devserver
-	"	3	0
-	^	3	39
-	.	3	37
-	+	3	37
-
-> ~/code/nodejs/HotPie/package.json
-	"	5	2
-	^	11	23
-	.	11	0
-	+	12	0
-	+	9	0
-	+	11	0
-	+	8	29
-	+	11	0
-
-> ~/code/nodejs/HotPie/test/apps/authentication-test.coffee
-	"	13	0
-	^	13	0
-	.	13	0
-	+	18	6
-	+	7	26
+	+	2	12
+	+	14	0
 	+	18	0
-	+	15	11
-	+	12	41
-	+	19	30
-	+	8	14
-	+	15	19
-	+	14	39
-	+	10	17
-	+	16	13
-	+	17	0
-	+	19	32
-	+	1	1
-	+	4	20
-	+	11	14
-	+	13	0
+	+	17	25
+	+	5	25
+	+	10	0
+	+	9	12
+	+	16	11
+	+	27	0
+	+	27	0
+	+	27	0
+	+	22	0
+	+	21	13
+	+	26	3
+	+	26	0
+	+	25	0
+	+	50	0
+	+	50	5
+	+	50	0
+	+	50	0
+	+	27	0
+	+	31	0
+	+	30	8
+	+	29	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	29	0
+	+	1	0
+	+	1	0
+	+	34	0
+	+	33	13
+	+	36	0
+	+	34	13
+	+	36	0
+	+	43	14
+	+	45	0
+	+	43	11
+	+	41	0
+	+	38	5
+	+	39	12
+	+	41	0
+	+	45	24
+	+	39	18
+	+	40	21
+	+	45	0
+	+	40	19
+	+	35	11
+	+	50	0
+	+	49	0
+	+	48	9
+	+	50	0
+	+	50	0
 
-> ~/code/nodejs/HotPie/test/_helper.js
-	"	3	0
-	^	3	25
-	.	4	0
-	+	3	24
-	+	1	28
-	+	3	25
-	+	4	0
-
-> ~/code/mint/Gemfile
+> ~/code/wildfire/app_suite/app/assets/stylesheets/global.scss.erb
 	"	1	0
+	.	1	0
+	+	1	0
+	+	1	0
 
-> ~/code/mint/GoToFile
-	"	1	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	2	0
-
-> ~/code/mint/README.rdoc
-	"	3	36
-	^	3	37
-	.	3	36
-	+	4	0
-	+	3	36
-
-> ~/code/wildfire/app_suite/.git/COMMIT_EDITMSG
-	"	1	9
-	^	1	10
-	.	1	9
-	+	1	23
-	+	1	29
-	+	1	68
-	+	3	38
-	+	1	52
-	+	1	2
-	+	1	0
-	+	1	0
-	+	1	0
+> ~/code/wildfire/app_suite/app/views/business/pages/_wizard_content_section.html.haml
+	"	5	0
+	^	5	37
+	.	5	36
+	+	2	45
 	+	3	0
-	+	1	28
-	+	1	70
+	+	12	47
+	+	20	83
+	+	1	15
+	+	2	19
 	+	2	0
-	+	1	9
+	+	5	36
 
-> /usr/local/.git/config
-	"	1	0
-
-> ~/code/websockets/goliath-example/server.rb
-	"	4	25
-	^	4	26
-	.	4	25
-	+	9	0
-	+	4	25
-
-> ~/code/wildfire/app_suite/spec/spec_helper.rb
-	"	103	0
-	^	191	0
-	.	192	0
-	+	192	0
-	+	191	0
-	+	192	0
-
-> ~/code/wildfire/app_suite/app/coffeescripts/business/pages/edit.coffee
-	"	293	38
-	^	293	27
-	.	293	0
-	+	291	0
-	+	291	23
-	+	291	0
-	+	291	105
-	+	292	0
-	+	295	0
-	+	295	14
-	+	295	28
-	+	295	59
-	+	297	19
-	+	297	39
-	+	109	20
-	+	295	0
-	+	110	0
-	+	295	0
-	+	293	0
-	+	294	27
-	+	114	29
-	+	297	0
-	+	115	0
-	+	291	0
-	+	121	0
-	+	120	0
-	+	121	16
-	+	131	25
-	+	301	0
-	+	309	0
-	+	299	47
-	+	298	43
-	+	292	25
-	+	295	25
-	+	296	36
-	+	121	17
-	+	131	26
-	+	309	4
-	+	291	0
-	+	135	0
-	+	134	0
-	+	291	0
-	+	135	0
-	+	136	0
-	+	135	16
-	+	138	20
-	+	309	10
-	+	118	56
-	+	122	15
-	+	129	14
-	+	139	28
-	+	299	62
-	+	116	19
-	+	132	0
-	+	298	28
-	+	299	61
-	+	139	0
-	+	297	0
-	+	299	37
-	+	299	12
-	+	299	37
-	+	299	0
-	+	299	9
+> ~/code/wildfire/app_suite/app/helpers/application_helper.rb
+	"	300	17
+	^	300	127
+	.	300	0
 	+	299	34
-	+	298	7
-	+	299	43
+	+	302	0
+	+	300	19
+	+	300	164
+	+	301	0
+	+	300	33
+	+	92	0
+	+	79	0
+	+	82	0
+	+	80	0
+	+	78	6
+	+	103	0
+	+	102	33
+	+	80	33
+	+	300	11
 	+	300	0
-	+	299	9
-	+	299	55
-	+	299	56
-	+	299	91
-	+	299	0
-	+	299	109
-	+	122	24
-	+	299	156
-	+	299	0
-	+	299	115
-	+	299	0
-	+	299	103
-	+	115	0
-	+	122	0
-	+	119	0
-	+	120	0
-	+	120	0
-	+	119	0
-	+	114	32
-	+	114	0
-	+	120	0
-	+	114	48
-	+	115	13
-	+	114	0
-	+	119	0
+	m	300	3
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vwg1Lzw/1.fugitiveblame
+	"	76	0
+
+> ~/code/wildfire/app_suite/app/views/business/internal_widgets/_edit_link.html.haml
+	"	3	0
+
+> ~/code/wildfire/app_suite/app/views/business/internal_widgets/edit_links/_page.html.haml
+	"	7	286
+	^	7	287
+	.	7	286
+	+	5	261
+	+	7	286
+
+> ~/code/wildfire/app_suite/app/views/business/internal_widgets/edit_links/_page_template.html.haml
+	"	6	0
+	^	6	326
+	.	6	325
+	+	5	0
+	+	5	0
+	+	6	0
+	+	16	0
+	+	17	350
+	+	6	325
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vwg1Lzw/3.fugitiveblame
+	"	5	0
+
+> ~/code/wildfire/app_suite/app/assets/stylesheets/application.css
+	"	3	0
+	.	3	0
+	+	3	0
+
+> ~/code/wildfire/app_suite/app/views/business/apps/_edit_link.html.haml
+	"	5	47
+
+> ~/code/wildfire/app_suite/app/views/business/apps/edit_links/_page.html.haml
+	"	7	0
+	^	7	101
+	.	7	100
+	+	5	99
+	+	7	100
+
+> ~/code/wildfire/app_suite/app/views/business/apps/edit_links/_page_template.html.haml
+	"	15	0
+	^	16	110
+	.	15	0
+	+	6	108
+	+	16	109
+	+	5	0
+	+	15	0
+
+> ~/code/wildfire/app_suite/app/assets/javascripts/designer/page_templates/edit.coffee.erb
+	"	113	0
+	.	180	0
+	+	170	20
+	+	170	0
+	+	180	0
+
+> ~/code/wildfire/app_suite/app/assets/javascripts/business/pages/edit.coffee.erb
+	"	104	0
+	.	170	0
 	+	1	0
-	+	190	0
-	+	301	0
-	+	301	0
-	+	301	28
-	+	301	0
-	+	301	0
-	+	189	0
-	+	301	0
-	+	296	0
-	+	293	0
+	+	1	0
+	+	1	0
+	+	1	24
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	29
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	28
+	+	1	28
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	70
+	+	1	0
+	+	1	13
+	+	1	6
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	15	0
+	+	15	0
+	+	126	57
+	+	126	57
+	+	126	30
+	+	127	0
+	+	126	29
+	+	127	0
+	+	127	65
+	+	127	32
+	+	127	43
+	+	127	35
+	+	127	0
+	+	127	31
+	+	127	65
+	+	127	88
+	+	127	0
+	+	127	0
+	+	127	0
+	+	127	30
+	+	127	50
+	+	127	0
+	+	127	0
+	+	127	47
+	+	127	35
+	+	123	7
+	+	87	31
+	+	123	23
+	+	17	26
+	+	18	0
+	+	127	0
+	+	126	73
+	+	168	0
+	+	167	26
+	+	101	0
+	+	104	0
+	+	155	0
+	+	170	0
+	n	101	54
 
-> ~/code/wildfire/app_suite/app/coffeescripts/shared/publishing.coffee
-	"	139	4
-
-> ~/code/wildfire/app_suite/app/coffeescripts/business/pages/shared.coffee
+> ~/code/wildfire/app_suite/app/views/business/pages/_wizard_appearance_section.html.haml
 	"	1	0
-
-> ~/code/wildfire/app_suite/app/coffeescripts/shared/wizard.coffee
-	"	155	0
-	.	156	0
-	+	156	0
-	+	156	118
-	+	156	0
-
-> ~/code/wildfire/app_suite/app/coffeescripts/designer/page_templates/show.coffee
-	"	35	4
-
-> ~/code/wildfire/app_suite/app/views/business/pages/_custom_css.html.haml
-	"	2	0
-	^	2	87
-	.	2	0
-	+	2	86
-	+	2	0
+	^	1	16
+	.	1	15
+	+	2	48
+	+	1	15
 
 > ~/code/wildfire/app_suite/app/views/shared/_appearance.html.haml
-	"	37	0
-	.	38	0
-	+	32	0
-	+	35	123
-	+	34	13
-	+	35	0
-	+	35	37
-	+	36	12
-	+	36	49
-	+	35	66
+	"	38	55
+	^	38	74
+	.	38	73
+	+	36	124
 	+	36	0
-	+	36	28
 	+	36	0
-	+	38	0
-	+	38	0
-	+	38	0
+	+	36	109
 	+	36	0
-	+	38	0
-
-> ~/code/wildfire/app_suite/app/views/business/pages/edit.html.haml
-	"	15	0
-	^	15	0
-	.	15	0
-	+	12	0
 	+	13	0
-	+	15	0
+	+	2	2
+	+	1	152
+	+	1	0
+	+	2	0
+	+	38	73
 
-> ~/code/wildfire/app_suite/public/stylesheets/sass/business/pages/edit.scss
-	"	168	0
-	^	165	10
-	.	165	9
-	+	36	0
-	+	7	0
-	+	169	25
-	+	170	0
-	+	174	0
-	+	157	0
-	+	160	0
-	+	165	13
-	+	163	9
-	+	166	0
-	+	163	9
-	+	165	9
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vwg1Lzw/5.fugitiveblame
+	"	2	0
 
-> ~/code/wildfire/app_suite/app/controllers/business/pages_controller.rb
-	"	1	0
-	^	22	19
-	.	6	0
-	+	142	5
-	+	11	147
-	+	142	26
-	+	61	25
-	+	62	19
-	+	63	0
-	+	67	0
-	+	66	61
-	+	67	0
-	+	66	24
-	+	60	47
-	+	64	73
-	+	66	35
-	+	142	0
-	+	142	0
-	+	48	0
-	+	22	18
-	+	6	0
-	+	6	0
-
-> ~/code/wildfire/app_suite/app/views/business/pages/edit_iframe.html.haml
-	"	1	0
-	^	4	4
-	.	1	0
-	+	4	0
-	+	1	0
-
-> ~/code/wildfire/app_suite/app/controllers/business/business_controller.rb
-	"	2	2
-	.	1	0
-	+	3	0
-	+	4	0
-	+	3	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	3	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	3
-	+	1	0
-	+	1	0
-	+	1	9
-	+	1	0
-	+	1	20
-	+	3	0
-	+	3	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	20
-	+	1	35
-	+	1	0
-
-> ~/code/wildfire/app_suite/lib/wf/consumer_auth/base_auth.rb
-	"	1	0
-
-> ~/code/wildfire/app_suite/app/models/account.rb
-	"	23	0
-	^	23	0
-	.	22	1
-	+	22	0
-	+	22	33
-	+	22	13
-	+	22	12
-	+	22	32
-	+	22	0
-	+	22	0
-	+	22	1
-
-> ~/code/wildfire/app_suite/spec/acceptance/designer/page_templates_spec.rb
-	"	36	0
-	^	36	53
-	.	35	0
-	+	109	0
-	+	118	0
-	+	117	38
-	+	118	0
-	+	35	55
-	+	37	0
-	+	35	0
-	+	35	0
-	+	35	28
-	+	35	0
-	+	36	52
-	+	35	0
-
-> ~/code/wildfire/app_suite/config/routes.rb
-	"	121	16
-	.	137	0
-	+	137	0
-
-> ~/code/RMO/.git/COMMIT_EDITMSG
-	"	1	17
-	^	1	18
-	.	1	17
-	+	1	17
-
-> ~/code/rails/.git/COMMIT_EDITMSG
-	"	1	57
-	^	1	58
-	.	1	57
-	+	1	57
-
-> ~/code/rails/activemodel/CHANGELOG.md
-	"	9	35
-	^	9	36
-	.	9	35
-	+	9	35
-
-> ~/code/rails/actionpack/lib/action_dispatch/testing/assertions/response.rb
-	"	7	0
-	.	7	0
-	+	7	0
-
-> ~/code/rails/.git/config
-	"	9	42
-	^	9	43
-	.	9	42
-	+	9	42
-
-> ~/code/rails/activemodel/examples/validations.rb
-	"	1	0
-
-> ~/code/rails/activemodel/lib/active_model.rb
-	"	63	0
-	.	1	0
-	+	1	0
-
-> ~/code/rails/activemodel/test/cases/attribute_methods_test.rb
-	"	141	0
-
-> ~/code/words-about-code/.git/COMMIT_EDITMSG
-	"	1	40
-	^	1	41
-	.	1	40
-	+	1	40
-
-> ~/code/words-about-code/2012/04/rails-internals-inside-attribute-methods.md
-	"	161	45
-	^	161	46
-	.	161	45
-	+	1	56
-	+	6	8
-	+	7	18
-	+	43	2
-	+	38	23
-	+	39	30
-	+	40	28
-	+	41	24
+> ~/code/wildfire/app_suite/app/helpers/business/pages_helper.rb
+	"	46	68
+	^	46	69
+	.	46	68
 	+	40	22
-	+	22	0
-	+	21	0
-	+	162	0
-	+	53	8
-	+	51	35
-	+	83	0
-	+	55	0
-	+	83	0
-	+	61	0
-	+	61	16
-	+	86	54
-	+	87	72
-	+	89	72
-	+	135	9
-	+	93	0
-	+	99	65
-	+	99	0
-	+	99	65
-	+	138	72
-	+	139	0
-	+	141	0
-	+	140	7
-	+	141	0
-	+	147	24
-	+	147	69
-	+	151	39
-	+	162	27
-	+	162	0
-	+	162	0
-	+	162	0
-	+	157	8
-	+	162	0
-	+	157	39
-	+	155	39
-	+	161	45
+	+	39	31
+	+	40	0
+	+	40	23
+	+	36	4
+	+	40	0
+	+	39	31
+	+	44	0
+	+	46	68
 
-> ~/code/words-about-code/README.md
-	"	4	26
-	^	4	27
-	.	4	26
-	+	10	0
-	+	9	50
-	+	4	26
-
-> ~/code/wildfire/app_suite/db/schema.rb
-	"	868	0
-	.	868	0
-	+	868	0
-
-> ~/code/wildfire/app_suite/app/views/business/pages/custom_css.html.haml
+> ~/code/wildfire/app_suite/app/views/business/pages/_wizard_fangate_section.html.haml
 	"	1	0
-	^	1	98
-	.	1	97
-	+	3	25
-	+	3	0
-	+	1	28
-	+	2	0
-	+	1	15
-	+	2	26
-	+	2	86
-	+	2	0
-	+	1	97
-
-> ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
-	"	195	20
-	^	195	21
-	.	195	20
-	+	181	0
-	+	213	0
-	+	200	35
-	+	201	29
-	+	204	0
-	+	204	32
-	+	213	0
-	+	209	0
-	+	199	74
-	+	209	0
-	+	209	0
-	+	212	20
-	+	183	0
-	+	182	0
-	+	183	36
-	+	190	55
-	+	192	69
-	+	192	0
-	+	191	21
-	+	204	33
-	+	207	40
-	+	209	82
-	+	205	40
-	+	207	0
-	+	204	23
-	+	205	0
-	+	206	0
-	+	205	32
-	+	211	50
-	+	210	0
-	+	190	68
-	+	190	0
-	+	190	29
-	+	190	0
-	+	190	0
-	+	188	40
-	+	190	0
-	+	188	36
-	+	190	0
-	+	189	0
-	+	202	40
-	+	204	0
-	+	203	0
-	+	183	17
-	+	196	0
-	+	195	33
-	+	188	36
-	+	184	14
-	+	185	0
-	+	188	37
-	+	192	44
-	+	193	0
-	+	194	15
-	+	195	20
-
-> ~/code/wildfire/app_suite/spec/support/ace_editor.rb
-	"	7	0
-	^	6	52
-	.	6	51
-	+	2	41
-	+	3	30
-	+	6	50
-	+	11	0
-	+	6	51
-
-> ~/code/oscardelben/.git/COMMIT_EDITMSG
-	"	1	10
-	^	1	11
-	.	1	10
-	+	1	10
-
-> ~/code/oscardelben/stylesheets/main.css
-	"	7	0
-	^	7	8
-	.	7	7
-	+	9	1
-	+	8	16
-	+	13	0
-	+	12	18
-	+	7	7
-
-> ~/code/oscardelben/GoToFile
-	"	1	0
-	.	12	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	12	0
-
-> ~/code/oscardelben/university.html
-	"	19	13
-	^	19	14
-	.	19	13
-	+	3	19
-	+	6	21
-	+	50	0
-	+	11	12
-	+	9	2
-	+	22	20
-	+	40	11
-	+	48	2
-	+	41	6
-	+	42	8
-	+	41	0
-	+	43	17
-	+	44	31
-	+	45	23
-	+	46	34
-	+	24	30
-	+	49	4
-	+	41	5
-	+	47	8
-	+	28	0
-	+	27	9
-	+	38	0
-	+	29	10
-	+	30	0
-	+	29	12
-	+	30	10
-	+	31	38
-	+	32	24
-	+	33	21
-	+	34	20
-	+	35	14
-	+	36	0
-	+	35	55
-	+	36	21
-	+	38	0
-	+	15	23
-	+	11	20
-	+	37	29
-	+	20	4
-	+	24	36
-	+	18	65
-	+	19	13
-
-> ~/code/oscardelben/university/trigonometry_review.html
-	"	10	39
-	^	10	40
-	.	10	39
-	+	1	0
-	+	3	25
-	+	8	71
-	+	10	39
-
-> ~/code/shoulda-matchers/lib/shoulda/matchers/active_record/association_matcher.rb
-	"	72	12
-
-> ~/code/shoulda-matchers/GoToFile
-	"	1	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/code/examples/issue_5701/app/models/issue.rb
-	"	2	0
-	^	4	36
-	.	2	0
-	+	4	35
-	+	2	0
-
-> ~/code/examples/issue_5701/GoToFile
-	"	1	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
-
-> ~/code/examples/issue_5701/app/models/category.rb
-	"	2	0
-	^	3	30
-	.	3	0
-	+	1	0
-	+	3	0
-
-> ~/code/examples/issue_5701/app/models/tracker.rb
-	"	2	2
-	^	3	62
-	.	2	0
-	+	3	61
-	+	2	0
-
-> ~/code/examples/issue_5701/db/migrate/20120402145010_create_issues.rb
-	"	6	22
-	^	6	23
-	.	6	22
-	+	6	22
-
-> ~/code/wildfire/app_suite/app/helpers/consumer/consumer_helper.rb
-	"	71	0
-	^	71	26
-	.	71	25
-	+	77	7
-	+	71	25
-
-> ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_spec.rb
-	"	207	6
-
-> ~/code/wildfire/app_suite/spec/acceptance/designer/edit_page_template_sections_spec.rb
-	"	390	0
-
-> ~/code/wildfire/app_suite/spec/acceptance/designer/preview_latest_page_template_spec.rb
-	"	27	0
-	^	27	25
-	.	27	0
-	+	27	0
-
-> ~/code/examples/attribute_methods.rb
-	"	5	1
-	^	5	3
-	.	5	2
-	+	4	11
-	+	2	17
-	+	5	2
-
-> ~/code/blog/.git/COMMIT_EDITMSG
-	"	1	7
-	^	1	8
-	.	1	7
-	+	1	7
-
-> ~/code/blog/_posts/2012-03-30-make-your-own-university.markdown
-	"	20	0
-	^	19	5
-	.	19	4
-	+	16	24
-	+	18	90
-	+	19	4
-
-> ~/code/blog/_layouts/post.html
-	"	27	36
-	^	27	37
-	.	27	36
-	+	28	0
-	+	40	228
-	+	28	52
-	+	28	0
-	+	27	36
-
-> ~/code/oscardelben/_layouts/post.html
-	"	20	0
-
-> ~/code/oscardelben/_posts/2012-03-30-make-your-own-university.markdown
-	"	40	0
-	^	40	14
-	.	41	0
-	+	1	0
-	+	5	0
-	+	9	10
-	+	8	54
-	+	41	38
-	+	41	47
-	+	9	63
-	+	41	0
-	+	14	14
-	+	12	48
-	+	14	21
-	+	22	70
-	+	23	5
-	+	24	22
-	+	26	1
-	+	29	37
-	+	27	7
-	+	40	13
-	+	41	0
-
-> ~/code/oscardelben/Rakefile
-	"	13	0
-	^	8	66
-	.	13	0
-	+	22	0
-	+	22	7
-	+	5	21
-	+	22	0
-	+	6	22
-	+	6	0
-	+	8	80
-	+	18	0
-	+	8	42
-	+	11	29
-	+	17	16
-	+	14	17
-	+	15	44
-	+	16	0
-	+	9	30
-	+	11	0
-	+	19	55
-	+	21	10
-	+	15	45
-	+	8	0
-	+	15	0
-	+	8	0
-	+	7	22
-	+	8	53
-	+	7	0
-	+	2	17
-	+	7	0
-	+	8	65
-	+	13	0
-
-> ~/code/oscardelben/_posts/2012-03-30-Build-your-own-university.markdown
-	"	7	0
-	^	7	0
-	.	6	0
-	+	1	0
-	+	8	0
-	+	3	22
-	+	6	0
-
-> ~/code/wildfire/challenge/Gemfile
-	"	13	24
-	^	13	25
-	.	13	24
-	+	11	9
-	+	38	0
-	+	33	0
-	+	11	18
-	+	31	23
-	+	37	15
-	+	13	14
-	+	32	14
-	+	13	24
-
-> ~/code/wildfire/challenge/features/welcome.feature
-	"	12	0
-	^	12	22
-	.	12	21
-	+	4	0
-	+	5	25
-	+	3	52
-	+	8	61
+	^	1	16
+	.	1	15
+	+	9	0
+	+	2	45
+	+	20	33
+	+	9	0
+	+	9	0
 	+	10	0
 	+	9	0
-	+	10	16
+	+	9	24
+	+	9	0
+	+	7	45
+	+	1	15
+
+> ~/code/wildfire/app_suite/app/views/business/pages/_wizard_publish_section.html.haml
+	"	5	33
+	^	5	34
+	.	5	34
+	+	2	45
+	+	1	15
+	+	2	19
+	+	2	0
+	+	5	34
+
+> ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
+	"	77	0
+	^	52	26
+	.	75	0
+	+	38	41
+	+	60	80
+	+	60	19
+	+	62	0
+	+	40	0
+	+	38	32
+	+	60	24
+	+	38	49
+	+	45	35
+	+	60	25
+	+	68	0
+	+	38	0
+	+	60	24
+	+	68	24
+	+	63	0
+	+	60	0
+	+	38	32
+	+	45	25
+	+	60	24
+	+	68	24
+	+	81	36
+	+	80	20
+	+	75	15
+	+	52	0
+	+	75	0
+
+> ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
+	"	3	0
+	.	9	0
+	+	3	3
+	+	9	557
+	+	3	0
+	+	9	0
+	+	1	0
+	+	9	41
+	+	9	0
+	+	9	0
+	+	9	6
+	+	9	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	9	45
+	+	9	69
+	+	9	95
+	+	9	0
+	+	9	0
+	+	9	0
+	+	1	0
+	+	9	557
+	+	9	0
+	+	9	14
+	+	9	0
+	+	9	557
+	+	9	0
+	+	9	14
+	+	9	18
+	+	9	42
+	+	9	66
+	+	9	0
+	+	9	0
+	+	9	0
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vwg1Lzw/7.fugitiveblame
+	"	80	0
+
+> ~/code/wildfire/app_suite/app/assets/javascripts/business/publishing.coffee.erb
+	"	299	0
+	^	299	40
+	.	299	39
+	+	153	34
+	+	157	49
+	+	162	34
+	+	236	28
+	+	238	91
+	+	240	30
+	+	299	39
+
+> ~/code/wildfire/app_suite/app/assets/stylesheets/sprites/wizard.scss.erb
+	"	233	0
+	.	33	0
+	+	33	0
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vwg1Lzw/13.fugitiveblame
+	"	2	94
+
+> /usr/include/dirent.h
+	"	65	19
+
+> /usr/include/sys/dirent.h
+	"	105	0
+
+> ~/code/wildfire/app_suite/script/rails
+	"	5	0
+
+> ~/code/wildfire/ui-toolkit/vendor/assets/javascripts/bootstrap.min.js
+	"	6	0
+
+> ~/code/wildfire/app_suite/app/controllers/consumer/pages_controller.rb
+	"	14	0
+
+> ~/code/wildfire/app_suite/app/controllers/application_controller.rb
+	"	1	0
+
+> ~/code/wildfire/app_suite/app/assets/javascripts/business.js
+	"	1	0
+
+> ~/code/wildfire/app_suite/app/views/layouts/application.html.haml
+	"	1	0
+
+> ~/code/wildfire/app_suite/app/views/layouts/page_wizard.html.haml
+	"	6	0
+	.	7	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	9	11
+	+	9	0
+	+	9	0
+	+	6	5
+	+	6	0
+	+	7	0
+	+	7	0
+	+	6	0
+	+	7	0
+	+	5	0
+	+	6	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	9	7
+	+	8	17
+	+	8	16
+	+	9	16
+	+	9	21
+	+	9	13
+	+	9	22
+	+	9	19
+	+	9	13
+	+	32	0
+	+	32	0
+	+	18	0
+	+	32	0
+	+	18	0
+	+	31	0
+	+	9	0
 	+	11	0
-	+	12	21
+	+	7	0
+
+> ~/code/wildfire/app_suite/app/assets/javascripts/consumer.js
+	"	6	0
+	.	6	0
+	+	6	0
+
+> ~/test_app/lib/foo.rb
+	"	4	0
+	^	4	8
+	.	4	7
+	+	5	0
+	+	2	9
+	+	3	0
+	+	6	0
+	+	4	7
+
+> ~/test_app/GoToFile
+	"	1	0
+	.	6	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	14	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	6	0
+
+> ~/test_app/app/models/user.rb
+	"	3	0
+	^	3	35
+	.	4	0
+	+	4	0
+	+	4	0
+	+	2	12
+	+	4	0
+
+> ~/test_app/config/application.rb
+	"	19	4
+	^	19	50
+	.	19	49
+	+	19	49
+
+> ~/test_app/app/controllers/application_controller.rb
+	"	2	0
+	.	3	0
+	+	3	0
+
+> ~/test_app/app/controllers/recipes_controller.rb
+	"	7	4
+	^	7	5
+	.	7	0
+	+	1	0
+	+	17	24
+	+	18	0
+	+	3	17
+	+	22	0
+	+	8	0
+	+	7	0
+
+> ~/code/wildfire/app_suite/app/views/business/pages/edit.html.haml
+	"	4	6
+	^	1	30
+	.	4	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	1	29
+	+	4	0
+
+> ~/code/wildfire/app_suite/app/views/business/pages/_wizard_subnav.html.haml
+	"	7	4
+	^	8	20
+	.	8	19
+	+	9	12
+	+	10	12
+	+	11	12
+	+	1	13
+	+	5	21
+	+	6	4
+	+	2	4
+	+	1	9
+	+	2	26
+	+	4	0
+	+	3	28
+	+	4	0
+	+	8	19
+
+> ~/code/wildfire/app_suite/app/views/shared/_show_hide_accordion_controls.html.haml
+	"	5	0
+	^	1	26
+	.	1	17
+	+	3	0
+	+	6	0
+	+	6	247
+	+	7	7
+	+	7	6
+	+	7	0
+	+	3	0
+	+	3	36
+	+	3	37
+	+	4	0
+	+	3	107
+	+	3	0
+	+	6	41
+	+	6	215
+	+	7	0
+	+	3	64
+	+	8	0
+	+	1	18
+	+	2	0
+	+	1	17
+
+> ~/code/wildfire/app_suite/app/views/shared/_current_channel_controls.html.haml
+	"	3	135
+	^	3	136
+	.	3	135
+	+	1	0
+	+	3	2
+	+	1	33
+	+	3	135
+
+> ~/code/wildfire/app_suite/app/views/shared/_current_network_controls.html.haml
+	"	3	135
+	^	3	136
+	.	3	135
+	+	1	0
+	+	3	2
+	+	1	99
+	+	1	0
+	+	3	135
+
+> ~/code/wildfire/app_suite/app/views/shared/_fan_preview_controls.html.haml
+	"	6	0
+	^	6	24
+	.	6	16
+	+	7	23
+	+	6	31
+	+	1	0
+	+	3	4
+	+	6	66
+	+	1	27
+	+	6	16
+
+> ~/code/wildfire/app_suite/app/views/layouts/page_template_wizard.html.haml
+	"	9	52
+
+> ~/code/wildfire/app_suite/app/views/designer/page_templates/_wizard_subnav.html.haml
+	"	1	0
+
+> ~/code/wildfire/app_suite/app/views/shared/gate_image.html.haml
+	"	15	0
+	^	14	43
+	.	15	0
+	+	14	42
+	+	15	0
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vi3H2pP/1.fugitiveblame
+	"	14	0
+
+> ~/code/bash/test.sh
+	"	3	5
+	^	3	6
+	.	3	5
+	+	4	0
+	+	4	9
+	+	4	0
+	+	4	0
+	+	4	5
+	+	4	0
+	+	3	5
+
+> ~/code/test.sh
+	"	2	0
+	^	2	0
+	.	1	19
+	+	5	4
+	+	1	19
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vaCnTzp/1.fugitiveblame
+	"	25	0
+
+> fugitive:///Users/oscardelben/code/wildfire/app_suite/.git//0/app/assets/javascripts/shared/wizard.coffee.erb
+	"	25	0
+
+> ~/code/wildfire/app_suite/app/assets/javascripts/GoToFile
+	"	1	0
+	.	20	0
+	+	1	0
+	+	20	0
+
+> ~/code/wildfire/app_suite/app/views/layouts/consumer.html.haml
+	"	36	4
+	.	36	4
+	+	12	0
+	+	37	0
+	+	36	5
+	+	35	4
+	+	36	4
+
+> ~/code/wildfire/app_suite/app/models/page.rb
+	"	8	0
+	^	4	18
+	.	3	0
+	+	4	0
+	+	3	0
+
+> ~/code/wildfire/app_suite/lib/publishable.rb
+	"	4	0
+
+> ~/code/wildfire/app_suite/app/models/widget_set.rb
+	"	22	0
+
+> ~/code/wildfire/app_suite/app/views/business/pages/_custom_css.html.haml
+	"	7	10
+	^	4	28
+	.	4	27
+	+	6	0
+	+	6	65
+	+	10	55
+	+	9	0
+	+	10	6
+	+	9	38
+	+	9	58
+	+	8	0
+	+	10	0
+	+	8	0
+	+	6	0
+	+	1	0
+	+	2	0
+	+	6	2
+	+	7	2
+	+	5	0
+	+	4	27
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vUCm0He/1.fugitiveblame
+	"	5	196
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vUCm0He/3.fugitiveblame
+	"	6	0
+
+> fugitive:///Users/oscardelben/code/wildfire/app_suite/.git//f545b48309ba3596e8c38cdab823a94a53363373
+	"	189	0
+	.	5	0
+	+	5	0
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vUCm0He/10.fugitiveblame
+	"	49	3
+
+> ~/code/wildfire/app_suite/app/assets/javascripts/shared/dialog.coffee.erb
+	"	64	33
+	^	64	34
+	.	64	33
+	+	16	47
+	+	63	23
+	+	64	33
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vUCm0He/12.fugitiveblame
+	"	63	0
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vUCm0He/14.fugitiveblame
+	"	14	0
+
+> ~/code/wildfire/app_suite/lib/liquid_renderable.rb
+	"	34	83
+
+> ~/code/wildfire/app_suite/app/views/shared/edit_iframe.html.haml
+	"	6	0
+	.	6	0
+	+	6	0
+
+> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/v4qzQAr/1.fugitiveblame
+	"	145	0
+
+> ~/code/wildfire/ui-toolkit/app/views/layouts/new.html.haml
+	"	15	0

@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/oscardelben/code/try_meteor/.meteor/local/build/app/packages/mongo-livedata'
-let g:netrw_dirhist_2='/Users/oscardelben/code/sheet/lib/sheet'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/'
+let g:netrw_dirhist_2='/Users/oscardelben/code/wildfire/app_suite'
+let g:netrw_dirhist_3='/Users/oscardelben/code/wildfire/app_suite/app'
+let g:netrw_dirhist_4='/'
