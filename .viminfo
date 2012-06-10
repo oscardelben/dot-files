@@ -8,19 +8,63 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/color
+~MSle0~/no
 
 # Last Substitute Search Pattern:
-~MSle0&wizard_section.
+~MSle0&e_factor
 
 # Last Substitute String:
-$accordion-group.
+$\=s:ProcessedLine(0, submatch(0), "\\V\\^\\(\\s\\{-}\\)\" \\?\\(\\_.\\{-}\\)\\$", "\" %s")
 
 # Command Line History (newest to oldest):
 :q
+:e ~/.zshrc
 :w
-:vsp
+:e precmd_update_git_vars
+:e preexec_update_git_vars
+:e chpwd_update_git_vars
+:e prompt_git_info
 :set paste
+:q!
+:wq
+:source ~/.vimrc
+:sp ~/.vim/colors/ir_black.vim
+:e ~/.vim/colors/grb256.vim
+:set hlsearch
+:set nohlsearch
+:e ~/.vimrc
+:vsp
+:%s/e_factor/ef/e
+:%s/interval/calculate_interval/e
+:%s/e_factor/calculate_e_factor/e
+:sp
+:!rails g model Item category:reference question:text answer:text interval:integer e_factor:decimal next_repetition:date
+:'<,'>s/^/# /e
+:set formatoptions?
+:%s/update_e_factor/e_factor/e
+:qa!
+:e spec/lib/sm2_spec.rb
+:!mkdir spec/lib
+:e lib/sm2.rb
+:!rails g rspec:install
+:!rails g
+:!rails g rspec
+:!bundle
+:b 3
+:ls
+:help bn
+:bn
+:set nolist
+:set list
+:Gedit
+:!%:p
+:!pwd
+:Glog
+:vsp git-diff-grep
+:Gread
+:Gdiff
+:vsp Readme.md
+:'<,'>s/;/#/g
 :help t_Co
 :man t_Co
 :set cursorline bgterm=white
@@ -32,8 +76,6 @@ $accordion-group.
 :noh
 :!ctags --extra=+f --exclude=.git --exclude=log -R * ~/.rbenv/versions/1.8.7-p358/lib/ruby/gems/1.8/gems/*
 :!ctags --extra=+f --exclude=.git --exclude=log -R * .rbenv/versions/1.8.7-p358/lib/ruby/gems/1.8/gems/*
-:source ~/.vimrc
-:qa!
 :rubytags
 :tags
 :%s/wizard_section./accordion-group./g
@@ -58,8 +100,6 @@ $accordion-group.
 :!ack 'edit_widget'
 :!ack 'render_partial_for_widget'
 :!tree app/assets/st
-:wq
-:q!
 :!ack 'toggleSidebar'
 :!ack 'accordionOpened'
 :Q
@@ -69,7 +109,6 @@ $accordion-group.
 :!g st
 :x
 :qw
-:sp
 :!ack page_wizard_subnav_wpr
 :!ack page_wizard_wpr
 :e app/views/layouts/page_wizard.html.haml
@@ -219,7 +258,6 @@ $accordion-group.
 :quit
 :q!!
 :load $MYVIMRC
-:e ~/.vimrc
 :e lib/wf/jobs/publish.rb
 :we
 :e spec/models/publication_job_spec.rb
@@ -376,7 +414,6 @@ $accordion-group.
 :e bin/pow
 :!mkdir bin
 :nh
-:!bundle
 :!b
 :!gaci
 :gaci
@@ -493,7 +530,6 @@ $accordion-group.
 :vsp leaderboard.html
 :e doc/vimux.txt
 :call RunVimTmuxCommand(:q
-:Gdiff
 :vsp app/controllers/application_controller.rb
 :e spec/acceptance/consumer/microsite_spec.rb
 :e scripts/install_ruby.sh
@@ -509,7 +545,6 @@ $accordion-group.
 :cjecktime
 :j
 :e test_observers.rb
-:!pwd
 :e spec/support/capybara.rb
 :e spec/acceptance/consumer/mobile_spec.rb
 :vsp spec/acceptance/business/edit_pages_spec.rb
@@ -685,7 +720,6 @@ $accordion-group.
 :!man fork
 :.!d
 :!man strcmp
-:ls
 :!man waitpid
 :!man strncmp
 :man execlp
@@ -705,6 +739,28 @@ $accordion-group.
 :hi cursorline ctermbg=white
 
 # Search String History (newest to oldest):
+?/no
+?/in
+?/sear
+? \V\^\zs\(\_.\{-}\)\$
+?/cursor
+?/status
+?/wf
+?/ef
+? e_factor
+? \V\^    \zs\(\_.\{-}\)\$
+?/autolo
+? interval
+? ^
+? update_e_factor
+? \(\w\+\) = \(.*\)$
+?/mod
+?/wrap
+?/rev
+?/revs
+?/trim
+? ;
+?/action_s
 ?/color
 ?/highli
 ?/current
@@ -745,7 +801,6 @@ $accordion-group.
 ?/shown
 ?/accordion
 ?/accordionope
-? \V\^    \zs\(\_.\{-}\)\$
 ?/resizeIf
 ?/resizeIfr
 ?/resizeable
@@ -828,7 +883,6 @@ $accordion-group.
 ?/not_
 ?/publication_ids
 ?/page
-?/wf
 ?/>>
 ?/mongre
 ?/mongo
@@ -849,7 +903,6 @@ $accordion-group.
 ?/set_social
 ?/set_social_
 ?/am_soc
-? \V\^\zs\(\_.\{-}\)\$
 ?/def am_
 ?/def am_s
 ?/strea
@@ -10686,25 +10739,6 @@ $accordion-group.
 ? wizard_section.
 ? accordion-inner
 ? accordion-body
-? accordion-heading
-? wizard_section
-? accordion-group
-? accordion-toggle
-? \V\^  \zs\(\_.\{-}\)\$
-? \V\^      \zs\(\_.\{-}\)\$
-? \V\^    \zs\(\_.\{-}\)\$
-? \%(^parent\)\@<! 
-? \V\^        \zs\(\_.\{-}\)\$
-? \V\^          \zs\(\_.\{-}\)\$
-? \V\^\zs\(\_.\{-}\)\$
-? \<BlackburnClient\>
-? \V\^            \zs\(\_.\{-}\)\$
-? VimuxUseExistingPane
-? \V\%6c \zs\(\_.\{-}\)\%8c
-? mountain
-? trekking
-? publication_social_app_id
-? \v([a-z_][a-zA-Z0-9_]*) \= (.+)
 
 # Expression History (newest to oldest):
 
@@ -10713,28 +10747,14 @@ $accordion-group.
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	" Generate tags for all gems
-	map <Leader>t :!ctags --extra=+f --exclude=.git --exclude=log -R * ~/.rbenv/versions/1.8.7-p358/lib/ruby/gems/1.8/gems/*<CR><CR>
-	
-	" use ,F to jump to tag in a vertical split
-	nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
-	
-	" use ,gf to go to file in a vertical split
-	nnoremap <silent> ,gf :vertical botright wincmd f<CR>
-	
-	" Map <leader>c to Gcommit
-	noremap <leader>c :Gcommit<cr>
-"1	LINE	0
-	
-	" Colors
-	hi Comment ctermfg=darkgray
-	
-	hi StatusLine ctermbg=darkgrey ctermfg=white
-	hi StatusLineNC ctermbg=black ctermfg=lightgrey
-	hi VertSplit ctermbg=black ctermfg=lightgrey
-	hi LineNr ctermfg=darkgray
-	hi CursorLine     guifg=NONE        guibg=#121212     gui=NONE      ctermfg=NONE        ctermbg=234
+"0	CHAR	0
+	#121212
+""1	LINE	0
+	:set t_Co=256
+"2	LINE	0
+	hi cursorline ctermbg=236
+	hi Search ctermbg=236
+"3	LINE	0
 	hi Function         guifg=#FFD2A7     guibg=NONE        gui=NONE      ctermfg=yellow       ctermbg=NONE        cterm=NONE
 	hi Visual           guifg=NONE        guibg=#262D51     gui=NONE      ctermfg=NONE        ctermbg=236    cterm=NONE
 	
@@ -10752,76 +10772,34 @@ $accordion-group.
 	highlight DiffDelete term=reverse cterm=bold ctermbg=lightred ctermfg=16
 	
 	highlight PmenuSel ctermfg=16 ctermbg=156
-"2	LINE	0
-	:set t_Co=256 " 256 colors
-"3	LINE	0
-	:set t_Co=256 " 256 colors
+	
 "4	LINE	0
-	set cursorline
+	
+	hi pythonSpaceError ctermbg=red guibg=red
+	
+	hi Comment ctermfg=darkgray
+	
+	hi StatusLine ctermbg=darkgrey ctermfg=white
+	hi StatusLineNC ctermbg=black ctermfg=lightgrey
+	hi VertSplit ctermbg=black ctermfg=lightgrey
+	hi LineNr ctermfg=darkgray
 "5	LINE	0
-	:set background=dark
-	:color grb256
-"6	LINE	0
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	" hi CursorLine     guifg=NONE        guibg=#121212     gui=NONE      ctermfg=NONE        ctermbg=234
+"6	CHAR	0
+	\ %{fugitive#statusline()}
 	
 "7	LINE	0
 	
 "8	LINE	0
-	""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-	" InsertTime COMMAND
-	" Insert the current time
-	""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-	command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
-"9	LINE	0
+	  def calculate_e_factor(quality, ef=DEFAULT_E_FACTOR)
+	    raise ArgumentError if quality < 0 || quality > 5
 	
+	    new_e_factor = ef + (0.1-(5-quality)*(0.08+(5-quality)*0.02))
+	    new_e_factor = 1.3 if new_e_factor < 1.3
+	    new_e_factor
+	  end
+"9	LINE	0
+	      p calculate_e_factor(quality, e_factor).to_s
 "a	CHAR	0
 	386
 <lwgcc:wnnofind("#pb€kbublication_job_social_app_od€kb€kbaid)€kb')€kbr"kjjkkkjjjkkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjkjjkjkjkjkjkjkjkljkjkjkjkjkllkkodebuggerjVJuVjgc:wkkkggjjjjkkkjjjjjjjjkkkkkkkjkobefore doendkki		SocialApp.any-insan€kb€kb€kb€kb€kb€kb_instnace.stubs(:bbbhciwany_instanceAst€kbet_fb_app_settings):wnjk/jjjjjjjVykkkggjjjjp:w=="w:w409Gj
@@ -10844,173 +10822,818 @@ $accordion-group.
 <GdVkkkkkkdddddddddddddddddddddduuuuuuuuVjjddd:w,gvlayoupajjjjjjjjjkeeeeeeeekeekkjjllllgfjjjjjjjjwwwwwwwllllllllllllllllgfjjjjjjjkkkeeeeebbbbwwwjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjkkkjjjo€kbjj€kb€kbwjji.togg€kb€kb€kb€kb€kbkkkkkjkkjjjjjhhhhhhi.fan_slie€kb€kbidetogglebbkwwwwbbjkjblllllllllhhhhhhhhlllllllllllllli€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kbgate+bu€kb€kb€kb+€kb_€kb-buttona€kb€kb€kb€kb€kb€kb€kb:wwjlkjli-button:was:wwkA€kb	$('€kb"..gfa€kb€kb€kb€kbfa€kbd€kb€kbfangate-buttons'€kb").live('€kb"click", wizard.€kb€kb€kb€kb€kb€kb€kbfunction(event) {}_€kb);A€kbA€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb(event) ->bbbbbbbr :wofan€kb€kb€kbif $(this).e€kbhasClass("yes")kkwwwi buttonjo$(ddkkofangate_slidetogge€kble€kb€kb€kb€kb€kbogl€kbgle = $("input[name€kbe='fangate_slidetoggle'€kb']")jofangate_slidetoggle.attr("checked", "checked"(€kb)A€kbbbbbbr ofangate_slidetoggle.trigger("change")€kbelsefangate_slidetoggle_€kb.remote€kb€kbveAttr("€kb€kb "checked"fangate_slidetoggle.trigger"€kb "Chan€kb€kb€kb€kbchage€kb€kbnge"kkkwbllxbhhx:wi :wkkko:wjjkwwwwwwwr A€kb:wkkhr A€kb:wjjjjlkkjjka if $(this).ha	 "yes" else "no"jdjkkjkkddjjVjjdkkVjMjjjjjjjjjjjjjjjjjjjVj<:wjkkoif $(this).hasClass("€kb€kb "yes"jwwwwwwwwi€kb€kb€kb€kb€kb€kb€kb€kbbhd2f"udf"wwwwwwbbbbbbiif wwwwwwwcwcheckedwwwwdwjkbbbbbbbwbbbbbhhhhhhwwwwwbbwwwwwwciwyesbbbbbbbA€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb€kb"checked"kok==oelsefangate_slde€kb€kb	ide€kb€kb€kb.removeAttr "checked":wkkkkkbjjjjjjjjjjjjkkkkkhhhhhhhhh	
 "w	CHAR	0
 	wwwwwwww
-""-	CHAR	0
-	ir_black
 
 # File marks:
-'0  235  12  ~/.vimrc
-'1  99  12  ~/.vimrc
-'2  101  0  ~/.vimrc
-'3  314  0  ~/.vimrc
-'4  503  0  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
-'5  1  0  ~/code/wildfire/app_suite/rspec
-'6  101  55  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
-'7  1  28  ~/code/wildfire/app_suite/.git/COMMIT_EDITMSG
-'8  8  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
-'9  23  6  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
+'0  1  0  ~/.zshrc
+'1  1  0  ~/.vimrc
+'2  105  0  ~/.vimrc
+'3  107  0  ~/.vimrc
+'4  148  39  ~/code/wildfire/app_suite/app/helpers/application_helper.rb
+'5  1  0  ~/code/wildfire/app_suite/lib/publishable.rb
+'6  29  0  ~/code/code_dojo/lib/sm2.rb
+'7  1  0  spec/lib/sm2_spec.rb
+'8  3  46  ~/code/code_dojo/.git/COMMIT_EDITMSG
+'9  25  15  ~/code/code_dojo/Gemfile
 
 # Jumplist (newest first):
--'  235  12  ~/.vimrc
--'  99  12  ~/.vimrc
--'  314  0  ~/.vimrc
--'  315  0  ~/.vimrc
--'  100  0  ~/.vimrc
--'  29  13  ~/.vimrc
--'  208  22  ~/.vimrc
--'  205  29  ~/.vimrc
--'  159  9  ~/.vimrc
--'  152  29  ~/.vimrc
--'  96  5  ~/.vimrc
--'  101  0  ~/.vimrc
+-'  1  0  ~/.zshrc
+-'  4  1  ~/.zsh/func/precmd_update_git_vars
+-'  5  3  ~/.zsh/func/preexec_update_git_vars
+-'  1  22  ~/.zsh/func/chpwd_update_git_vars
+-'  2  0  ~/.zsh/func/chpwd_update_git_vars
+-'  21  1  ~/.zsh/func/prompt_git_info
+-'  1  2  ~/.zsh/func/update_current_git_vars
+-'  29  1  ~/.zsh/func/update_current_git_vars
 -'  1  0  ~/.vimrc
--'  503  0  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  195  8  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  69  2  ~/code/wildfire/app_suite/Gemfile
--'  213  0  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  198  87  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  1  0  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  225  13  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  224  12  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  234  10  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  487  8  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  449  8  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  436  8  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  395  10  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  388  10  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  328  14  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  280  10  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  277  69  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  267  58  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  259  87  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  244  35  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  210  8  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  203  6  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  194  8  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  108  2  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  101  8  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  1  0  ~/code/wildfire/app_suite/rspec
--'  79  6  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  497  10  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  59  15  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  2  0  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
--'  5  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_content_section.html.haml
--'  3  12  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
--'  9  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
--'  1  22  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
--'  300  17  ~/code/wildfire/app_suite/app/helpers/application_helper.rb
--'  6  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
--'  7  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
--'  8  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
--'  77  0  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  75  15  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  52  6  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  57  26  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  60  19  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  61  8  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  39  8  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  38  27  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  68  19  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  63  30  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  6  6  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_publish_section.html.haml
--'  41  0  ~/code/wildfire/app_suite/app/assets/stylesheets/shared/wizard.scss.erb
--'  49  0  ~/code/wildfire/app_suite/app/assets/stylesheets/shared/wizard.scss.erb
--'  207  0  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
--'  115  0  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
--'  157  6  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
--'  128  4  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
--'  124  13  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
--'  159  5  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
--'  13  21  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
--'  7  21  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
--'  195  21  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
--'  158  0  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
--'  1  0  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
--'  208  0  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
--'  2  0  ~/code/wildfire/app_suite/app/assets/javascripts/shared/wizard.coffee.erb
--'  5  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_content_section.html.haml
--'  3  12  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
--'  9  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
--'  1  22  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
--'  300  17  ~/code/wildfire/app_suite/app/helpers/application_helper.rb
--'  6  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
--'  7  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
--'  8  0  ~/code/wildfire/app_suite/app/views/business/pages/_wizard_accordion.html.haml
--'  77  0  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  75  15  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  52  6  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  57  26  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  60  19  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  61  8  ~/code/wildfire/app_suite/app/helpers/business/publications_helper.rb
--'  1  0  ~/code/wildfire/app_suite/spec/models/company_spec.rb
+-'  119  1  ~/.vimrc
+-'  118  1  ~/.vimrc
+-'  117  1  ~/.vimrc
+-'  78  13  ~/.vimrc
+-'  38  34  ~/.vimrc
+-'  28  6  ~/.vimrc
+-'  12  4  ~/.vimrc
+-'  6  0  ~/.vimrc
+-'  5  0  ~/.vimrc
+-'  105  0  ~/.vimrc
+-'  107  0  ~/.vimrc
+-'  106  15  ~/.vimrc
+-'  148  39  ~/code/wildfire/app_suite/app/helpers/application_helper.rb
+-'  142  39  ~/code/wildfire/app_suite/app/helpers/application_helper.rb
+-'  1  0  ~/code/wildfire/app_suite/lib/publishable.rb
+-'  4  0  ~/code/wildfire/app_suite/app/models/account.rb
+-'  2  2  ~/code/wildfire/app_suite/app/models/account.rb
+-'  3  0  ~/code/wildfire/app_suite/app/models/account.rb
+-'  1  0  ~/code/wildfire/app_suite/app/models/account.rb
+-'  29  0  ~/code/code_dojo/lib/sm2.rb
+-'  38  38  ~/code/code_dojo/lib/sm2.rb
+-'  32  36  ~/code/code_dojo/lib/sm2.rb
+-'  27  34  ~/code/code_dojo/lib/sm2.rb
+-'  26  39  ~/code/code_dojo/lib/sm2.rb
+-'  49  6  ~/code/code_dojo/spec/lib/sm2_spec.rb
+-'  45  48  ~/code/code_dojo/spec/lib/sm2_spec.rb
+-'  28  4  ~/code/code_dojo/spec/lib/sm2_spec.rb
+-'  25  49  ~/code/code_dojo/config/application.rb
+-'  24  65  ~/code/code_dojo/config/application.rb
+-'  1  0  ~/code/code_dojo/config/application.rb
+-'  25  6  ~/code/code_dojo/spec/lib/sm2_spec.rb
+-'  39  0  ~/code/code_dojo/spec/lib/sm2_spec.rb
+-'  37  22  ~/code/code_dojo/spec/lib/sm2_spec.rb
+-'  4  6  ~/code/code_dojo/db/migrate/20120610002658_create_items.rb
+-'  11  0  ~/code/code_dojo/lib/sm2.rb
+-'  14  0  ~/code/code_dojo/lib/sm2.rb
+-'  23  1  ~/code/code_dojo/lib/sm2.rb
+-'  10  0  ~/code/code_dojo/spec/lib/sm2_spec.rb
+-'  41  0  ~/code/code_dojo/lib/sm2.rb
+-'  21  0  ~/code/code_dojo/lib/sm2.rb
+-'  1  0  spec/lib/sm2_spec.rb
+-'  2  0  ~/code/code_dojo/spec/lib/sm2_spec.rb
+-'  3  46  ~/code/code_dojo/.git/COMMIT_EDITMSG
+-'  1  0  ~/code/code_dojo/.git/COMMIT_EDITMSG
+-'  25  15  ~/code/code_dojo/Gemfile
+-'  1  0  ~/code/code_dojo/Gemfile
+-'  1  0  ~/code/Rails-One-Click-Website/CNAME
+-'  8  0  ~/code/wildfire/app_suite/app/models/page.rb
+-'  18  5  ~/code/wildfire/app_suite/app/models/app_type.rb
+-'  7  0  ~/code/wildfire/app_suite/app/models/app_type.rb
+-'  9  7  ~/code/wildfire/app_suite/app/models/app_type.rb
+-'  1  0  ~/code/wildfire/app_suite/app/models/app_type.rb
+-'  304  0  ~/.vimrc
+-'  305  65  ~/.vimrc
+-'  4  20  ~/code/wildfire/app_suite/app/models/company.rb
+-'  6  16  ~/code/wildfire/app_suite/app/models/company.rb
+-'  26  0  ~/.vimrc
+-'  10  0  fugitive:///Users/oscardelben/code/wildfire/app_suite/.git//7f2f018395b5612bdf737f58fc08175613aa0fc8/app/models/company.rb
+-'  1  0  fugitive:///Users/oscardelben/code/wildfire/app_suite/.git//7f2f018395b5612bdf737f58fc08175613aa0fc8/app/models/company.rb
 -'  1  0  ~/code/wildfire/app_suite/app/models/company.rb
--'  65  0  ~/code/wildfire/app_suite/app/models/company.rb
--'  14  0  ~/code/wildfire/app_suite/app/models/company.rb
--'  29  0  ~/code/wildfire/app_suite/app/models/company.rb
--'  32  0  ~/code/wildfire/app_suite/app/models/company.rb
+-'  24  0  ~/code/git-diff-grep/git-diff-grep
+-'  18  0  ~/code/git-diff-grep/Readme.md
+-'  1  18  ~/code/git-diff-grep/git-diff-grep
+-'  22  0  fugitive:///Users/oscardelben/code/git-diff-grep/.git//0/git-diff-grep
+-'  1  0  fugitive:///Users/oscardelben/code/git-diff-grep/.git//0/git-diff-grep
+-'  263  0  ~/code/docrails/guides/source/initialization.textile
+-'  227  235  ~/code/docrails/guides/source/initialization.textile
+-'  239  16  ~/code/docrails/guides/source/initialization.textile
+-'  1  0  ~/code/docrails/guides/source/initialization.textile
+-'  30  13  ~/bin/githelpers
+-'  40  0  ~/bin/githelpers
+-'  1  0  ~/bin/git
+-'  1  0  ~/bin/githelpers
+-'  1  23  ~/code/dot-files/.git/COMMIT_EDITMSG
+-'  238  12  ~/.vimrc
+-'  104  12  ~/.vimrc
+-'  317  0  ~/.vimrc
+-'  318  0  ~/.vimrc
+-'  29  13  ~/.vimrc
+-'  211  22  ~/.vimrc
+-'  208  29  ~/.vimrc
+-'  162  9  ~/.vimrc
+-'  155  29  ~/.vimrc
+-'  101  5  ~/.vimrc
+-'  503  0  ~/code/wildfire/app_suite/spec/acceptance/business/edit_pages_sections_spec.rb
 
 # History of marks within files (newest to oldest):
 
-> ~/.vimrc
-	"	235	12
-	^	235	13
-	.	235	12
-	+	315	68
-	+	315	0
-	+	315	0
-	+	315	15
-	+	315	40
-	+	315	13
-	+	315	0
-	+	315	13
-	+	315	0
-	+	315	0
-	+	315	10
-	+	315	0
-	+	315	0
-	+	315	0
-	+	315	29
-	+	315	0
-	+	315	13
-	+	315	2
-	+	5	33
-	+	315	0
+> ~/.zsh/func/update_current_git_vars
+	"	1	2
+	^	1	3
+	.	1	2
+	+	1	23
+	+	29	0
+	+	1	2
+
+> ~/.zsh/func/prompt_git_info
+	"	21	1
+	^	21	2
+	.	21	0
+	+	21	0
+
+> ~/.zsh/func/chpwd_update_git_vars
+	"	1	22
+	^	1	23
+	.	1	0
+	+	2	0
+	+	1	0
+
+> ~/.zsh/func/preexec_update_git_vars
+	"	5	3
+	^	5	4
+	.	5	0
 	+	5	0
-	+	185	0
-	+	188	78
-	+	315	0
+
+> ~/.zsh/func/precmd_update_git_vars
+	"	4	1
+	^	4	2
+	.	4	0
+	+	4	0
+
+> ~/.zshrc
+	"	1	0
+
+> ~/.vimrc
+	"	1	0
+	^	106	16
+	.	105	0
+	+	319	68
+	+	319	0
+	+	319	0
+	+	319	15
+	+	319	40
+	+	319	13
+	+	319	0
+	+	319	13
+	+	319	0
+	+	319	0
+	+	319	10
+	+	319	0
+	+	319	0
+	+	319	0
+	+	319	29
+	+	319	0
+	+	319	13
+	+	319	2
+	+	5	33
+	+	319	0
+	+	5	0
 	+	189	0
-	+	237	0
-	+	287	0
+	+	192	78
+	+	319	0
+	+	193	0
+	+	241	0
+	+	291	0
+	+	306	0
+	+	307	0
+	+	307	0
+	+	319	0
+	+	106	0
+	+	105	19
+	+	106	6
+	+	30	13
+	+	105	0
+	+	319	0
+	+	319	0
+	+	319	25
+	+	319	0
+	+	319	0
+	+	106	7
+	+	105	0
+	+	238	12
+	+	239	12
+	+	26	0
+	+	305	65
+	+	304	0
+	+	306	0
+	+	304	0
+	+	305	0
+	+	305	0
+	+	66	15
+	+	111	61
+	+	112	0
+	+	111	0
+	+	106	15
+	+	105	0
+
+> ~/code/wildfire/app_suite/app/helpers/application_helper.rb
+	"	148	39
+	^	300	127
+	.	300	0
+	+	299	34
 	+	302	0
-	+	303	0
-	+	303	0
-	+	315	0
-	+	101	0
-	+	100	19
-	+	101	6
-	+	29	13
-	+	100	0
-	+	315	0
-	+	315	0
-	+	315	25
-	+	315	0
-	+	315	0
-	+	101	7
-	+	99	0
-	+	234	12
-	+	235	12
+	+	300	19
+	+	300	164
+	+	301	0
+	+	300	33
+	+	92	0
+	+	79	0
+	+	82	0
+	+	80	0
+	+	78	6
+	+	103	0
+	+	102	33
+	+	80	33
+	+	300	11
+	+	300	0
+	m	300	3
+
+> ~/code/wildfire/app_suite/app/models/account.rb
+	"	4	0
+	.	3	0
+	+	3	0
+
+> ~/code/wildfire/app_suite/GoToFile
+	"	1	0
+	.	3	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	226	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	213	0
+	+	212	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	211	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	199	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	183	0
+	+	164	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	145	0
+	+	144	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	108	0
+	+	1	0
+	+	1	0
+	+	94	0
+	+	39	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	3	0
+
+> ~/.vim/colors/grb256.vim
+	"	6	0
+	.	5	0
+	+	7	0
+	+	7	0
+	+	7	25
+	+	7	0
+	+	7	0
+	+	7	20
+	+	7	0
+	+	7	0
+	+	5	0
+
+> ~/.vim/colors/ir_black.vim
+	"	98	5
+
+> ~/code/wildfire/app_suite/lib/publishable.rb
+	"	1	0
+
+> ~/code/code_dojo/lib/sm2.rb
+	"	29	0
+	^	38	45
+	.	29	0
+	+	41	0
+	+	1	66
+	+	2	2
+	+	41	3
+	+	41	0
+	+	23	2
+	+	23	15
+	+	28	0
+	+	27	13
+	+	28	0
+	+	28	39
+	+	32	35
+	+	33	0
+	+	38	30
+	+	27	39
+	+	28	0
+	+	23	9
+	+	26	44
+	+	32	44
+	+	27	42
+	+	38	46
+	+	23	0
+	+	29	0
+	+	29	29
+	+	29	22
+	+	29	0
+	+	29	55
+	+	29	52
+	+	29	18
+	+	29	15
+	+	26	15
+	+	27	30
+	+	32	32
+	+	33	7
+	+	35	10
+	+	38	32
+	+	25	65
+	+	29	6
+	+	4	2
+	+	19	0
+	+	5	66
+	+	6	35
+	+	18	21
+	+	14	0
+	+	12	0
+	+	29	37
+	+	29	15
+	+	26	15
+	+	5	0
+	+	26	29
+	+	27	34
+	+	29	35
+	+	29	20
+	+	32	36
+	+	38	44
+	+	29	0
+
+> ~/code/code_dojo/GoToFile
+	"	1	0
+	.	9	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	9	0
+
+> ~/code/code_dojo/spec/lib/sm2_spec.rb
+	"	49	6
+	^	45	51
+	.	45	50
+	+	54	0
+	+	1	31
+	+	10	24
+	+	13	0
+	+	12	32
+	+	28	0
+	+	7	21
+	+	8	0
+	+	7	0
+	+	7	0
+	+	7	0
+	+	4	0
+	+	13	11
+	+	7	16
+	+	16	0
+	+	15	0
+	+	16	32
+	+	17	35
+	+	22	0
+	+	21	0
+	+	20	80
+	+	21	36
+	+	10	20
+	+	54	0
+	+	25	39
+	+	26	0
+	+	25	39
+	+	33	41
+	+	52	0
+	+	33	74
+	+	36	0
+	+	35	0
+	+	36	56
+	+	37	38
+	+	51	0
+	+	37	43
+	+	39	0
+	+	41	45
+	+	46	0
+	+	45	48
+	+	50	0
+	+	49	49
+	+	30	0
+	+	54	0
+	+	36	56
+	+	37	31
+	+	20	0
+	+	10	0
+	+	41	47
+	+	45	50
+
+> ~/code/code_dojo/.git/COMMIT_EDITMSG
+	"	1	22
+	^	1	23
+	.	1	22
+	+	3	46
+	+	1	22
+
+> ~/code/code_dojo/app/models/item.rb
+	"	23	17
+	^	23	18
+	.	23	17
+	+	3	36
+	+	15	0
+	+	14	7
+	+	7	8
+	+	8	47
+	+	6	17
+	+	7	0
+	+	13	0
+	+	10	58
+	+	11	23
+	+	12	86
+	+	2	12
+	+	11	0
+	+	10	0
+	+	18	0
+	+	19	0
+	+	23	17
+
+> ~/code/code_dojo/spec/models/item_spec.rb
+	"	26	0
+	^	19	48
+	.	19	0
+	+	28	0
+	+	26	0
+	+	16	0
+	+	7	24
+	+	8	0
+	+	15	0
+	+	10	31
+	+	5	30
+	+	15	0
+	+	27	0
+	+	9	78
+	+	11	31
+	+	8	44
+	+	20	0
+	+	19	49
+	+	20	31
+	+	21	0
+	+	19	47
+	+	23	30
+	+	22	24
+	+	19	0
+
+> ~/code/code_dojo/db/migrate/20120610002658_create_items.rb
+	"	4	6
+	^	4	28
+	.	4	27
+	+	4	27
+
+> ~/code/code_dojo/config/application.rb
+	"	25	49
+	^	25	50
+	.	25	49
+	+	25	49
+
+> spec/lib/sm2_spec.rb
+	"	1	0
+	.	1	0
+	+	1	12
+	+	1	12
+	+	1	12
+	+	1	0
+	+	1	0
+
+> ~/code/code_dojo/Gemfile
+	"	25	15
+	^	27	16
+	.	27	15
+	+	26	16
+	+	27	21
+	+	25	20
+	+	26	0
+	+	28	0
+	+	27	15
+
+> ~/code/Rails-One-Click-Website/CNAME
+	"	1	0
+
+> ~/code/GoToFile
+	"	1	0
+	.	52	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	154	0
+	+	103	0
+	+	52	0
+
+> ~/code/wildfire/app_suite/app/models/app_type.rb
+	"	18	5
+	^	7	43
+	.	7	0
+	+	7	0
+
+> ~/code/wildfire/app_suite/app/models/page.rb
+	"	8	0
+	^	4	18
+	.	3	0
+	+	4	0
+	+	3	0
+
+> /usr/local/Cellar/vim/7.3.333/share/vim/vim73/doc/windows.txt
+	"	1157	30
 
 > ~/code/wildfire/app_suite/app/models/company.rb
+	"	4	20
+	^	4	44
+	.	4	0
+	+	4	0
+
+> fugitive:///Users/oscardelben/code/wildfire/app_suite/.git//7f2f018395b5612bdf737f58fc08175613aa0fc8/app/models/company.rb
+	"	10	0
+
+> ~/code/git-diff-grep/.git/COMMIT_EDITMSG
+	"	1	22
+	^	1	23
+	.	1	22
+	+	1	22
+
+> ~/code/git-diff-grep/Readme.md
+	"	5	127
+	^	5	128
+	.	5	127
+	+	23	0
+	+	2	0
+	+	5	80
+	+	6	0
+	+	5	127
+
+> ~/code/git-diff-grep/git-diff-grep
+	"	24	0
+	.	23	0
+	+	1	88
+	+	1	4
+	+	1	16
+	+	1	7
+	+	1	0
+	+	1	3
+	+	1	25
+	+	1	62
+	+	1	0
+	+	1	0
+	+	1	87
+	+	1	5
+	+	1	0
+	+	1	88
+	+	1	62
+	+	1	62
+	+	1	0
+	+	1	18
+	+	1	19
+	+	1	0
+	+	1	0
+	+	1	43
+	+	1	60
+	+	1	52
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	18
+	+	1	44
+	+	1	39
+	+	1	43
+	+	1	0
+	+	1	0
+	+	1	32
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	13
+	+	1	9
+	+	1	16
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	13
+	+	1	32
+	+	1	0
+	+	1	15
+	+	1	20
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	16
+	+	1	0
+	+	1	7
+	+	1	0
+	+	1	0
+	+	1	0
+	+	23	0
+
+> fugitive:///Users/oscardelben/code/git-diff-grep/.git//0/git-diff-grep
+	"	42	6
+	.	68	0
+	+	68	3
+	+	69	7
+	+	71	0
+	+	73	0
+	+	82	0
+	+	98	0
+	+	68	0
+
+> ~/repo/.git/COMMIT_EDITMSG
+	"	1	5
+	^	1	6
+	.	1	5
+	+	1	5
+
+> ~/code/git-diff-grep/.git/config
+	"	9	50
+	^	9	51
+	.	9	50
+	+	9	50
+
+> ~/code/docrails/guides/source/initialization.textile
+	"	263	0
+	^	252	7
+	.	253	0
+	+	227	235
+	+	239	0
+	+	227	0
+	+	227	235
+	+	235	0
+	+	229	5
+	+	236	0
+	+	236	1
+	+	238	128
+	+	238	25
+	+	242	65
+	+	253	0
+	+	252	6
+	+	253	0
+
+> ~/code/docrails/guides/GoToFile
+	"	1	0
+	.	13	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	13	0
+
+> ~/code/docrails/.git/COMMIT_EDITMSG
+	"	1	36
+	^	1	37
+	.	1	36
+	+	1	36
+
+> ~/bin/githelpers
+	"	30	13
+	^	30	14
+	.	30	13
+	+	1	11
+	+	39	1
+	+	30	13
+
+> ~/.gitconfig
+	"	12	22
+	^	12	23
+	.	12	22
+	+	2	1
+	+	6	1
+	+	17	1
+	+	20	1
+	+	14	0
+	+	14	0
+	+	13	0
+	+	2	0
+	+	11	23
+	+	12	22
+
+> ~/code/dot-files/.git/COMMIT_EDITMSG
+	"	1	32
+	^	1	33
+	.	1	32
+	+	1	32
+
+> ~/bin/git
 	"	1	0
 
 > ~/code/wildfire/app_suite/spec/models/company_spec.rb
@@ -11021,110 +11644,6 @@ $accordion-group.
 
 > /usr/local/Cellar/vim/7.3.333/share/vim/vim73/doc/term.txt
 	"	244	26
-
-> ~/code/wildfire/app_suite/GoToFile
-	"	1	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	85	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	72	0
-	+	71	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	70	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	58	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	42	0
-	+	23	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
 
 > ~/code/wildfire/app_suite/app/controllers/api/api_controller.rb
 	"	1	0
@@ -11636,28 +12155,6 @@ $accordion-group.
 	+	2	0
 	+	5	36
 
-> ~/code/wildfire/app_suite/app/helpers/application_helper.rb
-	"	300	17
-	^	300	127
-	.	300	0
-	+	299	34
-	+	302	0
-	+	300	19
-	+	300	164
-	+	301	0
-	+	300	33
-	+	92	0
-	+	79	0
-	+	82	0
-	+	80	0
-	+	78	6
-	+	103	0
-	+	102	33
-	+	80	33
-	+	300	11
-	+	300	0
-	m	300	3
-
 > /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vwg1Lzw/1.fugitiveblame
 	"	76	0
 
@@ -11968,340 +12465,3 @@ $accordion-group.
 
 > ~/code/wildfire/app_suite/app/views/layouts/application.html.haml
 	"	1	0
-
-> ~/code/wildfire/app_suite/app/views/layouts/page_wizard.html.haml
-	"	6	0
-	.	7	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	11
-	+	9	0
-	+	9	0
-	+	6	5
-	+	6	0
-	+	7	0
-	+	7	0
-	+	6	0
-	+	7	0
-	+	5	0
-	+	6	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	7
-	+	8	17
-	+	8	16
-	+	9	16
-	+	9	21
-	+	9	13
-	+	9	22
-	+	9	19
-	+	9	13
-	+	32	0
-	+	32	0
-	+	18	0
-	+	32	0
-	+	18	0
-	+	31	0
-	+	9	0
-	+	11	0
-	+	7	0
-
-> ~/code/wildfire/app_suite/app/assets/javascripts/consumer.js
-	"	6	0
-	.	6	0
-	+	6	0
-
-> ~/test_app/lib/foo.rb
-	"	4	0
-	^	4	8
-	.	4	7
-	+	5	0
-	+	2	9
-	+	3	0
-	+	6	0
-	+	4	7
-
-> ~/test_app/GoToFile
-	"	1	0
-	.	6	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	14	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	6	0
-
-> ~/test_app/app/models/user.rb
-	"	3	0
-	^	3	35
-	.	4	0
-	+	4	0
-	+	4	0
-	+	2	12
-	+	4	0
-
-> ~/test_app/config/application.rb
-	"	19	4
-	^	19	50
-	.	19	49
-	+	19	49
-
-> ~/test_app/app/controllers/application_controller.rb
-	"	2	0
-	.	3	0
-	+	3	0
-
-> ~/test_app/app/controllers/recipes_controller.rb
-	"	7	4
-	^	7	5
-	.	7	0
-	+	1	0
-	+	17	24
-	+	18	0
-	+	3	17
-	+	22	0
-	+	8	0
-	+	7	0
-
-> ~/code/wildfire/app_suite/app/views/business/pages/edit.html.haml
-	"	4	6
-	^	1	30
-	.	4	0
-	+	17	0
-	+	17	0
-	+	17	0
-	+	17	0
-	+	17	0
-	+	17	0
-	+	1	29
-	+	4	0
-
-> ~/code/wildfire/app_suite/app/views/business/pages/_wizard_subnav.html.haml
-	"	7	4
-	^	8	20
-	.	8	19
-	+	9	12
-	+	10	12
-	+	11	12
-	+	1	13
-	+	5	21
-	+	6	4
-	+	2	4
-	+	1	9
-	+	2	26
-	+	4	0
-	+	3	28
-	+	4	0
-	+	8	19
-
-> ~/code/wildfire/app_suite/app/views/shared/_show_hide_accordion_controls.html.haml
-	"	5	0
-	^	1	26
-	.	1	17
-	+	3	0
-	+	6	0
-	+	6	247
-	+	7	7
-	+	7	6
-	+	7	0
-	+	3	0
-	+	3	36
-	+	3	37
-	+	4	0
-	+	3	107
-	+	3	0
-	+	6	41
-	+	6	215
-	+	7	0
-	+	3	64
-	+	8	0
-	+	1	18
-	+	2	0
-	+	1	17
-
-> ~/code/wildfire/app_suite/app/views/shared/_current_channel_controls.html.haml
-	"	3	135
-	^	3	136
-	.	3	135
-	+	1	0
-	+	3	2
-	+	1	33
-	+	3	135
-
-> ~/code/wildfire/app_suite/app/views/shared/_current_network_controls.html.haml
-	"	3	135
-	^	3	136
-	.	3	135
-	+	1	0
-	+	3	2
-	+	1	99
-	+	1	0
-	+	3	135
-
-> ~/code/wildfire/app_suite/app/views/shared/_fan_preview_controls.html.haml
-	"	6	0
-	^	6	24
-	.	6	16
-	+	7	23
-	+	6	31
-	+	1	0
-	+	3	4
-	+	6	66
-	+	1	27
-	+	6	16
-
-> ~/code/wildfire/app_suite/app/views/layouts/page_template_wizard.html.haml
-	"	9	52
-
-> ~/code/wildfire/app_suite/app/views/designer/page_templates/_wizard_subnav.html.haml
-	"	1	0
-
-> ~/code/wildfire/app_suite/app/views/shared/gate_image.html.haml
-	"	15	0
-	^	14	43
-	.	15	0
-	+	14	42
-	+	15	0
-
-> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vi3H2pP/1.fugitiveblame
-	"	14	0
-
-> ~/code/bash/test.sh
-	"	3	5
-	^	3	6
-	.	3	5
-	+	4	0
-	+	4	9
-	+	4	0
-	+	4	0
-	+	4	5
-	+	4	0
-	+	3	5
-
-> ~/code/test.sh
-	"	2	0
-	^	2	0
-	.	1	19
-	+	5	4
-	+	1	19
-
-> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vaCnTzp/1.fugitiveblame
-	"	25	0
-
-> fugitive:///Users/oscardelben/code/wildfire/app_suite/.git//0/app/assets/javascripts/shared/wizard.coffee.erb
-	"	25	0
-
-> ~/code/wildfire/app_suite/app/assets/javascripts/GoToFile
-	"	1	0
-	.	20	0
-	+	1	0
-	+	20	0
-
-> ~/code/wildfire/app_suite/app/views/layouts/consumer.html.haml
-	"	36	4
-	.	36	4
-	+	12	0
-	+	37	0
-	+	36	5
-	+	35	4
-	+	36	4
-
-> ~/code/wildfire/app_suite/app/models/page.rb
-	"	8	0
-	^	4	18
-	.	3	0
-	+	4	0
-	+	3	0
-
-> ~/code/wildfire/app_suite/lib/publishable.rb
-	"	4	0
-
-> ~/code/wildfire/app_suite/app/models/widget_set.rb
-	"	22	0
-
-> ~/code/wildfire/app_suite/app/views/business/pages/_custom_css.html.haml
-	"	7	10
-	^	4	28
-	.	4	27
-	+	6	0
-	+	6	65
-	+	10	55
-	+	9	0
-	+	10	6
-	+	9	38
-	+	9	58
-	+	8	0
-	+	10	0
-	+	8	0
-	+	6	0
-	+	1	0
-	+	2	0
-	+	6	2
-	+	7	2
-	+	5	0
-	+	4	27
-
-> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vUCm0He/1.fugitiveblame
-	"	5	196
-
-> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vUCm0He/3.fugitiveblame
-	"	6	0
-
-> fugitive:///Users/oscardelben/code/wildfire/app_suite/.git//f545b48309ba3596e8c38cdab823a94a53363373
-	"	189	0
-	.	5	0
-	+	5	0
-
-> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vUCm0He/10.fugitiveblame
-	"	49	3
-
-> ~/code/wildfire/app_suite/app/assets/javascripts/shared/dialog.coffee.erb
-	"	64	33
-	^	64	34
-	.	64	33
-	+	16	47
-	+	63	23
-	+	64	33
-
-> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vUCm0He/12.fugitiveblame
-	"	63	0
-
-> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/vUCm0He/14.fugitiveblame
-	"	14	0
-
-> ~/code/wildfire/app_suite/lib/liquid_renderable.rb
-	"	34	83
-
-> ~/code/wildfire/app_suite/app/views/shared/edit_iframe.html.haml
-	"	6	0
-	.	6	0
-	+	6	0
-
-> /private/var/folders/fd/n3cb8vwj56qcq11rhlljy0lw0000gn/T/v4qzQAr/1.fugitiveblame
-	"	145	0
-
-> ~/code/wildfire/ui-toolkit/app/views/layouts/new.html.haml
-	"	15	0

@@ -1,50 +1,62 @@
-# setopt promptsubst
-# autoload -U promptinit
-# promptinit
-# prompt grb
-
-fpath=($fpath $HOME/.zsh/func)
-typeset -U fpath
+# Autoload functions
+fpath=(~/.zsh/functions $fpath)
+autoload -U ~/.zsh/functions/*(:t)
 
 # Colors
 autoload -U colors
 colors
-setopt prompt_subst
+setopt prompt_subst # http://sebastiancelis.com/2009/11/16/zsh-prompt-git-users/
 
-local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
+# Enable auto-execution of functions.
+typeset -ga preexec_functions
+typeset -ga precmd_functions
+typeset -ga chpwd_functions
 
-PROMPT='
-%~
-${smiley}  %{$reset_color%}'
+# Append git functions needed for prompt.
+preexec_functions+='preexec_update_git_vars'
+precmd_functions+='precmd_update_git_vars'
+chpwd_functions+='chpwd_update_git_vars'
+ 
+# Set the prompt.
+PROMPT=$'%{${fg[cyan]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} '
 
-RPROMPT='%{$fg[white]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git-cwd-info)%{$reset_color%}'
-
+# Completion
 autoload -U compinit
 compinit
 
+# Automatically cd to dir
+setopt AUTO_CD
+
+# Case insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 export EDITOR="vim"
 
+# Use vim key bindings
 bindkey -v
+
+# Re-map ^R
+bindkey '^R' history-incremental-search-backward
 
 alias be='bundle exec'
 alias migrate='be rake db:migrate && be rake db:test:prepare'
 alias vi='vim'
-# alias vim='mvim'
 alias g='git'
+alias gg='git grep'
+alias gs='g st'
 alias gaci='g add .; g ci'
 alias b='bundle'
 alias reset_db='be rake db:drop; be rake db:create; be rake db:migrate; be rake db:seed; be rake db:test:prepare'
 
-# colors
-export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+# colors (again!)
+export CLICOLOR=1
+export LSCOLORS="gxex"
 export GREP_OPTIONS="--color"
 export ACK_COLOR_MATCH='red'
 
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11/bin:/usr/X11/bin:/usr/texbin
 
-export PATH=/Users/oscardelben/bin:$PATH
-
-export CC=gcc-4.2
+export PATH=$HOME/bin:$PATH
 
 # Git stuff
 function current_branch() {
@@ -52,15 +64,9 @@ function current_branch() {
   echo ${ref#refs/heads/}
 }
 
-alias ggpull='git pull origin $(current_branch)'
-alias ggpush='git push origin $(current_branch)'
+alias gpull='git pull origin $(current_branch)'
+alias gpush='git push origin $(current_branch)'
 
-function wf_setup {
-  osascript ~/bin/wf_setup.applescript
-}
 
-# Load RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-# Load tmuxinator
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+# rbenv
+eval "$(rbenv init -)"
