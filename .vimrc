@@ -1,11 +1,11 @@
-" Based on https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
-Bundle 'wincent/Command-T'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'ervandew/supertab'
 Bundle 'kchmck/vim-coffee-script'
@@ -89,12 +89,6 @@ augroup vimrcEx
   " Delete fugitive buffers when closed
   autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" COLOR
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:set background=light
-:color raggi
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE

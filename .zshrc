@@ -23,10 +23,8 @@ export CLICOLOR=1
 export GREP_OPTIONS="--color"
 export ACK_COLOR_MATCH='red'
 
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11/bin:/usr/X11/bin:~/bin/play-2.0.4
-
-export PYTHONPATH=/usr/local/share/pypy:$PYTHONPATH
-
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.rbenv/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
 # rbenv
