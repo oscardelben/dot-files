@@ -8,14 +8,15 @@
     br = branch
     co = checkout
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p
-
+    ribbon = tag --force _ribbon origin/master
+    catchup = "!git lg _ribbon..origin/master"
 
 [core]
     editor = vim
     pager = less -FRSX
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	excludesfile = /path/to/.gitignore
-	deltaBaseCacheLimit = 1G
+    deltaBaseCacheLimit = 1G
+    excludesfile = /path/to/.gitignore
 
 [color]
     diff = auto
@@ -45,4 +46,4 @@
     whitespace = fix
 
 [push]
-	default = simple
+    default = simple
