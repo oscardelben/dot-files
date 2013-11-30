@@ -7,17 +7,15 @@
     ci = commit
     br = branch
     co = checkout
-    df = diff
-    hp = "!source ~/bin/githelpers && show_git_head"
-    l = "!source ~/bin/githelpers && pretty_git_log"
-    la = !git l --all
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p
 
 
 [core]
     editor = vim
     pager = less -FRSX
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    excludesfile = /Users/oscardelben/.gitignore
+	excludesfile = /path/to/.gitignore
+	deltaBaseCacheLimit = 1G
 
 [color]
     diff = auto
@@ -46,7 +44,5 @@
 [apply]
     whitespace = fix
 
-
-[github]
-    user = oscardelben
-    token = 135fdb1a0da30ab4b27a5ca6614adce9
+[push]
+	default = simple
