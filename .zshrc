@@ -18,6 +18,8 @@ alias g='git'
 alias gg='git grep'
 alias b='bundle'
 
+alias bison=/usr/local/Cellar/bison/3.0.2/bin/bison
+
 # colors
 export CLICOLOR=1
 export GREP_OPTIONS="--color"

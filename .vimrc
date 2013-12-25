@@ -190,3 +190,5 @@ map <Leader>t :!ctags --extra=+f --exclude=.git --exclude=log -R * ~/.rbenv/vers
 " For some reasons the esc key is not detected in command-t
 let g:CommandTCancelMap=['<ESC>','<C-c>']
 
+map <Leader>s :w<CR>
+imap <Leader>s <ESC>:w<CR>
